@@ -23,13 +23,13 @@
         <div class="collapse navbar-collapse" id="navMain">
         <ul class="navbar-nav ms-auto align-items-lg-center">
             <!-- Mega Menu：選擇商品 -->
-            <li class="nav-item dropdown text-header">
-            <a class="nav-link dropdown-toggle d-flex align-items-center fs-8 pt-1 pb-1 ps-4 pe-4"
-                href="#" data-bs-toggle="dropdown" aria-expanded="false">
+            <li class="nav-item dropdown text-header " >
+            <a class="nav-link dropdown-toggle d-flex align-items-center fs-8 pt-1 pb-1 ps-4 pe-4" 
+                href="#"  data-bs-toggle="dropdown"  aria-expanded="false">
                 選擇商品 <i style="font-size: 1.25rem;" class="bi bi-chevron-down ms-1 "></i>
             </a>
 
-            <div class="dropdown-menu mega">
+            <div class="dropdown-menu mega ">
                 <div class="row g-2">
                 <div class="col-12 col-lg-4">
                     <a href="#">遊戲王</a>
@@ -71,16 +71,31 @@
     </div>
     </nav>
 
-    <script>
-    // 下拉展開時換 icon
-    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-    toggle.addEventListener('show.bs.dropdown', () => {
-        const icon = toggle.querySelector('i');
-        if (icon) icon.classList.replace('bi-chevron-down', 'bi-chevron-up');
-    });
-    toggle.addEventListener('hide.bs.dropdown', () => {
-        const icon = toggle.querySelector('i');
-        if (icon) icon.classList.replace('bi-chevron-up', 'bi-chevron-down');
-    });
-    });
-    </script>
+<script>
+document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+  const menu = toggle.parentElement.querySelector('.dropdown-menu');
+
+  // 展開時
+  toggle.addEventListener('show.bs.dropdown', () => {
+    const icon = toggle.querySelector('i');
+    if (icon) icon.classList.replace('bi-chevron-down', 'bi-chevron-up');
+
+    // 讓選單下移 16px
+    if (menu) {
+      menu.style.marginTop = '21px';
+    }
+  });
+
+  // 收合時
+  toggle.addEventListener('hide.bs.dropdown', () => {
+    const icon = toggle.querySelector('i');
+    if (icon) icon.classList.replace('bi-chevron-up', 'bi-chevron-down');
+
+    // 收合時恢復 (避免 layout 被撐開)
+    if (menu) {
+      menu.style.marginTop = '';
+    }
+  });
+});
+</script>
+
