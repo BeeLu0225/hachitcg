@@ -1,4 +1,67 @@
-.header{
-  background: #69F0AE;
+.header {
+  background: #69f0ae;
   font-size: 64px;
+}
+.bg-header {
+  font-family: "Noto Sans", sans-serif;
+  background: #f8f8f5;
+}
+.text-header {
+  color: #64635f;
+  font-weight: 600;
+  font-family: "Noto Sans", sans-serif;
+}
+.fs-7 {
+  font-size: 0.875rem !important; /* 14px */
+}
+.fs-8 {
+  font-size: 20px !important;
+  line-height: 1;
+}
+.ms-6 {
+  margin-left: 24px !important; /* 6 x 4px (Bootstrap 的間距單位) */
+}
+.navbar .dropdown-toggle::after {
+  display: none !important;
+}
+/* 箭頭旋轉 */
+.navbar .dropdown-toggle i {
+  transition: transform 0.2s;
+}
+.nav-item.dropdown.show .dropdown-toggle i {
+  transform: rotate(180deg);
+}
+
+/* Mega Menu */
+.dropdown-menu.mega {
+  width: 680px; /* 展開寬度 */
+  padding: 16px 24px;
+  border-radius: 0;
+}
+.mega a {
+  display: block;
+  padding: 0.35rem 0.5rem;
+  color: #555;
+  text-decoration: none;
+  border-radius: 0;
+}
+.mega a:hover,
+.mega a.active {
+  background: #000;
+  color: #fff !important;
+}
+/* RWD：小於 lg 時改成單欄 */
+@media (max-width: 991.98px) {
+  .dropdown-menu.mega {
+    width: 100%;
+  }
+}
+/* 移除 Bootstrap 預設的 dropdown caret */
+.navbar .dropdown-toggle::after {
+  display: none !important;
+}
+.bg-img {
+  background: url("/assets/images/10002.png") no-repeat center center;
+  background-size: auto;
+  min-height: 600px;
 }
