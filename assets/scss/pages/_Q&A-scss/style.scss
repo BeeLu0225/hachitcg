@@ -1,0 +1,157 @@
+body {
+  /* font-family: "Inter", sans-serif; */
+
+  box-sizing: border-box;
+
+  /* background-color: black;
+    color: white; */
+  /* border: 1px solid white; */
+
+  background-color: white;
+  color: black;
+}
+
+h2 p,
+a,
+span {
+  color: black;
+}
+
+*,
+*::before,
+*::after {
+  /* margin: 0;
+    padding: 0; */
+  /* background-color: black;
+    color: white; */
+  background-color: white;
+  color: black;
+  line-height: 1.5;
+
+  text-decoration: none;
+  list-style: none;
+  font-weight: 400;
+  /* text-align: center; */
+  box-sizing: border-box;
+}
+
+p,
+h2,
+h3 {
+  background-color: white !important;
+  color: black !important;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+  flex-wrap: wrap;
+}
+
+/*Bootstrap 手風琴按鈕 */
+/* 隱藏預設的 Bootstrap 箭頭 */
+.accordion-button::after {
+  display: none;
+}
+
+/* 在按鈕內插入新的 SVG 圖示 */
+.accordion-button {
+  position: relative;
+}
+
+.SVG-switch :nth-child(1) .accordion-button::before,
+.SVG-switch :nth-child(2) .accordion-button::before,
+.SVG-switch :nth-child(3) .accordion-button::before,
+.SVG-switch :nth-child(7) .accordion-button::before,
+.SVG-switch :nth-child(8) .accordion-button::before,
+.SVG-switch :nth-child(9) .accordion-button::before,
+.SVG-switch :nth-child(10) .accordion-button::before {
+  content: none;
+}
+
+.SVG-switch :nth-child(4) .accordion-button::before,
+.SVG-switch :nth-child(5) .accordion-button::before,
+.SVG-switch :nth-child(6) .accordion-button::before {
+  content: "";
+}
+
+/* 預設狀態：使用加號圖示 */
+.accordion-button::before {
+  content: "";
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+
+  /* 這裡負責圖示變化的過渡效果 */
+  transition: transform 0.2s ease-in-out, background-image 0.2s ease-in-out;
+  transition-delay: 0s;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* 展開狀態：圖示立刻從 "+" 變為 "-" */
+.accordion-button[aria-expanded="true"]::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E");
+
+  /* 展開時無延遲 */
+  transition-delay: 0s;
+}
+
+/* 收合狀態：延遲圖示從 "-" 變回 "+" */
+.accordion-button:not([aria-expanded="true"])::before {
+  /* 在收合時新增延遲效果 */
+  transition-delay: 0.2s;
+  /* 延遲 0.2 秒後才開始變換圖示 */
+}
+
+/* 1. 隱藏預設的 Bootstrap 圖示 */
+.accordion-button:not(.collapsed)::after,
+.accordion-button.collapsed::after,
+.SVG-switch::after {
+  background-image: none;
+}
+
+/* 手風琴展開時，旋轉圖示 
+.accordion-button:not(.collapsed)::before {
+    transform: translateY(-50%) rotate(90deg);
+    /* 旋轉 90 度 */
+
+/* 調整手風琴按鈕的內間距 */
+.accordion-button {
+  padding: 1.5rem;
+  /* 增加按鈕的整體內間距 */
+}
+
+/* 調整手風琴內容的內間距 */
+.accordion-body {
+  padding: 1rem 2rem;
+  /* 頂部/底部 1rem，左右 2rem */
+}
+
+/* 調整每個手風琴項目之間的間距 */
+.accordion-item {
+  margin-bottom: 0.5rem;
+}
+
+.item-text-wh {
+  width: 150px;
+  height: 50px;
+}
+
+/* article */
+.QA-img {
+  width: 50px;
+  height: 50px;
+
+  background-color: white;
+  align-items: center;
+}
