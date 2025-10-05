@@ -45,6 +45,7 @@ export default defineConfig({
       scss: {
         // 設定 Sass 的尋找路徑
         includePaths: [path.resolve(__dirname, "node_modules")],
+        quietDeps: true // 靜音來自相依套件的警告訊息
       },
     },
   },

@@ -1,13 +1,11 @@
-// 匯入 Bootstrap 的功能與變數 (順序很重要)
+@use "sass:color";
+@use "sass:math";
 @import "../../node_modules/bootstrap/scss/functions";
 @import "./utils/variables";
-
-// 匯入完整的 Bootstrap 函式庫
-@import "../../node_modules/bootstrap";
-
-// 匯入自訂樣式檔案
+@import "./utils/variables-dark";
 @import "./layout/header.scss";
 @import "./layout/footer.scss";
 @import "./pages/index.scss";
 
+@import "../../node_modules/bootstrap";
 
