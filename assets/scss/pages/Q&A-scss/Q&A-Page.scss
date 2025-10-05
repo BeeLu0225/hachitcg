@@ -1,0 +1,14 @@
+// 導入 Bootstrap 的所有元件樣式
+@import "/node_modules/bootstrap/scss/bootstrap";
+@import "bootstrap/dist/css/bootstrap.min.css";
+//
+@import "../../utils/variables";
+
+// 4. 導入你自己的 SCSS 樣式
+@import "./reset-style.scss";
+@import "./style.scss";
+@import "./Specifications.scss";
+
+// 也可以選擇性地導入 layout 樣式
+@import "../../layout/header";
+@import "../../layout/footer";

@@ -1,7 +1,9 @@
+// vite.config.js
+
 import { defineConfig } from "vite";
 import { ViteEjsPlugin } from "vite-plugin-ejs";
 import { fileURLToPath } from "node:url";
-import path from "node:path";
+import path from "node:path"; // 確保只匯入一次
 import { glob } from "glob";
 
 import liveReload from "vite-plugin-live-reload";
@@ -31,9 +33,20 @@ export default defineConfig({
     ViteEjsPlugin(),
     moveOutputPlugin(),
   ],
+  // -----------------------------
   server: {
     // 啟動 server 時預設開啟的頁面
     open: "pages/index.html",
+  },
+  // -----------------------------
+  // 將 css 設定合併到這裡
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // 設定 Sass 的尋找路徑
+        includePaths: [path.resolve(__dirname, "node_modules")],
+      },
+    },
   },
   build: {
     rollupOptions: {
