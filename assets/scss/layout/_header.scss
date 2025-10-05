@@ -1,43 +1,59 @@
+/* 全域字體設定 */
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+
+/* header、bg-header 等保持繼承全域字體 */
 .header {
   background: #69f0ae;
   font-size: 64px;
 }
+
 .bg-header {
-  font-family: "Noto Sans", sans-serif;
   background: #f8f8f5;
 }
+
+/* 區域字體：僅 text-header 使用 JinBuTi */
 .text-header {
   color: #1C1C1C;
   font-weight: 400;
-   font-family: "JinBuTi", "Microsoft JhengHei", sans-serif;
+  font-family: "JinBuTi", "Microsoft JhengHei", sans-serif;
 }
+
+/* 其餘維持原樣 */
 .fs-7 {
-  font-size: 0.875rem !important; /* 14px */
+  font-size: 0.875rem !important;
 }
+
 .fs-8 {
-  font-size: 20px !important;
+  font-size: 16px !important;
   line-height: 1;
+  font-weight: 700;
 }
+
 .ms-6 {
-  margin-left: 24px !important; /* 6 x 4px (Bootstrap 的間距單位) */
+  margin-left: 24px !important;
 }
+
 .navbar .dropdown-toggle::after {
   display: none !important;
 }
-/* 箭頭旋轉 */
+
 .navbar .dropdown-toggle i {
   transition: transform 0.2s;
 }
+
 .nav-item.dropdown.show .dropdown-toggle i {
   transform: rotate(180deg);
 }
 
 /* Mega Menu */
 .dropdown-menu.mega {
-  width: 680px; /* 展開寬度 */
+  width: 680px;
   padding: 16px 24px;
   border-radius: 0;
 }
+
 .mega a {
   display: block;
   padding: 0.35rem 0.5rem;
@@ -45,24 +61,27 @@
   text-decoration: none;
   border-radius: 0;
 }
+
 .mega a:hover,
 .mega a.active {
   background: #000;
   color: #fff !important;
 }
-/* RWD：小於 lg 時改成單欄 */
+
+/* RWD */
 @media (max-width: 991.98px) {
   .dropdown-menu.mega {
     width: 100%;
   }
 }
-/* 移除 Bootstrap 預設的 dropdown caret */
-.navbar .dropdown-toggle::after {
-  display: none !important;
-}
+
 .bg-img {
   background: url("/assets/images/10002.png") no-repeat center center;
-  background-size:  cover;
+  background-size: cover;
   min-height: 600px;
   top: 96px;
+}
+.nav-link {
+  --bs-nav-link-color: #1C1C1C;
+  --bs-nav-link-hover-color: #34d21f;
 }
