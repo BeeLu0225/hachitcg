@@ -20,3 +20,16 @@
 .mb-36 {
   margin-bottom: 36px !important;
 }
+// 引入金筆體字型
+@font-face {
+  font-family: "JinBuTi";
+  src: url("https://lzcdn.dianpusoft.cn/fonts/DingTalkJinBuTi/DingTalk-JinBuTi.woff2") format("woff2"),
+       url("https://lzcdn.dianpusoft.cn/fonts/DingTalkJinBuTi/DingTalk-JinBuTi.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.jinbuti {
+  font-family: "JinBuTi", "Microsoft JhengHei", sans-serif;
+}

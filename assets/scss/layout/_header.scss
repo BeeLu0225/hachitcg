@@ -7,9 +7,9 @@
   background: #f8f8f5;
 }
 .text-header {
-  color: #64635f;
-  font-weight: 600;
-  font-family: "Noto Sans", sans-serif;
+  color: #1C1C1C;
+  font-weight: 400;
+   font-family: "JinBuTi", "Microsoft JhengHei", sans-serif;
 }
 .fs-7 {
   font-size: 0.875rem !important; /* 14px */
@@ -62,6 +62,7 @@
 }
 .bg-img {
   background: url("/assets/images/10002.png") no-repeat center center;
-  background-size: auto;
+  background-size:  cover;
   min-height: 600px;
+  top: 96px;
 }
