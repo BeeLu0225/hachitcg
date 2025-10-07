@@ -1,10 +1,10 @@
+@use "sass:color";
 // Variables
 //
 // Variables should follow the `$component-state-property-size` formula for
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 // Color system
-
 // scss-docs-start gray-color-variables
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
@@ -298,14 +298,14 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
-$success:       $green !default;
-$info:          $cyan !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-900 !default;
+$primary:   #E4B112 !default;
+$secondary: #494949 !default; // 
+$success:   #51A779 !default;
+$info:      #81C3E9 !default;
+$warning:   #FFC107 !default;
+$danger:    #D56060 !default;
+$light:     #FFFFFF !default;
+$dark:      #1C1C1C !default;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -607,7 +607,8 @@ $aspect-ratios: (
 
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+// $font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif: "Noto Sans TC", "Noto Sans", "Montserrat", "Microsoft JhengHei", sans-serif !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
 $font-family-base:            var(--#{$prefix}font-sans-serif) !default;
@@ -627,19 +628,20 @@ $font-weight-medium:          500 !default;
 $font-weight-semibold:        600 !default;
 $font-weight-bold:            700 !default;
 $font-weight-bolder:          bolder !default;
-
+$font-weight-regular:         400 !default;
 $font-weight-base:            $font-weight-normal !default;
 
 $line-height-base:            1.5 !default;
 $line-height-sm:              1.25 !default;
 $line-height-lg:              2 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
-$h6-font-size:                $font-size-base !default;
+$display1-size: 3.5rem; // 56px
+$h1-font-size: 2.5rem; // 40px
+$h2-font-size: 2rem;   // 32px
+$h3-font-size: 1.75rem; // 28px
+$h4-font-size: 1.5rem; // 24px
+$h5-font-size: 1.25rem; // 20px
+$h6-font-size: $font-size-base; // 16px
 // scss-docs-end font-variables
 
 // scss-docs-start font-sizes
@@ -657,24 +659,24 @@ $font-sizes: (
 $headings-margin-bottom:      $spacer * .5 !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
-$headings-font-weight:        500 !default;
+$headings-font-weight:        700 !default;
 $headings-line-height:        1.2 !default;
 $headings-color:              inherit !default;
 // scss-docs-end headings-variables
 
 // scss-docs-start display-headings
 $display-font-sizes: (
-  1: 5rem,
-  2: 4.5rem,
-  3: 4rem,
-  4: 3.5rem,
-  5: 3rem,
-  6: 2.5rem
+  1: 3.5rem, // 56px
+  2: 2.5rem, // 40px
+  3: 2rem,   // 32px
+  4: 1.75rem,// 28px
+  5: 1.5rem, // 24px
+  6: 1.25rem // 20px
 ) !default;
 
 $display-font-family: null !default;
 $display-font-style:  null !default;
-$display-font-weight: 300 !default;
+$display-font-weight: 700 !default;
 $display-line-height: $headings-line-height !default;
 // scss-docs-end display-headings
 
@@ -850,9 +852,12 @@ $btn-link-disabled-color:     $gray-600 !default;
 // $btn-link-focus-shadow-rgb:   to-rgb(mix(color-contrast($link-color), $link-color, 15%)) !default;
 $btn-link-focus-shadow-rgb:   to-rgb(color.mix(color-contrast($link-color), $link-color, 15%)) !default;
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius:           var(--#{$prefix}border-radius) !default;
-$btn-border-radius-sm:        var(--#{$prefix}border-radius-sm) !default;
-$btn-border-radius-lg:        var(--#{$prefix}border-radius-lg) !default;
+// $btn-border-radius:           var(--#{$prefix}border-radius) !default;
+// $btn-border-radius-sm:        var(--#{$prefix}border-radius-sm) !default;
+// $btn-border-radius-lg:        var(--#{$prefix}border-radius-lg) !default;
+$btn-border-radius: 100px;      // 一般
+$btn-border-radius-sm: 100px;   // .btn-sm
+$btn-border-radius-lg: 100px;   // .btn-lg
 
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 

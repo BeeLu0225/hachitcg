@@ -1,76 +1,88 @@
-    <!-- Bootstrap CSS / JS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <nav class="navbar navbar-expand-lg border-bottom small py-1 bg-light">
-    <div class="container">
-        <!-- 左：品牌區 -->
-        <a class="navbar-brand d-flex align-items-center gap-2 mt-1" href="#">
-        <img src="../assets/images/logo.png" alt="logo" width="74" height="47.57">
-        <span class="d-flex flex-column lh-1">
-            <strong class="brand-title text-header">小蜜蜂卡牌屋</strong>
-            <span class=" brand-sub text-header fs-7 mt-1">Little Bee Card House</span>
-        </span>
-        </a>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
 
-        <!-- 漢堡 -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-        <span class="navbar-toggler-icon"></span>
-        </button>
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-        <!-- 右：選單 -->
-        <div class="collapse navbar-collapse" id="navMain">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-            <!-- Mega Menu：選擇商品 -->
-            <li class="nav-item dropdown  " >
-            <a class="nav-link dropdown-toggle d-flex align-items-center fs-8 pt-1 pb-1 ps-4 pe-4 py-2 fw-bold" 
-                href="#"  data-bs-toggle="dropdown"  aria-expanded="false">
-                選擇商品 <i style="font-size: 1.25rem;" class="bi bi-chevron-down ms-1 "></i>
-            </a>
+<!-- 你的自訂 Bootstrap SCSS 編譯結果 -->
+<link rel="stylesheet" href="/assets/all.css">
 
-            <div class="dropdown-menu mega ">
-                <div class="row g-2">
-                <div class="col-12 col-lg-4">
-                    <a href="#">遊戲王</a>
-                    <a href="#">Vanguard</a>
-                    <a href="#">Weiß Schwarz Rose</a>
-                    <a href="#">Dual Masters</a>
-                    <a href="#">UNION ARENA</a>
-                    <a href="#">碧藍航線</a>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <a href="#">寶可夢</a>
-                    <a href="#">Weiß Schwarz</a>
-                    <a href="#">Rebirth for you</a>
-                    <a href="#">Wixoss</a>
-                    <a href="#">數碼寶貝</a>
-                    <a href="#">Z/X</a>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <a href="#">航海王</a>
-                    <a href="#">Weiß Schwarz Blau</a>
-                    <a href="#">hololive</a>
-                    <a href="#">魔法風雲會</a>
-                    <a href="#">Battle Spirits</a>
-                </div>
-                </div>
+<!-- Bootstrap JS (僅保留 JS，不載入官方 CSS) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ====== Navbar Start ====== -->
+<nav class="navbar navbar-expand-lg border-bottom small py-1 bg-light">
+  <div class="container">
+    <!-- 左：品牌區 -->
+    <a class="navbar-brand d-flex align-items-center gap-2 mt-1" href="#">
+      <img src="../assets/images/logo.png" alt="logo" width="74" height="47.57">
+      <span class="d-flex flex-column lh-1">
+        <strong class="brand-title text-header">小蜜蜂卡牌屋</strong>
+        <span class="brand-sub text-header fs-7 mt-1">Little Bee Card House</span>
+      </span>
+    </a>
+
+    <!-- 漢堡按鈕 -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- 右：導覽選單 -->
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <!-- Mega Menu：選擇商品 -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center fs-8 pt-1 pb-1 ps-4 pe-4 py-2 fw-bold" 
+             href="#" data-bs-toggle="dropdown" aria-expanded="false">
+            選擇商品 <i class="bi bi-chevron-down ms-1" style="font-size: 1.25rem;"></i>
+          </a>
+
+          <div class="dropdown-menu mega mt-0 border-0 shadow-sm rounded-0">
+            <div class="row g-2 px-3 py-2">
+              <div class="col-12 col-lg-4">
+                <a href="#">遊戲王</a>
+                <a href="#">Vanguard</a>
+                <a href="#">Weiß Schwarz Rose</a>
+                <a href="#">Dual Masters</a>
+                <a href="#">UNION ARENA</a>
+                <a href="#">碧藍航線</a>
+              </div>
+              <div class="col-12 col-lg-4">
+                <a href="#">寶可夢</a>
+                <a href="#">Weiß Schwarz</a>
+                <a href="#">Rebirth for you</a>
+                <a href="#">Wixoss</a>
+                <a href="#">數碼寶貝</a>
+                <a href="#">Z/X</a>
+              </div>
+              <div class="col-12 col-lg-4">
+                <a href="#">航海王</a>
+                <a href="#">Weiß Schwarz Blau</a>
+                <a href="#">hololive</a>
+                <a href="#">魔法風雲會</a>
+                <a href="#">Battle Spirits</a>
+              </div>
             </div>
-            </li>
+          </div>
+        </li>
 
-            <li class="nav-item fs-8 pt-1 pb-1 ps-4 pe-4 fw-bold"><a class="nav-link" href="#">消息攻略</a></li>
-            <li class="nav-item fs-8 pt-1 pb-1 ps-4 pe-4 fw-bold"><a class="nav-link" href="#">優惠專區</a></li>
-            <li class="nav-item fs-8 pt-1 pb-1 ps-4 pe-4 fw-bold"><a class="nav-link" href="#">問與答</a></li>
+        <!-- 其他導覽連結 -->
+        <li class="nav-item fs-8 pt-1 pb-1 ps-4 pe-4 fw-bold"><a class="nav-link" href="#">消息攻略</a></li>
+        <li class="nav-item fs-8 pt-1 pb-1 ps-4 pe-4 fw-bold"><a class="nav-link" href="#">優惠專區</a></li>
+        <li class="nav-item fs-8 pt-1 pb-1 ps-4 pe-4 fw-bold"><a class="nav-link" href="#">問與答</a></li>
 
-            <!-- 右側 icon -->
-            <li class="nav-item fs-5"><a class="nav-link px-2" href="#"><i class="bi bi-cart-fill"></i></a></li>
-            <li class="nav-item ms-3 fs-5"><a class="nav-link px-2" href="#"><i class="bi bi-heart-fill"></i></a></li>
-            <li class="nav-item ms-3 fs-3"><a class="nav-link px-2" href="#"><i class="bi bi-person-fill"></i></a></li>
-        </ul>
-        </div>
+        <!-- Icon 區 -->
+        <li class="nav-item fs-5"><a class="nav-link px-2" href="#"><i class="bi bi-cart-fill"></i></a></li>
+        <li class="nav-item ms-3 fs-5"><a class="nav-link px-2" href="#"><i class="bi bi-heart-fill"></i></a></li>
+        <li class="nav-item ms-3 fs-3"><a class="nav-link px-2" href="#"><i class="bi bi-person-fill"></i></a></li>
+      </ul>
     </div>
-    </nav>
+  </div>
+</nav>
+<!-- ====== Navbar End ====== -->
 
+<!-- ====== Dropdown JS 行為 ====== -->
 <script>
 document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
   const menu = toggle.parentElement.querySelector('.dropdown-menu');
@@ -79,23 +91,14 @@ document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
   toggle.addEventListener('show.bs.dropdown', () => {
     const icon = toggle.querySelector('i');
     if (icon) icon.classList.replace('bi-chevron-down', 'bi-chevron-up');
-
-    // 讓選單下移 16px
-    if (menu) {
-      menu.style.marginTop = '21px';
-    }
+    if (menu) menu.style.marginTop = '21px';
   });
 
   // 收合時
   toggle.addEventListener('hide.bs.dropdown', () => {
     const icon = toggle.querySelector('i');
     if (icon) icon.classList.replace('bi-chevron-up', 'bi-chevron-down');
-
-    // 收合時恢復 (避免 layout 被撐開)
-    if (menu) {
-      menu.style.marginTop = '';
-    }
+    if (menu) menu.style.marginTop = '';
   });
 });
 </script>
-

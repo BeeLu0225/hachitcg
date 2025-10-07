@@ -1,8 +1,12 @@
 @use "sass:color";
-@use "sass:math";
 @import "../../node_modules/bootstrap/scss/functions";
+
+
 @import "./utils/variables";
+
 @import "./utils/variables-dark";
+
+
 @import "./layout/header.scss";
 @import "./layout/footer.scss";
 @import "./pages/index.scss";
