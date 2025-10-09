@@ -14,11 +14,12 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
       rel="stylesheet"
     />
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
   </head>
   <body>
     <%- include('./layout/header'); -%>
     <div
-      class="bg-img d-flex flex-column justify-content-center align-items-center text-white text-center"
+      class="bg-img d-flex flex-column justify-content-center align-items-center text-white text-center mb-8"
     >
       <p class="heading-1">立即購買 各種卡牌遊戲單卡</p>
       <p class="heading-5 mb-36">你的收藏, 應該有自己的蜂巢。</p>
@@ -30,10 +31,48 @@
         立即選購<i class="bi bi-arrow-right ms-6"></i>
       </button>
     </div>
+  <div class="d-flex flex-column justify-content-center fs-4 text-center mb-7">
+  <h4 class="text-primary mb-2">/ CARD /</h4>
+  <span class="fw-bold display-2 text-dark" style="line-height: 48px;">選擇卡牌</span>
+  
+</div>
+   <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><div class="bee-card"><img src="https://picsum.photos/400/200?1"><h5>寶可夢</h5><p class="text-success">● 商品庫存：999</p><button class="btn btn-dark rounded-pill px-4">點擊進入 <i class="bi bi-arrow-right"></i></button></div></div>
+      <div class="swiper-slide"><div class="bee-card"><img src="https://picsum.photos/400/200?2"><h5>Vanguard</h5><p class="text-success">● 商品庫存：999</p><button class="btn btn-dark rounded-pill px-4">點擊進入 <i class="bi bi-arrow-right"></i></button></div></div>
+      <div class="swiper-slide"><div class="bee-card"><img src="https://picsum.photos/400/200?3"><h5>航海王</h5><p class="text-success">● 商品庫存：999</p><button class="btn btn-dark rounded-pill px-4">點擊進入 <i class="bi bi-arrow-right"></i></button></div></div>
+      <div class="swiper-slide"><div class="bee-card"><img src="https://picsum.photos/400/200?4"><h5>Weiß Schwarz</h5><p class="text-success">● 商品庫存：999</p><button class="btn btn-dark rounded-pill px-4">點擊進入 <i class="bi bi-arrow-right"></i></button></div></div>
+      <div class="swiper-slide"><div class="bee-card"><img src="https://picsum.photos/400/200?5"><h5>Battle Spirits</h5><p class="text-success">● 商品庫存：999</p><button class="btn btn-dark rounded-pill px-4">點擊進入 <i class="bi bi-arrow-right"></i></button></div></div>
+    </div>
 
+    <div class="swiper-pagination"></div>
+  </div>
+    
+   
     <!-- <%- include('./layout/footer'); -%> -->
 
     <script type="module" src="../main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+     <script>
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      slidesPerView: 5,
+      centeredSlides: true,
+      slideToClickedSlide: true,
+      spaceBetween: 24, // ✅ 這行就是左右間距 24px
+      speed: 600,
+      grabCursor: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        0: { slidesPerView: 1.2, spaceBetween: 16 },
+        768: { slidesPerView: 3, spaceBetween: 20 },
+        1200: { slidesPerView: 5, spaceBetween: 24 },
+      },
+    });
+  </script>
   </body>
 </html>
