@@ -20,23 +20,19 @@
 .mb-36 {
   margin-bottom: 36px !important;
 }
+
 // 引入金筆體字型
 @font-face {
   font-family: "JinBuTi";
-  src: url("https://lzcdn.dianpusoft.cn/fonts/DingTalkJinBuTi/DingTalk-JinBuTi.woff2")
-      format("woff2"),
-    url("https://lzcdn.dianpusoft.cn/fonts/DingTalkJinBuTi/DingTalk-JinBuTi.woff")
-      format("woff");
+  src: url("https://lzcdn.dianpusoft.cn/fonts/DingTalkJinBuTi/DingTalk-JinBuTi.woff2") format("woff2"),
+       url("https://lzcdn.dianpusoft.cn/fonts/DingTalkJinBuTi/DingTalk-JinBuTi.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
+.jinbuti { font-family: "JinBuTi", "Microsoft JhengHei", sans-serif; }
 
-.jinbuti {
-  font-family: "JinBuTi", "Microsoft JhengHei", sans-serif;
-}
-//輪播圖
-
+// 輪播圖
 .about-title {
   font-size: 7.5rem;
   font-weight: 900;
@@ -48,12 +44,8 @@
   transform: translateX(-50%);
   pointer-events: none;
   white-space: nowrap;
-  font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
-  background: linear-gradient(
-    to bottom,
-    rgb(8 42 123 / 35%) 30%,
-    rgb(255 255 255 / 0%) 76%
-  );
+  // font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
+  background: linear-gradient(to bottom, rgb(8 42 123 / 35%) 30%, rgb(255 255 255 / 0%) 76%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -67,7 +59,6 @@
   perspective: 1000px;
   margin: 80px auto 0;
 }
-
 .bc-carousel-track {
   width: 100%;
   height: 100%;
@@ -82,81 +73,71 @@
 .bc-card {
   position: absolute;
   width: 360px;
-  height: 373px;
-  background: white;
-  border-radius: 20px;
+  height: 370px;
+  background: #fff;
+  border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 20px 40px rgba(0,0,0,.15);
+  transition: all .8s cubic-bezier(.25,.46,.45,.94);
   cursor: pointer;
   will-change: transform, opacity;
   display: flex;
   justify-content: center;
-}
 
-.bc-card img {
-  display: block;
-  width: auto;
-  height: auto;
-  max-width: 70%;
-  max-height: 40%;
+  // 為了漸層邊框保留透明邊框
+  border: 2px solid transparent;
 }
 
 .bc-card.center {
   z-index: 10;
   transform: scale(1.1) translateZ(0);
+
+  // 選中卡片的漸層邊框 + 黃色陰影
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(135deg, #FFD302 0%, #EA8A00 100%) border-box;
+  border-color: transparent;
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.15),
+    8px 8px 50px rgba(255, 222, 89, .2);
 }
-.bc-card.center img {
-  filter: none;
-}
+.bc-card.center img { filter: none; }
 
 .bc-card.left-2 {
   z-index: 1;
   transform: translateX(-400px) scale(0.8) translateZ(-300px);
   opacity: 0.7;
 }
-.bc-card.left-2 img {
-  filter: grayscale(100%);
-}
+.bc-card.left-2 img { filter: grayscale(100%); }
 
 .bc-card.left-1 {
   z-index: 5;
   transform: translateX(-200px) scale(0.9) translateZ(-100px);
   opacity: 0.9;
 }
-.bc-card.left-1 img {
-  filter: grayscale(100%);
-}
+.bc-card.left-1 img { filter: grayscale(100%); }
 
 .bc-card.right-1 {
   z-index: 5;
   transform: translateX(200px) scale(0.9) translateZ(-100px);
   opacity: 0.9;
 }
-.bc-card.right-1 img {
-  filter: grayscale(100%);
-}
+.bc-card.right-1 img { filter: grayscale(100%); }
 
 .bc-card.right-2 {
   z-index: 1;
   transform: translateX(400px) scale(0.8) translateZ(-300px);
   opacity: 0.7;
 }
-.bc-card.right-2 img {
-  filter: grayscale(100%);
-}
+.bc-card.right-2 img { filter: grayscale(100%); }
 
-.bc-card.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
+.bc-card.hidden { opacity: 0; pointer-events: none; }
 
 .bc-member-info {
   text-align: center;
   margin-top: 40px;
   transition: all 0.5s ease-out;
 }
-
 .bc-member-name {
   color: rgb(8, 42, 123);
   font-size: 2.5rem;
@@ -165,7 +146,6 @@
   position: relative;
   display: inline-block;
 }
-
 .bc-member-name::before,
 .bc-member-name::after {
   content: "";
@@ -175,12 +155,8 @@
   height: 2px;
   background: rgb(8, 42, 123);
 }
-.bc-member-name::before {
-  left: -120px;
-}
-.bc-member-name::after {
-  right: -120px;
-}
+.bc-member-name::before { left: -120px; }
+.bc-member-name::after  { right: -120px; }
 
 .bc-member-role {
   color: #848696;
@@ -198,19 +174,19 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 60px;
+  margin-top: 10px;
+  margin-bottom: 80px;
 }
-
 .bc-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
+  width: 30px;
+  height: 5px;
+  border-radius: 10%;
   background: rgba(8, 42, 123, 0.2);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .bc-dot.active {
-  background: rgb(8, 42, 123);
+  background: $primary;
   transform: scale(1.2);
 }
 
@@ -218,8 +194,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(8, 42, 123, 0.6);
-  color: white;
+  background: $primary;
+  color: #fff;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -235,53 +211,95 @@
   padding-bottom: 4px;
 }
 .bc-nav-arrow:hover {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgb(255, 0, 0);
   transform: translateY(-50%) scale(1.1);
 }
-.bc-nav-arrow.left {
-  left: 20px;
-  padding-right: 3px;
-}
-.bc-nav-arrow.right {
-  right: 20px;
-  padding-left: 3px;
-}
+.bc-nav-arrow.left  { left: 20px;  padding-right: 3px; }
+.bc-nav-arrow.right { right: 20px; padding-left: 3px; }
 
 @media (max-width: 768px) {
-  .about-title {
-    font-size: 4.5rem;
-  }
-  .bc-card {
-    width: 200px;
-    height: 280px;
-  }
-  .bc-card.left-2 {
-    transform: translateX(-250px) scale(0.8) translateZ(-300px);
-  }
-  .bc-card.left-1 {
-    transform: translateX(-120px) scale(0.9) translateZ(-100px);
-  }
-  .bc-card.right-1 {
-    transform: translateX(120px) scale(0.9) translateZ(-100px);
-  }
-  .bc-card.right-2 {
-    transform: translateX(250px) scale(0.8) translateZ(-300px);
-  }
+  .about-title { font-size: 4.5rem; }
+  .bc-card { width: 200px; height: 280px; }
+  .bc-card.left-2  { transform: translateX(-250px) scale(0.8) translateZ(-300px); }
+  .bc-card.left-1  { transform: translateX(-120px) scale(0.9) translateZ(-100px); }
+  .bc-card.right-1 { transform: translateX(120px)  scale(0.9) translateZ(-100px); }
+  .bc-card.right-2 { transform: translateX(250px)  scale(0.8) translateZ(-300px); }
 
-  .bc-member-name {
-    font-size: 2rem;
-  }
-  .bc-member-role {
-    font-size: 1.2rem;
-  }
+  .bc-member-name { font-size: 2rem; }
+  .bc-member-role { font-size: 1.2rem; }
   .bc-member-name::before,
-  .bc-member-name::after {
-    width: 50px;
-  }
-  .bc-member-name::before {
-    left: -70px;
-  }
-  .bc-member-name::after {
-    right: -70px;
-  }
+  .bc-member-name::after { width: 50px; }
+  .bc-member-name::before { left: -70px; }
+  .bc-member-name::after  { right: -70px; }
+}
+
+/* 版面排列（卡片內部結構） */
+.bc-card { padding: 20px; display:flex; flex-direction:column; align-items:center; gap:16px; }
+.bc-card__media { height: 200px; display:flex; align-items:center; justify-content:center; width:100%; }
+.bc-card__media img { width:auto; height:auto; max-width:100%; max-height:100%; display:block; }
+
+.bc-card__body  { text-align:center; width:100%; }
+.bc-card__title { font-size:1.125rem; font-weight:700; color:#1a1a1a; margin:4px 0 8px; }
+.bc-card__stock { margin:0 0 12px; color:#636b74; font-size:0.95rem; }
+
+/* 狀態:存貨綠點 */
+.bc-dot--status {
+  display:inline-block; width:8px; height:8px; border-radius:50%;
+  background:#18c964; margin-right:6px; vertical-align:middle;
+}
+/* 狀態:缺貨紅點 */
+.bc-dot--status-red {
+  display:inline-block; width:8px; height:8px; border-radius:50%;
+  background: $red; margin-right:6px; vertical-align:middle;
+}
+/* 行動按鈕（固定 328×48） */
+.bc-card__btn{
+  width:328px;
+  height:48px;
+  margin:0 auto;
+  border:none;
+  border-radius:999px;
+  background:#111;
+  color:#fff;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 14px 0 20px;
+  gap:12px;
+  cursor:pointer;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.bc-card__btn:hover{ transform:translateY(-1px); box-shadow:0 8px 18px rgba(0,0,0,.15); }
+
+/* 右側白色圓形箭頭 */
+.bc-card__btn-icon{
+  width:32px; height:32px; border-radius:50%;
+  background:#fff; color:#111;
+  display:inline-flex; align-items:center; justify-content:center;
+  font-size:16px; flex:0 0 32px;
+}
+
+/* 若在 BS5 用的輔助 class（可保留） */
+.btn-fixed{ width:328px; height:48px; margin:0 auto; }
+.icon-32{ width:32px; height:32px; flex:0 0 32px; font-size:16px; }
+
+// 輪播圖結束
+//新聞背景圖區塊遮罩
+.news-section{
+  width:100%;
+  min-height:798px;                /* Figma: Hug 798 */
+  padding:80px 312px;              /* T/B 80, L/R 312 */
+  background-color:#75C2EE33;        /* 底色 */
+  position:relative;
+  display:flex; justify-content:center; align-items:center;
+}
+
+/* 背景圖作“遮罩/紋理”，置中且填滿，透明度 10% */
+.news-section::before{
+  content:"";
+  position:absolute; inset:0;
+  background:url("/assets/images/newsbg.png") center/cover no-repeat;
+  opacity:.1;                       /* 10% */
+  pointer-events:none;
 }
