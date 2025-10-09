@@ -23,8 +23,10 @@
 // 引入金筆體字型
 @font-face {
   font-family: "JinBuTi";
-  src: url("https://lzcdn.dianpusoft.cn/fonts/DingTalkJinBuTi/DingTalk-JinBuTi.woff2") format("woff2"),
-       url("https://lzcdn.dianpusoft.cn/fonts/DingTalkJinBuTi/DingTalk-JinBuTi.woff") format("woff");
+  src: url("https://lzcdn.dianpusoft.cn/fonts/DingTalkJinBuTi/DingTalk-JinBuTi.woff2")
+      format("woff2"),
+    url("https://lzcdn.dianpusoft.cn/fonts/DingTalkJinBuTi/DingTalk-JinBuTi.woff")
+      format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -34,74 +36,252 @@
   font-family: "JinBuTi", "Microsoft JhengHei", sans-serif;
 }
 //輪播圖
- body {
-      background: #f5f5f5;
-      font-family: "Noto Sans TC", sans-serif;
-    }
 
-      .swiper {
-      width: min(1280px, 100%);
-      margin-inline: auto;
-      padding-block: 60px;
-    }
+.about-title {
+  font-size: 7.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  white-space: nowrap;
+  font-family: "Arial Black", "Arial Bold", Arial, sans-serif;
+  background: linear-gradient(
+    to bottom,
+    rgb(8 42 123 / 35%) 30%,
+    rgb(255 255 255 / 0%) 76%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
-    /* 卡片樣式 */
-    .bee-card {
-      width: 300px;
-      height: 293px;
-      background: #fff;
-      border-radius: 16px;
-      border: 1px solid #ddd;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      transition: all 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px;
-      text-align: center;
-      transform-origin: center center;
-    }
+.bc-carousel-container {
+  width: 100%;
+  max-width: 1200px;
+  height: 450px;
+  position: relative;
+  perspective: 1000px;
+  margin: 80px auto 0;
+}
 
-    .bee-card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
+.bc-carousel-track {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
 
-    /* 選中卡片效果 */
-    .swiper-slide-active .bee-card {
-      width: 360px !important;
-      height: 373px !important;
-      transform: scale(1.05);
-      border-color: var(--bee-primary);
-      box-shadow: 0 6px 24px rgba(228, 177, 18, 0.35);
-      background: linear-gradient(180deg, #fff 0%, #fff9d9 100%);
-    }
+.bc-card {
+  position: absolute;
+  width: 360px;
+  height: 373px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  will-change: transform, opacity;
+  display: flex;
+  justify-content: center;
+}
 
-    /* hover 效果 */
-    .bee-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-    }
+.bc-card img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 70%;
+  max-height: 40%;
+}
 
-    /* 分頁點 */
-    .swiper-pagination {
-      position: static;
-      margin-top: 16px;
-      text-align: center;
-    }
+.bc-card.center {
+  z-index: 10;
+  transform: scale(1.1) translateZ(0);
+}
+.bc-card.center img {
+  filter: none;
+}
 
-    .swiper-pagination-bullet {
-      width: 28px;
-      height: 6px;
-      border-radius: 4px;
-      background: #ccc;
-      opacity: 1;
-      transition: background-color 0.3s;
-    }
+.bc-card.left-2 {
+  z-index: 1;
+  transform: translateX(-400px) scale(0.8) translateZ(-300px);
+  opacity: 0.7;
+}
+.bc-card.left-2 img {
+  filter: grayscale(100%);
+}
 
-    .swiper-pagination-bullet-active {
-      background: var(--bee-primary);
-    }
+.bc-card.left-1 {
+  z-index: 5;
+  transform: translateX(-200px) scale(0.9) translateZ(-100px);
+  opacity: 0.9;
+}
+.bc-card.left-1 img {
+  filter: grayscale(100%);
+}
+
+.bc-card.right-1 {
+  z-index: 5;
+  transform: translateX(200px) scale(0.9) translateZ(-100px);
+  opacity: 0.9;
+}
+.bc-card.right-1 img {
+  filter: grayscale(100%);
+}
+
+.bc-card.right-2 {
+  z-index: 1;
+  transform: translateX(400px) scale(0.8) translateZ(-300px);
+  opacity: 0.7;
+}
+.bc-card.right-2 img {
+  filter: grayscale(100%);
+}
+
+.bc-card.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bc-member-info {
+  text-align: center;
+  margin-top: 40px;
+  transition: all 0.5s ease-out;
+}
+
+.bc-member-name {
+  color: rgb(8, 42, 123);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.bc-member-name::before,
+.bc-member-name::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 100px;
+  height: 2px;
+  background: rgb(8, 42, 123);
+}
+.bc-member-name::before {
+  left: -120px;
+}
+.bc-member-name::after {
+  right: -120px;
+}
+
+.bc-member-role {
+  color: #848696;
+  font-size: 1.5rem;
+  font-weight: 500;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 10px 0;
+  margin-top: -15px;
+  position: relative;
+}
+
+.bc-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 60px;
+}
+
+.bc-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(8, 42, 123, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.bc-dot.active {
+  background: rgb(8, 42, 123);
+  transform: scale(1.2);
+}
+
+.bc-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(8, 42, 123, 0.6);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  padding-bottom: 4px;
+}
+.bc-nav-arrow:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+.bc-nav-arrow.left {
+  left: 20px;
+  padding-right: 3px;
+}
+.bc-nav-arrow.right {
+  right: 20px;
+  padding-left: 3px;
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 4.5rem;
+  }
+  .bc-card {
+    width: 200px;
+    height: 280px;
+  }
+  .bc-card.left-2 {
+    transform: translateX(-250px) scale(0.8) translateZ(-300px);
+  }
+  .bc-card.left-1 {
+    transform: translateX(-120px) scale(0.9) translateZ(-100px);
+  }
+  .bc-card.right-1 {
+    transform: translateX(120px) scale(0.9) translateZ(-100px);
+  }
+  .bc-card.right-2 {
+    transform: translateX(250px) scale(0.8) translateZ(-300px);
+  }
+
+  .bc-member-name {
+    font-size: 2rem;
+  }
+  .bc-member-role {
+    font-size: 1.2rem;
+  }
+  .bc-member-name::before,
+  .bc-member-name::after {
+    width: 50px;
+  }
+  .bc-member-name::before {
+    left: -70px;
+  }
+  .bc-member-name::after {
+    right: -70px;
+  }
+}
