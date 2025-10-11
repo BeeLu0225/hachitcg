@@ -5,11 +5,13 @@
   font-size: 60px;
   font-weight: 600;
   line-height: 72px;
+  z-index: 5;
 }
 .heading-5 {
   font-weight: 600;
   font-size: 24px;
   line-height: 36px;
+  z-index: 5;
 }
 .heading-6 {
   font-weight: 900 !important;
@@ -305,41 +307,34 @@
 
 //左右邊裝飾
 :root {
-  --header-h: 0px; /* 由 JS 自動取得 header 高度 */
+  --header-h: 0px;
 }
 
 body {
   margin: 0;
   position: relative;
   background-color: #fff;
-  /* 固定背景牆：兩邊各一張 */
+}
+
+/* 背景區只到 footer 之前 */
+#side-bg {
+  position: fixed; 
+  top: var(--header-h);   /* 從 header 下方開始 */
+  left: 0;
+  right: 0;
+  bottom: 0;              /* 等等會被 JS 動態改為 footer 的頂部 */
+  z-index: -1;
+  pointer-events: none;
+  height: 3325px;
   background-image:
     url("/assets/images/titleback.png"),
     url("/assets/images/titleback.png");
   background-repeat: no-repeat, no-repeat;
   background-position: left top, right top;
-  background-attachment: fixed, fixed;  /* 關鍵！讓背景不動 */
-  background-size: auto 250%;           /* 貼滿整個高，寬度依圖片 */
+  background-attachment: fixed, fixed;
+  background-size: auto 250%;
 }
-
-/* 讓背景從 header 下方開始 */
-#side-bg {
-  position: absolute;
-  top: var(--header-h);
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* 小螢幕關閉側邊牆 */
-@media (max-width: 1200px) {
-  body {
-    background-image: none;
-  }
-}
-
+// 黑色共用按鈕
 .news-btn {
   @extend .btn, .btn-dark, .d-flex, .align-items-center, .justify-content-between, .rounded-pill;
   width: 306px;
@@ -373,6 +368,43 @@ body {
   &:active {
     background-color: #000;
     border-color: #000;
+    transform: scale(0.98);
+  }
+}
+//首頁主要按鈕
+.btn-primary-1 {
+  @extend .btn, .d-inline-flex, .align-items-center, .justify-content-center, .rounded-pill;
+  width: 220px;
+  height: 64px;
+  background-color: $primary !important; /* 主色 */
+  border: 2px solid #fff;    /* 白色外框 */
+  color: #fff;               /* 白色文字 */
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  gap: 12px;
+  z-index: 9;
+
+  i {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    background-color: #d29f0f; /* hover 稍微變深 */
+    color: #fff;
+    transform: translateY(-2px);
+    
+    border: $primary;
+
+    i {
+      transform: translateX(3px); /* 箭頭往右滑一點 */
+    }
+  }
+
+  &:active {
+    background-color: #b8870c;
     transform: scale(0.98);
   }
 }
@@ -418,22 +450,52 @@ body {
     object-fit: cover;
   }
 }
-
 .scroll-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 5;
-  width: 40px;
-  height: 40px;
-  background-color: $primary !important;
-  opacity: 0.8;
-  &.left {
-    left:-30px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* --- 實色質感底 --- */
+  background: linear-gradient(145deg, #e4b112, #d19c0f); /* 金屬漸層 */
+  border: 1px solid #fff;
+  color: #fff;
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.25),  /* 外層陰影 */
+    inset 0 2px 3px rgba(255, 255, 255, 0.3); /* 內部高光 */
+
+  transition: all 0.3s ease;
+
+  i {
+    font-size: 18px;
+    line-height: 1;
+    transition: transform 0.3s ease;
   }
-  &.right {
-    right:-30px;
+
+  &:hover {
+    background: linear-gradient(145deg, #f0c63a, #dca718); /* hover 更亮一點 */
+    transform: translateY(-50%) scale(1.08);
+    box-shadow:
+      0 6px 14px rgba(0, 0, 0, 0.3),
+      inset 0 3px 4px rgba(255, 255, 255, 0.35);
   }
+
+  &:active {
+    background: linear-gradient(145deg, #c4940c, #a67705);
+    transform: translateY(-50%) scale(0.96);
+    box-shadow:
+      inset 0 2px 4px rgba(0, 0, 0, 0.3),
+      0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  &.left  { left: -30px; }
+  &.right { right: -30px; }
 }
 
 //關於我區塊

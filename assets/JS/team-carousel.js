@@ -111,16 +111,13 @@ if (cards.length && dots.length && memberName && memberRole && leftArrow && righ
 
   updateCarousel(0);
 }
- 
- //增加左右container外的圖片裝飾 計算 header 高度，讓背景從 header 下方開始
-  function setHeaderOffset() {
-    const header = document.querySelector('header');
-    const h = header ? header.offsetHeight : 0;
-    document.documentElement.style.setProperty('--header-h', h + 'px');
+//側邊背景高度控制
+window.addEventListener("load", () => {
+  const header = document.querySelector("header");
+  if (header) {
+    document.documentElement.style.setProperty("--header-h", `${header.offsetHeight}px`);
   }
-  window.addEventListener('load', setHeaderOffset);
-  window.addEventListener('resize', setHeaderOffset);
-
+});
 
 //攻略圖片箭頭控制
 const row = document.querySelector(".product-row");

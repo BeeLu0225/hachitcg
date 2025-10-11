@@ -92,3 +92,7 @@
   --bs-nav-link-color: #1C1C1C;
   --bs-nav-link-hover-color: #34d21f;
 }
+.nav-item img {
+  position: relative;
+  top: -4px; /* icon 向上移動 */
+}
