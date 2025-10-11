@@ -305,7 +305,7 @@ $info:      #81C3E9 !default;
 $warning:   #FFC107 !default;
 $danger:    #D56060 !default;
 $light:     #FFFFFF !default;
-$dark:      #1C1C1C !default;
+$dark:      #5B3400 !default;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -408,6 +408,7 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 // You can add more entries to the $spacers map, should you need more variation.
 
 // scss-docs-start spacer-variables-maps
+//調整全域間距
 $spacer: 1rem !default;
 $spacers: (
   0: 0,           
@@ -645,13 +646,15 @@ $h6-font-size: $font-size-base; // 16px
 // scss-docs-end font-variables
 
 // scss-docs-start font-sizes
+//字體大小 例如: fs-1 ~ 6
 $font-sizes: (
-  1: $h1-font-size,
-  2: $h2-font-size,
-  3: $h3-font-size,
-  4: $h4-font-size,
-  5: $h5-font-size,
-  6: $h6-font-size
+  1: $h1-font-size, // 40px
+  2: $h2-font-size, // 32px
+  3: $h3-font-size, // 28px
+  4: $h4-font-size, // 24px 
+  5: $h5-font-size, // 20px
+  6: $h6-font-size, // 16px
+  7: 48px // 3rem
 ) !default;
 // scss-docs-end font-sizes
 

@@ -110,3 +110,12 @@ if (cards.length && dots.length && memberName && memberRole && leftArrow && righ
 
   updateCarousel(0);
 }
+ 
+ // 計算 header 高度，讓背景從 header 下方開始
+  function setHeaderOffset() {
+    const header = document.querySelector('header');
+    const h = header ? header.offsetHeight : 0;
+    document.documentElement.style.setProperty('--header-h', h + 'px');
+  }
+  window.addEventListener('load', setHeaderOffset);
+  window.addEventListener('resize', setHeaderOffset);

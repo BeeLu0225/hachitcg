@@ -18,6 +18,7 @@
   </head>
   <body>
     <%- include('./layout/header'); -%>
+   <div id="side-bg"></div>
     <div
       class="bg-img d-flex flex-column justify-content-center align-items-center text-white text-center mb-8"
     >
@@ -33,9 +34,10 @@
     </div>
   <div class="d-flex flex-column justify-content-center fs-4 text-center mb-7">
   <h4 class="text-primary mb-2">/ CARD /</h4>
-  <span class="fw-bold display-2 text-dark" style="line-height: 48px;">選擇卡牌</span>
+  <span class="fw-bold fs-7 text-black " >選擇卡牌</span>
   
 </div>
+
 
 <div class="container">
     
@@ -53,9 +55,10 @@
     <p class="bc-card__stock">
       <span class="bc-dot--status"></span> 商品庫存：999
     </p>
-    <button class="bc-card__btn" type="button">
-      點擊進入 <span class="bc-card__btn-icon">➜</span>
-    </button>
+   <a href="/news.html" class="news-btn">
+  <span>點擊進入</span>
+  <span class="icon"><i class="bi bi-arrow-right"></i></span>
+</a>
   </div>
 </div>
         <div class="bc-card" data-index="1" data-name="Michael Steward" data-role="Creative Director">
@@ -65,12 +68,10 @@
   <div class="bc-card__body">
     <h3 class="bc-card__title">Michael Steward</h3>
     <p class="bc-card__stock"><span class="bc-dot--status"></span> 商品庫存：999</p>
-    <button class="btn btn-dark rounded-pill d-flex align-items-center justify-content-between btn-fixed px-3">
-  <span class="fw-bold">點擊進入</span>
-  <span class="icon-32 d-inline-flex justify-content-center align-items-center bg-white rounded-circle text-dark">
-    ➜
-  </span>
-</button>
+     <a href="/news.html" class="news-btn">
+  <span>點擊進入</span>
+  <span class="icon"><i class="bi bi-arrow-right"></i></span>
+</a>
   </div>
 </div>
 
@@ -81,12 +82,10 @@
   <div class="bc-card__body">
     <h3 class="bc-card__title">Emma Rodriguez</h3>
     <p class="bc-card__stock"><span class="bc-dot--status"></span> 商品庫存：999</p>
-    <button class="btn btn-dark rounded-pill d-flex align-items-center justify-content-between btn-fixed px-3">
-  <span class="fw-bold">點擊進入</span>
-  <span class="icon-32 d-inline-flex justify-content-center align-items-center bg-white rounded-circle text-dark">
-    ➜
-  </span>
-</button>
+   <a href="/news.html" class="news-btn">
+  <span>點擊進入</span>
+  <span class="icon"><i class="bi bi-arrow-right"></i></span>
+</a>
   </div>
 </div>
 
@@ -97,12 +96,10 @@
   <div class="bc-card__body">
     <h3 class="bc-card__title">Julia Gimmel</h3>
     <p class="bc-card__stock"><span class="bc-dot--status-red"></span> 商品庫存：9</p>
-    <button class="btn btn-dark rounded-pill d-flex align-items-center justify-content-between btn-fixed px-3">
-  <span class="fw-bold">點擊進入</span>
-  <span class="icon-32 d-inline-flex justify-content-center align-items-center bg-white rounded-circle text-dark">
-    ➜
-  </span>
-</button>
+     <a href="/news.html" class="news-btn">
+  <span>點擊進入</span>
+  <span class="icon"><i class="bi bi-arrow-right"></i></span>
+</a>
   </div>
 </div>
 
@@ -113,12 +110,10 @@
   <div class="bc-card__body">
     <h3 class="bc-card__title">Lisa Anderson</h3>
     <p class="bc-card__stock"><span class="bc-dot--status"></span> 商品庫存：996</p>
-   <button class="btn btn-dark rounded-pill d-flex align-items-center justify-content-between btn-fixed px-3">
-  <span class="fw-bold">點擊進入</span>
-  <span class="icon-32 d-inline-flex justify-content-center align-items-center bg-white rounded-circle text-dark">
-    ➜
-  </span>
-</button>
+    <a href="/news.html" class="news-btn">
+  <span>點擊進入</span>
+  <span class="icon"><i class="bi bi-arrow-right"></i></span>
+</a>
   </div>
 </div>
       </div>
@@ -140,7 +135,65 @@
     </div>
   </div>
 <div class="news-section">
-  
+  <div class="container mt-8" style="z-index: 9;">
+    <div class="row">
+      <div class="col-4 ">
+        <h4 class="text-dark mb-2">/ NEWS /</h4>
+        <span class="fw-bold fs-7 text-black " >選擇卡牌</span>
+       <a href="/news.html" class="news-btn mt-7">
+  <span>更多消息</span>
+  <span class="icon"><i class="bi bi-arrow-right"></i></span>
+</a>
+      </div>
+       <div class="col-8">
+      <!-- 一個新聞框 -->
+      <div class="news-card border rounded-3 p-3 mb-3 d-flex justify-content-between align-items-center">
+        <div>
+          <small class="text-secondary d-block mb-1">2025-08-01</small>
+          <span class="badge bg-danger-subtle text-danger border border-danger me-2">優惠消息</span>
+          <span>滿千折扣5%優惠中，一月優惠碼領取</span>
+        </div>
+        <i class="bi bi-arrow-right fs-5"></i>
+      </div>
+
+      <div class="news-card border border-warning rounded-3 p-3 mb-3 d-flex justify-content-between align-items-center">
+        <div>
+          <small class="text-secondary d-block mb-1">2025-08-01</small>
+          <span class="badge bg-warning-subtle text-warning border border-warning me-2">寶可夢</span>
+          <span>超級勇氣、超級交響樂 系列單卡開始販售。</span>
+        </div>
+        <i class="bi bi-arrow-right fs-5"></i>
+      </div>
+
+      <div class="news-card border border-info rounded-3 p-3 mb-3 d-flex justify-content-between align-items-center">
+        <div>
+          <small class="text-secondary d-block mb-1">2025-08-01</small>
+          <span class="badge bg-info-subtle text-info border border-info me-2">Hololive</span>
+          <span>Elite Spark 系列單卡開始販售。</span>
+        </div>
+        <i class="bi bi-arrow-right fs-5"></i>
+      </div>
+
+      <div class="news-card border border-warning rounded-3 p-3 mb-3 d-flex justify-content-between align-items-center">
+        <div>
+          <small class="text-secondary d-block mb-1">2025-08-01</small>
+          <span class="badge bg-warning-subtle text-warning border border-warning me-2">Re:birth</span>
+          <span>Fate/Grand Carnival 系列單卡價格調整。</span>
+        </div>
+        <i class="bi bi-arrow-right fs-5"></i>
+      </div>
+
+      <div class="news-card border border-warning rounded-3 p-3 mb-3 d-flex justify-content-between align-items-center">
+        <div>
+          <small class="text-secondary d-block mb-1">2025-08-01</small>
+          <span class="badge bg-warning-subtle text-warning border border-warning me-2">遊戲王</span>
+          <span>DOOM OF DIMENSIONS 系列單卡開始販售。</span>
+        </div>
+        <i class="bi bi-arrow-right fs-5"></i>
+      </div>
+    </div>
+    </div>
+  </div>
 </div>
 
 
