@@ -389,3 +389,100 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 }
+
+
+//攻略內容區塊
+.product-wrapper {
+  position: relative;
+}
+
+.product-row {
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.product-card {
+  flex: 0 0 auto;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  .card-img-top {
+    height: 180px;
+    object-fit: cover;
+  }
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+  background-color: $primary !important;
+  opacity: 0.8;
+  &.left {
+    left:-30px;
+  }
+  &.right {
+    right:-30px;
+  }
+}
+
+//關於我區塊
+.about-section {
+  background: linear-gradient(to right, #f9f6ef 0%, #e8f2f9 100%);
+
+  .about-card {
+    height: 260px;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* 加黑色透明遮罩，讓文字清楚 */
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      transition: background 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    &:hover::before {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    i,
+    h5,
+    small {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  /* 每張卡不同背景圖 */
+  .about-1 {
+    background-image: url("/assets/images/about01.jpg");
+  }
+  .about-2 {
+    background-image: url("/assets/images/about02.jpg");
+  }
+  .about-3 {
+    background-image: url("/assets/images/about03.jpg");
+  }
+}

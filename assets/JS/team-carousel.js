@@ -119,3 +119,17 @@ if (cards.length && dots.length && memberName && memberRole && leftArrow && righ
   }
   window.addEventListener('load', setHeaderOffset);
   window.addEventListener('resize', setHeaderOffset);
+
+
+//攻略圖片箭頭控制
+const row = document.querySelector(".product-row");
+const leftBtn = document.querySelector(".scroll-btn.left");
+const rightBtn = document.querySelector(".scroll-btn.right");
+
+leftBtn.addEventListener("click", () => {
+  row.scrollBy({ left: -300, behavior: "smooth" });
+});
+
+rightBtn.addEventListener("click", () => {
+  row.scrollBy({ left: 300, behavior: "smooth" });
+});
