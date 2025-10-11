@@ -1,4 +1,5 @@
 // /assets/JS/team-carousel.js
+//首頁導覽列
 const teamMembers = [
   { name: "寶可夢",       role: "Pokémon 集換式卡牌遊戲" },
   { name: "Vanguard", role: "卡片戰鬥先導者 TCG" },
@@ -111,7 +112,7 @@ if (cards.length && dots.length && memberName && memberRole && leftArrow && righ
   updateCarousel(0);
 }
  
- // 計算 header 高度，讓背景從 header 下方開始
+ //增加左右container外的圖片裝飾 計算 header 高度，讓背景從 header 下方開始
   function setHeaderOffset() {
     const header = document.querySelector('header');
     const h = header ? header.offsetHeight : 0;

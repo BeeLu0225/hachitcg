@@ -486,3 +486,28 @@ body {
     background-image: url("/assets/images/about03.jpg");
   }
 }
+
+
+//底下選擇商品區塊
+.brand-list {
+  display: grid;
+  grid-template-columns: repeat(6, 196px); /* 每行 6 個，寬度固定 196px */
+  gap: 24px; /* 上下左右間距 24px */
+  justify-content: center; /* 置中排列 */
+}
+
+.brand-logo {
+  width: 196px;
+  height: 80px;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid #d8c7a4;
+  border-radius: 6px;
+  padding: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-logo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
