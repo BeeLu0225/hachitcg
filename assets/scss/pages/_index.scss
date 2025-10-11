@@ -382,7 +382,7 @@ body {
   transition: all 0.25s ease;
   background-color: #fff;
   cursor: pointer;
-  border-radius: 4px !important;
+  border-radius: 1px !important;
   &:hover {
     background-color: #f8f9fa;   // hover 微亮灰背景
     transform: translateY(-2px);
@@ -407,7 +407,7 @@ body {
   flex: 0 0 auto;
   width: 280px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+  border-radius: 1px !important;
   &:hover {
     transform: translateY(-6px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -442,7 +442,7 @@ body {
 
   .about-card {
     height: 260px;
-    border-radius: 12px;
+    border-radius: 1px;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -501,8 +501,8 @@ body {
   height: 80px;
   object-fit: contain;
   background: #fff;
-  border: 1px solid #d8c7a4;
-  border-radius: 6px;
+  border: 1px solid $dark;
+  border-radius: 4px;
   padding: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
