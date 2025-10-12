@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <script type="module" crossorigin src="/hachitcg/assets/main-Bpm7EEn0.js"></script>
+    <link rel="stylesheet" crossorigin href="/hachitcg/assets/main-DpXL0oRM.css">
+  </head>
+  
+  <body>
+    <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- 你的自訂 Bootstrap SCSS 編譯結果 -->
+<link rel="stylesheet" href="/assets/all.css">
+
+<!-- Bootstrap JS (僅保留 JS，不載入官方 CSS) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ====== Navbar Start ====== -->
+<nav class="navbar navbar-expand-lg border-bottom small py-1 bg-light">
+  <div class="container">
+    <!-- 左：品牌區 -->
+    <a class="navbar-brand d-flex align-items-center gap-2 mt-1" href="index.html">
+      <img src="data:image/png;base64,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" alt="logo" width="74" height="47.57">
+      <span class="d-flex flex-column lh-1">
+        <strong class="brand-title text-header">小蜜蜂卡牌屋</strong>
+        <span class="brand-sub text-header fs-8 mt-1">Little Bee Card House</span>
+      </span>
+    </a>
+
+    <!-- 漢堡按鈕 -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- 右：導覽選單 -->
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <!-- Mega Menu：選擇商品 -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center fs-6 pt-1 pb-1 ps-4 pe-4 py-2 fw-bold" 
+             href="#" data-bs-toggle="dropdown" aria-expanded="false">
+            選擇商品 <i class="bi bi-chevron-down ms-1" style="font-size: 1.25rem;"></i>
+          </a>
+
+          <div class="dropdown-menu mega mt-0 border-0 shadow-sm rounded-0">
+            <div class="row g-2 px-3 py-2">
+              <div class="col-12 col-lg-4">
+                <a href="#">遊戲王</a>
+                <a href="#">Vanguard</a>
+                <a href="#">Weiß Schwarz Rose</a>
+                <a href="#">Dual Masters</a>
+                <a href="#">UNION ARENA</a>
+                <a href="#">碧藍航線</a>
+              </div>
+              <div class="col-12 col-lg-4">
+                <a href="#">寶可夢</a>
+                <a href="#">Weiß Schwarz</a>
+                <a href="#">Rebirth for you</a>
+                <a href="#">Wixoss</a>
+                <a href="#">數碼寶貝</a>
+                <a href="#">Z/X</a>
+              </div>
+              <div class="col-12 col-lg-4">
+                <a href="#">航海王</a>
+                <a href="#">Weiß Schwarz Blau</a>
+                <a href="#">hololive</a>
+                <a href="#">魔法風雲會</a>
+                <a href="#">Battle Spirits</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- 其他導覽連結 -->
+        <li class="nav-item fs-6 pt-1 pb-1 ps-4 pe-4 fw-bold"><a class="nav-link" href="news.html">消息攻略</a></li>
+        <li class="nav-item fs-6 pt-1 pb-1 ps-4 pe-4 fw-bold"><a class="nav-link" href="#">優惠專區</a></li>
+        <li class="nav-item fs-6 pt-1 pb-1 ps-4 pe-4 fw-bold"><a class="nav-link" href="about.html">問與答</a></li>
+
+        <!-- Icon 區 -->
+        <li class="nav-item fs-5"><a class="nav-link px-2" href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEJSURBVHgBvZTdDYIwFIVvi7zrI+EnuokbqBMYJ1A30E10AzdQN3ADSeBdBuDH0wQBoRDbJn4vpXC4Pb23t8zzvIJqjnEcH8gA3ppvx4AMYJ8HOL1imJMBRVGETYdHMoRzXjsUmLpkjG3aOdR2ie0+oig6fQVEhW9YJSQNbNteiZFLvim7hIlTCKQBLcu6QJCQAvinMtEJiIUS5ONMGu6kAQUIuKDfuDfdCUZtRRAEuzzPp6I4qNqMFOk4zLJsK8Y0TfekAWu/8H3/hS0r9zOOHJM6BHvds/gfHMdZoqdfrus+UaC1qq6TQyHAlqflNEFuJrKAfbpODnEFVQUZ6pg+XW9RStFQX0t1b+orYCcB9QH4AAAAAElFTkSuQmCC" alt="">
+        </a></li>
+        <li class="nav-item ms-3 fs-5"><a class="nav-link px-2" href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAE6SURBVHgBrZO7UcNAEIb3Tg6cWaFm9JgrQXRgOoAKDCERlIArQCVARugObHdABxySAmUIxXrwr5FnZI+EbEvfzL32dv/Zu70TVGNZljIM40kIscDSREurqloVRbFMkkSzj23bvpTyEfabLh/Bned5i7Isg9qpjWcI/cDnpWOfsH8XhuGb4Mwmk8knDSfN8/zKmM1mAY7p03CmgnFd9xv3YNI4pHJEMcaUSDKl8dhluKXx2Ep0AY1HIOM43mCyoYHg6l5ZizMkvMN7GDRdCMfily13871RKeXjC63PrToXFWLXWuuPA0HGcZw5hjWdAQRvoyha7ddGczPLMo2f8wWnOZbTHqEU7QFi7wf2Nue+4x8fs4lsC2BHDmgrVF2AVrHODBuZqjpTdSSmu2L+FWyK8rxP7GTUHyc9p19EapBFIO6HFAAAAABJRU5ErkJggg==" alt=""></a></li>
+        <li class="nav-item  fs-3"><a class="nav-link px-2" href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAI7SURBVHgB7Za9UsJAEMc3QOEMHxM7GD6EJxCfQHwCY2cnvAGlneQJxCdQ30BKK7WzM6WdYYA+w0fhMID/ZQ4HMwHuEuzuN3Nzx2Y3+XPZvSyRRqPRaDRRMCgCJkgmk3XDME4Xi0UVc5ntWDtYu5g7g8HggSIQWmAul7Pi8fg969zmB5EuJjus0DiFoFgs3mKH2lge7PKFn4lhZTIZGg6Hb6SIssBCoXCD6ZrUqaXTaXM0Gj2rBMVUnPP5fB1Ty2/nfMN0lkgkDnngd0PY/H5NTg1SQCkHIfBrVQjrQFTFBeu2MpjNZh/IQX+OeuPxuOIBkkB6B3n3gsSBjl8cI2ydAP9l5ZMk0gI50TdccjbFiAoOuleNJFHJwSMKftjRlphqkBHCj0kSFYGbHmZls9my3y5s50ExG1IlkARFx8SB/YIctSeTyRMbUqlUFcLvaQ9IVzEEuDtepwpOv98/kXFUKRKH9kdX1lFaYCwWe/XbINrDeMS44LMQu2LwwPqEbXwt6F6wP5Ek0q8Y566Jg/drdfDyQ5B7DRx33o44PrBbiLsScW6v16uQJNI7KIQ0xE9vPp/bu8SJOBe+7TWTTQooNQvoRj7RlRxiWcNOXOLj/42P//u2mFKp1MTEFc2dj40UaJMCofpBdDQtTNzV/PZ7GA56vmUh8WudTqcW/gSfgzXhd4frTVIkdMOKnrDOIvHg8jY/LiRMDeSddGH8iaeICKGWELr8hGHdRdVz2/+K+UEmVzUajUaj+R9+ACFb01M42G6HAAAAAElFTkSuQmCC" alt=""></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ====== Navbar End ====== -->
+
+<!-- ====== Dropdown JS 行為 ====== -->
+<script>
+document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+  const menu = toggle.parentElement.querySelector('.dropdown-menu');
+
+  // 展開時
+  toggle.addEventListener('show.bs.dropdown', () => {
+    const icon = toggle.querySelector('i');
+    if (icon) icon.classList.replace('bi-chevron-down', 'bi-chevron-up');
+    if (menu) menu.style.marginTop = '21px';
+  });
+
+  // 收合時
+  toggle.addEventListener('hide.bs.dropdown', () => {
+    const icon = toggle.querySelector('i');
+    if (icon) icon.classList.replace('bi-chevron-up', 'bi-chevron-down');
+    if (menu) menu.style.marginTop = '';
+  });
+});
+</script>
+ 
+    <div class="container-md">
+
+      <h1 class="md-1">購物車</h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">
+              <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+            </th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col">單價</th>
+            <th scope="col">數量</th>
+            <th scope="col">總計</th>
+            <th scope="col">刪除</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="align-middle">
+            <th scope="row">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkDefault"  checked>
+              </div>
+            </th>
+            <td>
+              商品圖
+            </td>
+            <td>
+              <h6>寶可夢</h6>              
+              <h3>
+                <a href="">寶包繭（精靈球閃）</a>
+              </h3>
+              <h6>SV11WF-002</h6>
+            </td>
+            <td>$15</td>
+            <td>
+              <select class="form-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4" selected>4</option>
+              </select>
+            </td>
+            <td>$60</td>
+            <td>
+              <button type="button" class="btn btn-link">                
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                </svg>
+              </button>
+            </td>
+          </tr>
+          <tr class="align-middle">
+            <th scope="row">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+              </div>
+            </th>
+            <td>
+              商品圖
+            </td>
+            <td>
+              <h6>WS</h6>              
+              <h3>
+                <a href="">I'm yours　天海春香</a>
+              </h3>
+              <h6>IAS/SES2-41</h6>
+            </td>
+            <td>$140</td>
+            <td>
+              <select class="form-select">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </td>
+            <td>$140</td>
+            <td>
+              <button type="button" class="btn btn-link">                
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                </svg>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="d-flex justify-content-end">
+        <p class="me-3">商品總金額</p>
+        <p>$60</p>
+      </div>
+
+
+      <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-primary me-3">繼續購物</button>
+        <button type="button" class="btn btn-primary">前往結帳</button>
+      </div>
+    </div>
+    <footer>
+    <section class="bg-F0F0F0"> <!--商品-->
+        <div class="container py-50">
+            <h2 class="mb-2 fs-4 fw-bold text-primary text-center">/ PRODUCT /</h2>
+            <h2 class="mb-5 fs-1 fw-bold text-black text-center">選擇商品</h2>
+            <div class="row gx-4 gy-4"> <!--清單-->
+                <div class="col-2">
+                    <a class="d-block bg-white p-cardTitle border border-primary rounded rounded-1" href="#"><img class="size-cardTitle" src="/hachitcg/assets/10004-CePQpDq-.png" alt=""></a>
+                </div>
+                <div class="col-2">
+                    <a class="d-block bg-white p-cardTitle border border-primary rounded rounded-1" href="#"><img class="size-cardTitle" src="/hachitcg/assets/10007-DgLpglwF.png" alt=""></a>
+                </div>
+                <div class="col-2">
+                    <a class="d-block bg-white p-cardTitle border border-primary rounded rounded-1" href="#"><img class="size-cardTitle" src="/hachitcg/assets/10004-CePQpDq-.png" alt=""></a>
+                </div>
+                <div class="col-2">
+                    <a class="d-block bg-white p-cardTitle border border-primary rounded rounded-1" href="#"><img class="size-cardTitle" src="/hachitcg/assets/10006-Ch5LfwKc.png" alt=""></a>
+                </div>
+                <div class="col-2">
+                    <a class="d-block bg-white p-cardTitle border border-primary rounded rounded-1" href="#"><img class="size-cardTitle" src="/hachitcg/assets/10011-C8dLOtjE.png" alt=""></a>
+                </div>
+                <div class="col-2">
+                    <a class="d-block bg-white p-cardTitle border border-primary rounded rounded-1" href="#"><img class="size-cardTitle" src="/hachitcg/assets/10016-uiXz-IfL.png" alt=""></a>
+                </div>
+                <div class="col-2">
+                    <a class="d-block bg-white p-cardTitle border border-primary rounded rounded-1" href="#"><img class="size-cardTitle" src="/hachitcg/assets/10012-CJm_gBfp.png" alt=""></a>
+                </div>
+                <div class="col-2">
+                    <a class="d-block bg-white p-cardTitle border border-primary rounded rounded-1" href="#"><img class="size-cardTitle" src="/hachitcg/assets/10010-ClS2udtH.png" alt=""></a>
+                </div>
+                <div class="col-2">
+                    <a class="d-block bg-white p-cardTitle border border-primary rounded rounded-1" href="#"><img class="size-cardTitle" src="/hachitcg/assets/10013-Ddi3xkWr.png" alt=""></a>
+                </div>
+                <div class="col-2">
+                    <a class="d-block bg-white p-cardTitle border border-primary rounded rounded-1" href="#"><img class="size-cardTitle" src="/hachitcg/assets/10014-H7omiMZh.png" alt=""></a>
+                </div>
+                <div class="col-2">
+                    <a class="d-block bg-white p-cardTitle border border-primary rounded rounded-1" href="#"><img class="size-cardTitle" src="/hachitcg/assets/10015-cpB57nWR.png" alt=""></a>
+                </div>
+                <div class="col-2">
+                    <a class="d-block bg-black p-cardTitle border border-primary rounded rounded-1" href="#"><img class="size-cardTitle" src="/hachitcg/assets/10017-DjYEnYje.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-footer"> <!--banner-->
+        <div class="container py-50">
+            <div class="d-flex align-items-center mb-4">
+                <div class="me-auto"> <!-- logo-->
+                    <a class="navbar-brand d-flex align-items-center gap-2 mt-1" href="index.html">
+                    <img src="data:image/png;base64,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" alt="logo" width="74" height="47.57">
+                    <span class="d-flex flex-column lh-1">
+                        <strong class="brand-title text-footer">小蜜蜂卡牌屋</strong>
+                        <span class="brand-sub text-footer fs-8 mt-1">Little Bee Card House</span>
+                    </span>
+                    </a>
+                </div>
+
+                <div> <!-- nav-->
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link p-75 text-white fw-bold" href="#">消息攻略</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-75 text-white fw-bold" href="#">優惠專區</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center"> <!--聯絡-->
+                <ul class="nav">
+                    <li class="nav-item me-3"><a class="nav-link p-0" href="">
+                        <i class="bi bi-facebook text-white"></i>
+                    </a></li>
+                    <li class="nav-item me-3"><a class="nav-link p-0" href="">
+                        <i class="bi bi-instagram text-white"></i>
+                    </a></li>
+                    <li class="nav-item me-3"><a class="nav-link p-0" href="">
+                        <i class="bi bi-messenger text-white"></i>
+                    </a></li>
+                    <li class="nav-item me-137-5"><a class="nav-link p-0" href="">
+                        <i class="bi bi-whatsapp text-white"></i>
+                    </a></li>
+                </ul>
+                
+                <p class="m-0 text-white fs-87-5">聯絡我們  sevice@cardstore.com.tw</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray500"> <!--版權-->
+        <div class="d-flex justify-content-center py-75">
+            <p class="m-0 text-white-50 fs-75">網站版權為 小蜜蜂卡牌屋 所有 Copyright © 2025 小蜜蜂卡牌屋 . All rights reserved.</p>
+        </div>
+    </section>
+</footer>
+  </body>
+</html>
