@@ -6,6 +6,13 @@
   z-index: 0; /* 讓遮罩疊在圖上 */
 }
 
+/* 區域字體：僅 text-header 使用 JinBuTi */
+.text-footer {
+  color: $white;
+  font-weight: 400;
+  font-family: "JinBuTi", "Microsoft JhengHei", sans-serif;
+}
+
 /* 黑色透明遮罩 */
 .bg-footer::before {
   content: "";
