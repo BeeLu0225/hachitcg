@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 
 <head>
   <meta charset="UTF-8" />
@@ -53,3 +54,334 @@
 </body>
 
 </html>
+=======
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>首頁</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  </head>
+  <body>
+    <%- include('./layout/header'); -%>
+   <div id="side-bg"></div>
+    <div
+      class="bg-img d-flex flex-column justify-content-center align-items-center text-white text-center mb-8"
+    >
+      <p class="heading-1">立即購買 各種卡牌遊戲單卡</p>
+      <p class="heading-5 mb-36">你的收藏, 應該有自己的蜂巢。</p>
+      
+      <a href="/news.html"  target="_blank" class="btn-primary-1 ">
+  <span>立即選購</span>
+  <span class="icon"><i class="bi bi-arrow-right"></i></span>
+</a>
+    </div>
+  <div class="d-flex flex-column justify-content-center fs-4 text-center mb-7">
+  <h4 class="text-primary mb-2">/ CARD /</h4>
+  <span class="fw-bold fs-7 text-black " >選擇卡牌</span>
+  
+</div>
+
+
+<div class="container">
+    
+
+    <div class="bc-carousel-container">
+      <button class="bc-nav-arrow left" aria-label="Previous"><i class="bi bi-chevron-left"></i></button>
+
+      <div class="bc-carousel-track ">
+        <div class="bc-card" data-index="0" data-name="寶可夢" data-role="Pokémon 集換式卡牌遊戲">
+  <div class="bc-card__media">
+    <img src="../assets/images/carousel-1.png" alt="寶可夢" />
+  </div>
+  <div class="bc-card__body">
+    <h3 class="bc-card__title">寶可夢</h3>
+    <p class="bc-card__stock">
+      <span class="bc-dot--status"></span> 商品庫存：999
+    </p>
+   <a href="/news.html" target="_blank" class="news-btn">
+  <span>點擊進入</span>
+  <span class="icon"><i class="bi bi-arrow-right"></i></span>
+</a>
+  </div>
+</div>
+        <div class="bc-card" data-index="1" data-name="Michael Steward" data-role="Creative Director">
+  <div class="bc-card__media">
+    <img src="../assets/images/carousel-2.png" alt="Michael Steward" />
+  </div>
+  <div class="bc-card__body">
+    <h3 class="bc-card__title">Michael Steward</h3>
+    <p class="bc-card__stock"><span class="bc-dot--status"></span> 商品庫存：999</p>
+     <a href="/news.html"  target="_blank" class="news-btn">
+  <span>點擊進入</span>
+  <span class="icon"><i class="bi bi-arrow-right"></i></span>
+</a>
+  </div>
+</div>
+
+<div class="bc-card" data-index="2" data-name="Emma Rodriguez" data-role="Lead Developer">
+  <div class="bc-card__media">
+    <img src="../assets/images/carousel-3.png" alt="Emma Rodriguez" />
+  </div>
+  <div class="bc-card__body">
+    <h3 class="bc-card__title">Emma Rodriguez</h3>
+    <p class="bc-card__stock"><span class="bc-dot--status"></span> 商品庫存：999</p>
+   <a href="/news.html"  target="_blank" class="news-btn">
+  <span>點擊進入</span>
+  <span class="icon"><i class="bi bi-arrow-right"></i></span>
+</a>
+  </div>
+</div>
+
+<div class="bc-card" data-index="3" data-name="Julia Gimmel" data-role="UX Designer">
+  <div class="bc-card__media">
+    <img src="../assets/images/carousel-4.png" alt="Julia Gimmel" />
+  </div>
+  <div class="bc-card__body">
+    <h3 class="bc-card__title">Julia Gimmel</h3>
+    <p class="bc-card__stock"><span class="bc-dot--status-red"></span> 商品庫存：9</p>
+     <a href="/news.html" target="_blank" class="news-btn">
+  <span>點擊進入</span>
+  <span class="icon"><i class="bi bi-arrow-right"></i></span>
+</a>
+  </div>
+</div>
+
+<div class="bc-card" data-index="4" data-name="Lisa Anderson" data-role="Marketing Manager">
+  <div class="bc-card__media">
+    <img src="../assets/images/carousel-5.png" alt="Lisa Anderson" />
+  </div>
+  <div class="bc-card__body">
+    <h3 class="bc-card__title">Lisa Anderson</h3>
+    <p class="bc-card__stock"><span class="bc-dot--status"></span> 商品庫存：996</p>
+    <a href="/news.html" target="_blank" class="news-btn">
+  <span>點擊進入</span>
+  <span class="icon"><i class="bi bi-arrow-right"></i></span>
+</a>
+  </div>
+</div>
+      </div>
+
+      <button class="bc-nav-arrow right" aria-label="Next"><i class="bi bi-chevron-right"></i></button>
+    </div>
+
+    <div class="bc-member-info">
+      <h2 class="bc-member-name">Emily Kim</h2>
+      <p class="bc-member-role">Founder</p>
+    </div>
+
+    <div class="bc-dots" role="tablist" aria-label="Carousel dots">
+      <div class="bc-dot active" data-index="0" role="tab" aria-selected="true" aria-controls="slide-0"></div>
+      <div class="bc-dot" data-index="1" role="tab" aria-selected="false" aria-controls="slide-1"></div>
+      <div class="bc-dot" data-index="2" role="tab" aria-selected="false" aria-controls="slide-2"></div>
+      <div class="bc-dot" data-index="3" role="tab" aria-selected="false" aria-controls="slide-3"></div>
+      <div class="bc-dot" data-index="4" role="tab" aria-selected="false" aria-controls="slide-4"></div>
+    </div>
+  </div>
+<div class="news-section pb-8 mb-8  ">
+  <div class="container mt-8 " style="z-index: 9;">
+    <div class="row ">
+      <div class="col-4 ">
+        <h4 class="text-dark mb-2">/ NEWS /</h4>
+        <span class="fw-bold fs-7 text-black " >最新消息</span>
+       <a href="/news.html" class="news-btn mt-7">
+  <span>更多消息</span>
+  <span class="icon"><i class="bi bi-arrow-right"></i></span>
+</a>
+      </div>
+       <div class="col-8 ">  
+      <!-- 一個新聞框 -->
+     <a href="https://example.com/promo" target="_blank" class="text-decoration-none text-reset">
+  <div class="news-card border rounded-3 p-3 mb-3 d-flex justify-content-between align-items-center">
+    <div>
+      <small class="text-secondary d-block mb-1">2025-08-01</small>
+      <span class="badge bg-danger-subtle text-danger border border-danger me-2">優惠消息</span>
+      <span>滿千折扣5%優惠中，一月優惠碼領取</span>
+    </div>
+    <i class="bi bi-arrow-right-circle-fill text-primary fs-5"></i>
+  </div>
+</a>
+
+<a href="https://example.com/pokemon" target="_blank" class="text-decoration-none text-reset">
+  <div class="news-card border border-warning rounded-3 p-3 mb-3 d-flex justify-content-between align-items-center">
+    <div>
+      <small class="text-secondary d-block mb-1">2025-08-01</small>
+      <span class="badge bg-warning-subtle text-warning border border-warning me-2">寶可夢</span>
+      <span>超級勇氣、超級交響樂 系列單卡開始販售。</span>
+    </div>
+    <i class="bi bi-arrow-right-circle-fill text-primary  fs-5"></i>
+  </div>
+</a>
+
+<a href="https://example.com/hololive" target="_blank" class="text-decoration-none text-reset">
+  <div class="news-card border border-info rounded-3 p-3 mb-3 d-flex justify-content-between align-items-center">
+    <div>
+      <small class="text-secondary d-block mb-1">2025-08-01</small>
+      <span class="badge bg-info-subtle text-info border border-info me-2">Hololive</span>
+      <span>Elite Spark 系列單卡開始販售。</span>
+    </div>
+    <i class="bi bi-arrow-right-circle-fill text-primary  fs-5"></i>
+  </div>
+</a>
+
+<a href="https://example.com/rebirth" target="_blank" class="text-decoration-none text-reset">
+  <div class="news-card border border-warning rounded-3 p-3 mb-3 d-flex justify-content-between align-items-center">
+    <div>
+      <small class="text-secondary d-block mb-1">2025-08-01</small>
+      <span class="badge bg-warning-subtle text-warning border border-warning me-2">Re:birth</span>
+      <span>Fate/Grand Carnival 系列單卡價格調整。</span>
+    </div>
+    <i class="bi bi-arrow-right-circle-fill text-primary  fs-5"></i>
+  </div>
+</a>
+
+<a href="https://example.com/yugioh" target="_blank" class="text-decoration-none text-reset">
+  <div class="news-card border border-warning rounded-3 p-3 mb-3 d-flex justify-content-between align-items-center">
+    <div>
+      <small class="text-secondary d-block mb-1">2025-08-01</small>
+      <span class="badge bg-warning-subtle text-warning border border-warning me-2">遊戲王</span>
+      <span>DOOM OF DIMENSIONS 系列單卡開始販售。</span>
+    </div>
+    <i class="bi bi-arrow-right-circle-fill text-primary  fs-5"></i>
+  </div>
+</a>
+
+    </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="container  mt-8  mb-yb">
+<div class="row">
+  <div class="col-4">
+
+ <h4 class="text-primary mb-2">/ STRATEGY /</h4>
+        <span class="fw-bold fs-7 text-black mb-7" >最新攻略</span>
+       <a href="/news.html" class="news-btn mt-7">
+  <span>攻略文章一覽</span>
+  <span class="icon"><i class="bi bi-arrow-right"></i></span>
+</a>
+</div>
+<div class="col-8">
+  <div class="product-wrapper position-relative">
+  <button class="scroll-btn left btn btn-light rounded-circle shadow-sm">
+    <i class="bi bi-chevron-left text-white"></i>
+  </button>
+
+  <div class="product-row d-flex flex-nowrap gap-4 overflow-auto px-4">
+    <div class="product-card border rounded-3 overflow-hidden">
+      <img src="/assets/images/card001.png" class="card-img-top" alt="商品1">
+      <div class="card-body p-3">
+        <small class="text-secondary d-block mb-1">2025-07-23</small>
+        <span class="badge bg-warning-subtle text-warning border border-warning mb-2">Hololive</span>
+        <p class="card-title fw-semibold mb-0">[牌組介紹] 小湊零 @ たいCS...</p>
+      </div>
+    </div>
+
+    <div class="product-card border rounded-3 overflow-hidden">
+      <img src="/assets/images/card002.png" class="card-img-top" alt="商品2">
+      <div class="card-body p-3">
+        <small class="text-secondary d-block mb-1">2025-07-23</small>
+        <span class="badge bg-warning-subtle text-warning border border-warning mb-2">Hololive</span>
+        <p class="card-title fw-semibold mb-0">[卡片介紹] 噴火龍ex</p>
+      </div>
+    </div>
+
+    <div class="product-card border rounded-3 overflow-hidden">
+      <img src="/assets/images/card003.png" class="card-img-top" alt="商品3">
+      <div class="card-body p-3">
+        <small class="text-secondary d-block mb-1">2025-07-23</small>
+        <span class="badge bg-warning-subtle text-warning border border-warning mb-2">遊戲王</span>
+        <p class="card-title fw-semibold mb-0">[牌組介紹] 純愛妖精</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="scroll-btn right btn btn-light rounded-circle shadow-sm">
+    <i class="bi bi-chevron-right text-white"></i>
+  </button>
+</div>
+
+
+</div>
+
+</div>
+</div>
+<section class="about-section py-5">
+  <div class="container text-center">
+    <h4 class="text-primary mt-8">/ ABOUT /</h4>
+    <h2 class="fw-bold fs-7 text-black mb-7">關於小蜜蜂卡牌屋</h2>
+
+    <div class="row g-4 mb-8">
+      <div class="col-md-4">
+        <div class="about-card about-1 d-flex flex-column justify-content-center align-items-center text-white">
+          <i class="bi bi-card-list display-7 mb-5"></i>
+          <h5 class="fw-bold display-4">列表販售</h5>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="about-card about-2 d-flex flex-column justify-content-center align-items-center text-white">
+          <i class="bi bi-bag-check display-7 mb-5"></i>
+          <h5 class="fw-bold display-4">品質保證</h5>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="about-card about-3 d-flex flex-column justify-content-center align-items-center text-white">
+          <i class="bi bi-truck display-1 mb-5" ></i>
+          <h5 class="fw-bold display-4">配送服務</h5>
+          <small class="text-white mt-1 fs-6 mx-6 fw-medium" style="line-height: 24px; ">購買滿500元即達出貨標準。 當天14點前下單﹐均會在當日18點前寄出﹐保證出貨快速。</small>
+        </div>
+      </div>
+    </div>
+    <h4 class="text-primary mb-1 mt-8">/ PRODUCT /</h4>
+   <h2 class="fs-7 text-black mb-7 ">選擇商品</h2>
+
+   <div class="brand-list d-flex flex-wrap justify-content-center mb-8">
+     <img src="/assets/images/p1.png" class="brand-logo" alt="遊戲王">
+     <img src="/assets/images/p2.png" class="brand-logo" alt="寶可夢">
+     <img src="/assets/images/p3.png" class="brand-logo" alt="ONE PIECE">
+     <img src="/assets/images/p4.png" class="brand-logo" alt="Vanguard">
+     <img src="/assets/images/p5.png" class="brand-logo" alt="Weiss Schwarz">
+     <img src="/assets/images/p6.png" class="brand-logo" alt="WSB">
+     <img src="/assets/images/p7.png" class="brand-logo" alt="W">
+     <img src="/assets/images/p8.png" class="brand-logo" alt="Rebirth">
+     <img src="/assets/images/p9.png" class="brand-logo" alt="Weiss Schwarz">
+     <img src="/assets/images/p10.png" class="brand-logo" alt="Rebirth">
+     <img src="/assets/images/p11.png" class="brand-logo" alt="w/x">
+     <img src="/assets/images/p12.png" class="brand-logo bg-black" alt="Magic the Gathering">
+   </div>
+  </div>
+</section>
+
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+<%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+   <script type="module" src="/assets/JS/team-carousel.js"></script>
+  </body>
+</html>
+>>>>>>> 165ca1649e8e91e5d25f63025801767c60cd0be5

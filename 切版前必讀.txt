@@ -1,0 +1,61 @@
+文字大小 fs-1~8
+$font-sizes: (
+  1: $h1-font-size, // 40px
+  2: $h2-font-size, // 32px
+  3: $h3-font-size, // 28px
+  4: $h4-font-size, // 24px 
+  5: $h5-font-size, // 20px
+  6: $h6-font-size, // 16px
+  7: 48px, // 3rem
+  8: 12px // 12px
+) !default;
+
+display-1~7 
+
+$display-font-sizes: (
+  1: 3.5rem, // 56px
+  2: 2.5rem, // 40px
+  3: 2rem,   // 32px
+  4: 1.75rem,// 28px
+  5: 1.5rem, // 24px
+  6: 1.25rem, // 20px
+  7: 80px // 80px
+) !default;
+
+間距 M P - X Y
+$spacers: (
+  0: 0,           
+  1: $spacer * .25,  // 4px
+  2: $spacer * .5,   // 8px
+  3: $spacer * .75,  // 12px 
+  4: $spacer * .875, // 14px 
+  5: $spacer,        // 16px
+  6: $spacer * 1.5,  // 24px
+  7: $spacer * 3,    // 48px
+  8: $spacer * 5,    // 80px 
+  yb: $spacer * 7.5    // 120px
+  
+) 
+$primary:   #E4B112 !default;
+$secondary: #494949 !default; 
+$success:   #51A779 !default;
+$info:      #81C3E9 !default;
+$warning:   #FFC107 !default;
+$danger:    #D56060 !default;
+$light:     #FFFFFF !default;
+$dark:      #5B3400 !default;
+
+黑色共用按鈕
+  <a href="(選擇連結的html)" target="_blank" class="news-btn">
+  <span>(按鈕內文)</span>
+  <span class="icon"><i class="bi bi-arrow-right"></i></span>
+</a>
+主鍵按鈕
+<a href="(選擇連結的html)"  target="_blank" class="btn-primary-1 ">
+  <span>(按鈕內文)</span>
+  <span class="icon"><i class="bi bi-arrow-right"></i></span>
+</a>
+
+
+!!若要使用新的元件、樣式  請自行命名與bs5沒有使用並衝突的類別名稱 以免其他頁面跑版(重要)!!
+// 測試

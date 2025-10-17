@@ -1,4 +1,105 @@
-<h1 class="header">header</h1>
-<a href="index.html">index</a>
-<a href="about.html">about</a>
-<a href="contact.html">contact</a>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- 你的自訂 Bootstrap SCSS 編譯結果 -->
+<link rel="stylesheet" href="/assets/all.css">
+
+<!-- Bootstrap JS (僅保留 JS，不載入官方 CSS) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ====== Navbar Start ====== -->
+<nav class="navbar navbar-expand-lg border-bottom small py-1 bg-light">
+  <div class="container">
+    <!-- 左：品牌區 -->
+    <a class="navbar-brand d-flex align-items-center gap-2 mt-1" href="index.html">
+      <img src="../assets/images/logo.png" alt="logo" width="74" height="47.57">
+      <span class="d-flex flex-column lh-1">
+        <strong class="brand-title text-header">小蜜蜂卡牌屋</strong>
+        <span class="brand-sub text-header fs-8 mt-1">Little Bee Card House</span>
+      </span>
+    </a>
+
+    <!-- 漢堡按鈕 -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- 右：導覽選單 -->
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <!-- Mega Menu：選擇商品 -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center fs-6 pt-1 pb-1 ps-4 pe-4 py-2 fw-bold" 
+             href="#" data-bs-toggle="dropdown" aria-expanded="false">
+            選擇商品 <i class="bi bi-chevron-down ms-1" style="font-size: 1.25rem;"></i>
+          </a>
+
+          <div class="dropdown-menu mega mt-0 border-0 shadow-sm rounded-0">
+            <div class="row g-2 px-3 py-2">
+              <div class="col-12 col-lg-4">
+                <a href="#">遊戲王</a>
+                <a href="#">Vanguard</a>
+                <a href="#">Weiß Schwarz Rose</a>
+                <a href="#">Dual Masters</a>
+                <a href="#">UNION ARENA</a>
+                <a href="#">碧藍航線</a>
+              </div>
+              <div class="col-12 col-lg-4">
+                <a href="#">寶可夢</a>
+                <a href="#">Weiß Schwarz</a>
+                <a href="#">Rebirth for you</a>
+                <a href="#">Wixoss</a>
+                <a href="#">數碼寶貝</a>
+                <a href="#">Z/X</a>
+              </div>
+              <div class="col-12 col-lg-4">
+                <a href="#">航海王</a>
+                <a href="#">Weiß Schwarz Blau</a>
+                <a href="#">hololive</a>
+                <a href="#">魔法風雲會</a>
+                <a href="#">Battle Spirits</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- 其他導覽連結 -->
+        <li class="nav-item fs-6 pt-1 pb-1 ps-4 pe-4 fw-bold"><a class="nav-link" href="news.html">消息攻略</a></li>
+        <li class="nav-item fs-6 pt-1 pb-1 ps-4 pe-4 fw-bold"><a class="nav-link" href="#">優惠專區</a></li>
+        <li class="nav-item fs-6 pt-1 pb-1 ps-4 pe-4 fw-bold"><a class="nav-link" href="about.html">問與答</a></li>
+
+        <!-- Icon 區 -->
+        <li class="nav-item fs-5"><a class="nav-link px-2" href="#"><img src="/assets/images/Vector.png" alt="">
+        </a></li>
+        <li class="nav-item ms-3 fs-5"><a class="nav-link px-2" href="#"><img src="/assets/images/heart.png" alt=""></a></li>
+        <li class="nav-item  fs-3"><a class="nav-link px-2" href="#"><img src="/assets/images/Icon Button.png" alt=""></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ====== Navbar End ====== -->
+
+<!-- ====== Dropdown JS 行為 ====== -->
+<script>
+document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+  const menu = toggle.parentElement.querySelector('.dropdown-menu');
+
+  // 展開時
+  toggle.addEventListener('show.bs.dropdown', () => {
+    const icon = toggle.querySelector('i');
+    if (icon) icon.classList.replace('bi-chevron-down', 'bi-chevron-up');
+    if (menu) menu.style.marginTop = '21px';
+  });
+
+  // 收合時
+  toggle.addEventListener('hide.bs.dropdown', () => {
+    const icon = toggle.querySelector('i');
+    if (icon) icon.classList.replace('bi-chevron-up', 'bi-chevron-down');
+    if (menu) menu.style.marginTop = '';
+  });
+});
+</script>

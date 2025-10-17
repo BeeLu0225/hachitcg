@@ -1,4 +1,90 @@
+<<<<<<< HEAD
 .footer{
   background: #69F0AE;
   font-size: 64px;
+=======
+.bg-footer{
+  position: relative;
+  background: url('/assets/images/10008.png') no-repeat center center;
+  background-size: cover;
+  min-height: 176px;
+  z-index: 0; /* 讓遮罩疊在圖上 */
+}
+
+/* 區域字體：僅 text-header 使用 JinBuTi */
+.text-footer {
+  color: $white;
+  font-weight: 400;
+  font-family: "JinBuTi", "Microsoft JhengHei", sans-serif;
+}
+
+/* 黑色透明遮罩 */
+.bg-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7); /* 黑色透明 70% */
+  z-index: 1;
+}
+
+/* 讓內部文字內容在遮罩上方 */
+.bg-footer > * {
+  position: relative;
+  z-index: 2;
+}
+.bg-banner{
+  background: url('/assets/images/10008.png') no-repeat center center;
+}
+
+.bg-F0F0F0{
+  background: #F0F0F0;
+}
+
+.p-cardTitle{
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 37px;
+  padding-right: 37px;
+}
+
+.size-cardTitle{
+  width: 122px;
+  height: 54px;
+}
+
+// Gray500
+.bg-gray500{
+  background: #494949;
+}
+
+// Gray200
+
+
+// 0.75 rem
+.p-75{
+  padding: 0.75rem !important;
+}
+.py-75{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.fs-75{
+  font-size: 12px;
+}
+
+// 0.875 rem
+.fs-87-5{
+  font-size: 14px;
+}
+
+// 1.375rem
+.me-137-5{
+  margin-right: 1.375rem;
+}
+
+// 5.0 rem
+.py-50{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+>>>>>>> 165ca1649e8e91e5d25f63025801767c60cd0be5
 }
