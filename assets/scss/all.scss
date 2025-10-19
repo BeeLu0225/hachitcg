@@ -4,15 +4,16 @@
 @import "./utils/variables";
 
 // 匯入完整的 Bootstrap 函式庫
+
 @import "../../node_modules/bootstrap";
 
 // 匯入自訂樣式檔案
 @import "./layout/header.scss";
 @import "./layout/footer.scss";
 @import "./pages/index.scss";
-@import "./pages/products.scss";
+// @import "./pages/products.scss"; (覆蓋到首頁樣式)
 
 // 匯入 Q&A 頁面使用的樣式
 
-@import "./pages/Q&A-scss/Specifications.scss";
-@import "./pages/Q&A-scss/style.scss";
+// @import "./pages/Q&A-scss/Specifications.scss"; (覆蓋到全域樣式)
+// @import "./pages/Q&A-scss/style.scss"; (覆蓋到全域樣式)

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-.header{
-  background: #69F0AE;
-  font-size: 64px;
-=======
 
 /* header、bg-header 等保持繼承全域字體 */
 .header {
@@ -21,16 +16,6 @@
   font-family: "JinBuTi", "Microsoft JhengHei", sans-serif;
 }
 
-/* 其餘維持原樣 */
-.fs-7 {
-  font-size: 0.875rem !important;
-}
-
-.fs-8 {
-  font-size: 16px !important;
-  line-height: 1;
-  font-weight: 700;
-}
 
 .ms-6 {
   margin-left: 24px !important;
@@ -100,5 +85,4 @@
 .nav-item img {
   position: relative;
   top: -4px; /* icon 向上移動 */
->>>>>>> 165ca1649e8e91e5d25f63025801767c60cd0be5
 }
