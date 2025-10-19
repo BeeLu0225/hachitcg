@@ -1,4 +1,4 @@
-自訂樣式 以註解分類 寫在_custom.scss
+// 自訂樣式 以註解分類 寫在_custom.scss
 // [data-app="site"] {
 //   .btn { border-radius: .75rem; }
 //   .product-card { background-color: #f9f9f9; }
@@ -7,7 +7,24 @@
 //獨立空間樣式 引用寫法
 
 
-應用限定區域樣式在html 標籤上加入 data-app="site"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 應用限定區域樣式在html 標籤上加入 data-app="site"
 // 使用樣式寫在最外層↓
 // <!DOCTYPE html>
 // <html lang="zh-Hant" data-app="site" <--寫在這裡>
