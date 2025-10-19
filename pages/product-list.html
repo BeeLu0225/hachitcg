@@ -1,166 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>product-list</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700&display=swap"
-      rel="stylesheet"
-    />
+  <html lang="zh-Hant" data-app="product-list">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>product-list</title>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700&display=swap"
+        rel="stylesheet"
+      />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <%- include('./layout/header'); -%>
-    <div class="container">
-      <!-- breadcrumb -->
-      <nav aria-label="breadcrumb" class="mr-2 my-6">
-        <ol
-          class="breadcrumb mb-0 body-sm text-gray-400 lh-base fw-normal font-noto"
-        >
-          <li class="breadcrumb-item">
-            <a href="#" class="text-gray-400 text-decoration-none">首頁</a>
-          </li>
-          <li class="breadcrumb-item">
-            <a href="#" class="text-gray-400 text-decoration-none">選擇商品</a>
-          </li>
-          <li
-            class="breadcrumb-item active text-dark fw-normal"
-            aria-current="page"
+      <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet"
+      />
+    </head>
+    <body>
+      <%- include('./layout/header'); -%>
+      <div class="container">
+        <!-- breadcrumb -->
+        <nav aria-label="breadcrumb" class="mr-2 my-6">
+          <ol
+            class="breadcrumb mb-0 body-sm text-gray-400 lh-base fw-normal font-noto"
           >
-            寶可夢 超級勇氣
-          </li>
-        </ol>
-      </nav>
-      <!-- breadcrumb-end -->
-
-      <!-- 網格分區 -->
-      <div class="my-4">
-        <div class="row g-4">
-          <!-- 左側選單 -->
-          <aside class="col-12 col-lg-3">
-            <div class="card border-0 shadow-sm sticky-top" style="top: 88px">
-              <div class="card-body">
-                <!-- 搜尋 -->
-                <div class="input-group mb-3">
-                  <input
-                    type="text"
-                    class="form-control form-control-sm"
-                    placeholder="搜尋卡牌"
-                  />
-                  <button class="btn btn-outline-secondary btn-sm">
-                    <i class="bi bi-search"></i>
-                  </button>
-                </div>
-
-                <hr class="my-3" />
-
-                <!-- Scrollspy 導覽 -->
-                <nav id="categoryNav" class="nav nav-pills flex-column gap-2">
-                  <a class="nav-link fw-bold" href="#ws">Weiß Schwarz</a>
-                  <a class="nav-link fw-bold" href="#onepiece">航海王</a>
-
-                  <!-- 寶可夢分類 -->
-                  <div class="nav-item">
-                    <button
-                      class="btn w-100 d-flex justify-content-between align-items-center px-0 border-0 bg-transparent fw-bold"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#grp-pokemon"
-                    >
-                      寶可夢
-                      <i class="bi bi-chevron-down small"></i>
-                    </button>
-                    <div id="grp-pokemon" class="collapse show ps-3">
-                      <a class="nav-link small" href="#poke-latest">最新彈</a>
-                      <a class="nav-link small" href="#poke-bravery"
-                        >超級勇氣</a
-                      >
-                      <a class="nav-link small" href="#poke-symphony"
-                        >超級交響樂</a
-                      >
-                    </div>
-                  </div>
-
-                  <a class="nav-link fw-bold" href="#scarlet">朱紫系列</a>
-                  <a class="nav-link fw-bold" href="#swsh">劍盾系列</a>
-                  <a class="nav-link fw-bold" href="#vanguard">Vanguard</a>
-                  <a class="nav-link fw-bold" href="#ygo">遊戲王</a>
-                </nav>
-              </div>
-            </div>
-          </aside>
-
-          <!-- 右側卡牌內容 -->
-          <main class="col-12 col-lg-9">
-            <div
-              data-bs-spy="scroll"
-              data-bs-target="#categoryNav"
-              data-bs-smooth-scroll="true"
-              tabindex="0"
+            <li class="breadcrumb-item">
+              <a href="#" class="text-gray-400 text-decoration-none">首頁</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="#" class="text-gray-400 text-decoration-none"
+                >選擇商品</a
+              >
+            </li>
+            <li
+              class="breadcrumb-item active text-dark fw-normal"
+              aria-current="page"
             >
-              <!-- 寶可夢／超級勇氣 -->
-              <section id="poke-bravery" class="pt-4 mb-5">
-                <div class="d-flex align-items-center mb-3">
-                  <span class="text-uppercase text-warning fw-semibold me-2"
-                    >PTCG</span
+              寶可夢 超級勇氣
+            </li>
+            <li
+              class="breadcrumb-item active text-dark fw-normal"
+              aria-current="page"
+            >
+              胖嘟嘟ex
+            </li>
+          </ol>
+        </nav>
+        <!-- breadcrumb-end -->
+
+        <!-- new -->
+        <div class="container-xxl my-4">
+          <div class="row g-4">
+            <!-- 左側：類別/搜尋 -->
+            <aside class="col-12 col-lg-3">
+              <div class="card border-0 shadow-sm sticky-top" style="top: 88px">
+                <div class="card-body">
+                  <div class="input-group mb-3">
+                    <input
+                      type="text"
+                      class="form-control form-control-sm"
+                      placeholder="搜尋卡牌"
+                    />
+                    <button class="btn btn-outline-secondary btn-sm">
+                      <i class="bi bi-search"></i>
+                    </button>
+                  </div>
+
+                  <nav id="categoryNav" class="nav nav-pills flex-column gap-2">
+                    <a class="nav-link fw-bold" href="#">Weiß Schwarz</a>
+                    <a class="nav-link fw-bold" href="#">航海王</a>
+
+                    <div class="nav-item">
+                      <button
+                        class="btn w-100 d-flex justify-content-between align-items-center px-0 border-0 bg-transparent fw-bold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#grp-pokemon"
+                        aria-expanded="true"
+                      >
+                        寶可夢
+                        <i class="bi bi-chevron-down small"></i>
+                      </button>
+                      <div id="grp-pokemon" class="collapse show ps-3">
+                        <a class="nav-link small" href="#">最新彈</a>
+                        <a
+                          class="nav-link small text-warning fw-semibold"
+                          href="#"
+                          >超級勇氣</a
+                        >
+                        <a class="nav-link small text-muted" href="#"
+                          >超級交響樂</a
+                        >
+                      </div>
+                    </div>
+
+                    <a class="nav-link fw-bold" href="#">朱紫系列</a>
+                    <a class="nav-link fw-bold" href="#">劍盾系列</a>
+                    <a class="nav-link fw-bold" href="#">Vanguard</a>
+                    <a class="nav-link fw-bold" href="#">遊戲王</a>
+                  </nav>
+                </div>
+              </div>
+            </aside>
+
+            <!-- 右側：主內容 -->
+            <main class="col-12 col-lg-9">
+              <!-- 返回 + 標題 -->
+              <div class="d-flex align-items-center mb-3 gap-2">
+                <a
+                  href="product-list.html"
+                  class="link-secondary d-inline-flex align-items-center"
+                >
+                  <i class="bi bi-arrow-left me-1"></i> 回上層
+                </a>
+              </div>
+
+              <!-- 主卡內容：圖片 + 資訊 -->
+              <div class="row g-4 align-items-start">
+                <!-- 大圖區（左） -->
+                <div class="col-12 col-lg-6">
+                  <div
+                    class="ratio ratio-3x4 rounded overflow-hidden shadow-sm"
                   >
-                  <h2 class="h4 mb-0 fw-bold">寶可夢 超級勇氣</h2>
+                    <img
+                      src="https://placehold.co/800x1066"
+                      class="w-100 h-100 object-fit-cover"
+                      alt="卡牌大圖"
+                    />
+                  </div>
                 </div>
 
-                <!-- 卡牌列表：使用 Bootstrap row-cols -->
-                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
-                  <div class="col">
-                    <div class="card shadow-sm border-0">
-                      <img
-                        src="https://placehold.co/250x350"
-                        class="card-img-top"
-                        alt="卡牌圖片"
+                <!-- 資訊/操作區（右） -->
+                <div class="col-12 col-lg-6">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <span class="badge bg-warning text-dark">實卡</span>
+                    <span class="badge bg-light text-dark border"
+                      >稀有度 RR</span
+                    >
+                  </div>
+
+                  <h1 class="h3 fw-bold mb-2">胖嘟嘟 ex</h1>
+                  <div class="text-muted small mb-1">SV11WF - 042</div>
+                  <div class="fs-5 fw-bold mb-3">
+                    NT$ 15
+                    <span class="text-muted small fw-normal">NT$ 15</span>
+                  </div>
+
+                  <!-- 操作列：數量 + 加入購物車 + 愛心 -->
+                  <div class="d-flex align-items-stretch gap-2 mb-3">
+                    <div
+                      class="input-group input-group-sm"
+                      style="width: 120px"
+                    >
+                      <button class="btn btn-outline-secondary">-</button>
+                      <input
+                        type="number"
+                        class="form-control text-center"
+                        value="1"
+                        min="1"
                       />
+                      <button class="btn btn-outline-secondary">+</button>
+                    </div>
+                    <button class="btn btn-dark flex-grow-1">加入購物車</button>
+                    <button class="btn btn-outline-secondary">
+                      <i class="bi bi-heart"></i>
+                    </button>
+                  </div>
+
+                  <!-- 規格/說明卡 -->
+                  <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                      <div class="row g-3">
+                        <div class="col-6">
+                          <div class="text-muted small">屬性</div>
+                          <div>異界</div>
+                        </div>
+                        <div class="col-6">
+                          <div class="text-muted small">HP</div>
+                          <div>270</div>
+                        </div>
+                        <div class="col-6">
+                          <div class="text-muted small">階級</div>
+                          <div>2</div>
+                        </div>
+                        <div class="col-6">
+                          <div class="text-muted small">稀有度</div>
+                          <div>RR</div>
+                        </div>
+                      </div>
+
+                      <hr class="my-3" />
+                      <div class="small text-muted mb-1">／卡牌說明／</div>
+                      <p class="mb-0 small text-secondary">
+                        特性：海之親觸。當你將這隻寶可夢從手牌進化到場上的時候…
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 分隔 -->
+              <div class="my-6"></div>
+
+              <!-- 其他版本列表 -->
+              <section aria-labelledby="ver-title">
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <span class="text-warning fw-semibold">／ VERSION ／</span>
+                  <h2 id="ver-title" class="h4 fw-bold mb-0">
+                    胖嘟嘟 ex 其他版本
+                  </h2>
+                </div>
+
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+                  <!-- 單張卡片 -->
+                  <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                      <div class="ratio ratio-3x4">
+                        <img
+                          src="https://placehold.co/400x533"
+                          class="card-img-top object-fit-cover"
+                          alt="ver"
+                        />
+                      </div>
                       <div class="card-body p-2">
-                        <p class="text-muted small mb-1">SV1V 001 皮卡丘</p>
-                        <p class="fw-bold mb-1">NT$ 55</p>
-                        <button class="btn btn-dark w-100 btn-sm">
-                          加入購物車
-                        </button>
+                        <div
+                          class="d-flex justify-content-between align-items-start mb-1"
+                        >
+                          <span class="badge bg-warning text-dark">實卡</span>
+                          <button class="btn btn-sm btn-outline-secondary">
+                            <i class="bi bi-heart"></i>
+                          </button>
+                        </div>
+                        <div class="small text-muted">SV1VWF - 001</div>
+                        <div class="fw-bold">NT$ 55</div>
+                      </div>
+                      <div class="card-footer bg-transparent">
+                        <div class="d-flex gap-2">
+                          <div
+                            class="input-group input-group-sm"
+                            style="width: 110px"
+                          >
+                            <button class="btn btn-outline-secondary">-</button>
+                            <input
+                              type="number"
+                              class="form-control text-center"
+                              value="1"
+                            />
+                            <button class="btn btn-outline-secondary">+</button>
+                          </div>
+                          <button class="btn btn-dark btn-sm flex-fill">
+                            加入購物車
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <!-- 複製多張 -->
-                  <div class="col">
-                    <div class="card shadow-sm border-0">
-                      <img
-                        src="https://placehold.co/250x350"
-                        class="card-img-top"
-                        alt="卡牌圖片"
-                      />
-                      <div class="card-body p-2">
-                        <p class="text-muted small mb-1">SV1V 002 小火龍</p>
-                        <p class="fw-bold mb-1">NT$ 55</p>
-                        <button class="btn btn-dark w-100 btn-sm">
-                          加入購物車
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                  <!-- 複製 .col 重覆多張 -->
                 </div>
               </section>
-            </div>
-          </main>
+            </main>
+          </div>
         </div>
+
+        <!-- new-end -->
       </div>
 
-      <!-- 網格分區 end-->
-    </div>
+      <%- include('./layout/footer'); -%>
 
-    <%- include('./layout/footer'); -%>
-
-    <script type="module" src="../main.js"></script>
-  </body>
+      <script type="module" src="../main.js"></script>
+    </body>
+  </html>
 </html>
