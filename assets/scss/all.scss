@@ -1,18 +1,10 @@
-<<<<<<< HEAD
 // 匯入 Bootstrap 的功能與變數 (順序很重要)
-=======
-@use "sass:color";
->>>>>>> 165ca1649e8e91e5d25f63025801767c60cd0be5
 @import "../../node_modules/bootstrap/scss/functions";
 
 @import "./utils/variables";
 
-<<<<<<< HEAD
 // 匯入完整的 Bootstrap 函式庫
 @import "../../node_modules/bootstrap";
-=======
-@import "./utils/variables-dark";
->>>>>>> 165ca1649e8e91e5d25f63025801767c60cd0be5
 
 // 匯入自訂樣式檔案
 @import "./layout/header.scss";
@@ -20,11 +12,7 @@
 @import "./pages/index.scss";
 @import "./pages/products.scss";
 
-<<<<<<< HEAD
 // 匯入 Q&A 頁面使用的樣式
-@import "./pages/Q&A-scss/reset-style.scss";
+// @import "./pages/Q&A-scss/reset-style.scss";
 @import "./pages/Q&A-scss/Specifications.scss";
 @import "./pages/Q&A-scss/style.scss";
-=======
-@import "../../node_modules/bootstrap";
->>>>>>> 165ca1649e8e91e5d25f63025801767c60cd0be5
