@@ -67,6 +67,7 @@ $dark:      #5B3400 !default;
    .btn { border-radius: .75rem; }
    .product-card { background-color: #f9f9f9; }
    .navbar { background-color: #fff; border-bottom: 1px solid #ddd; }
+   }
  範例內容僅供參考  請依實際需求修改
 獨立空間樣式 引用寫法
 
