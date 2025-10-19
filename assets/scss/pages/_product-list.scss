@@ -1,0 +1,29 @@
+// 匯入文字
+@import "../utils/font";
+
+// 選擇器
+#categoryNav .nav-link {
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  border-radius: 0;
+  padding: 0.25rem 0.5rem;
+
+  &:hover {
+    color: #c79a3b;
+  }
+}
+
+#categoryNav .nav-link.active {
+  background-color: transparent !important;
+  color: #c79a3b !important;
+  font-weight: 700;
+}
+
+/* 折疊箭頭旋轉 */
+#categoryNav button[data-bs-toggle="collapse"] i {
+  transition: transform 0.2s ease;
+}
+#categoryNav button[aria-expanded="true"] i {
+  transform: rotate(180deg);
+}
