@@ -49,7 +49,6 @@ export default defineConfig({
 =======
         quietDeps: true // 靜音來自相依套件的警告訊息
 >>>>>>> 165ca1649e8e91e5d25f63025801767c60cd0be5
-      },
     },
   },
   build: {
