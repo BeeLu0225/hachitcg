@@ -7,564 +7,444 @@
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous" />
+      rel="stylesheet" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+TC:wght@400;500;700&display=swap"
+      rel="stylesheet" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-
-    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   </head>
   <body>
     <%- include('./layout/header'); -%>
-    <main class="product-list-page">
+    <main class="product-list-page py-5">
       <div class="container">
         <div class="row gx-4">
           <aside class="col-3">
-            <div class="side-menu">
-              <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="搜尋..." aria-label="搜尋" />
-                <button class="btn btn-light" type="submit">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path
-                      d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                  </svg>
-                </button>
+            <div class="menu-box">
+              <div class="search-box">
+                <input type="text" placeholder="搜尋卡牌" />
+                <i class="bi bi-search"></i>
               </div>
 
-              <nav class="sidebar-nav">
-                <ul class="list-unstyled">
-                  <li>
-                    <a href="#" class="nav-link d-flex justify-content-between"><span>Weiβ Schwarz</span> <i class="fa-solid fa-chevron-down"></i></a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link d-flex justify-content-between"><span>航海王</span> <i class="fa-solid fa-chevron-down"></i></a>
-                  </li>
-                  <li class="nav-item-active">
-                    <a href="#pokemon-collapse" class="nav-link d-flex justify-content-between" data-bs-toggle="collapse" role="button" aria-expanded="true">
-                      <span>寶可夢</span> <i class="fa-solid fa-chevron-up"></i>
-                    </a>
-                    <div class="collapse show" id="pokemon-collapse">
-                      <ul class="list-unstyled sub-menu">
-                        <li>
-                          <a href="#latest-collapse" class="nav-link d-flex justify-content-between" data-bs-toggle="collapse" role="button" aria-expanded="true">
-                            <span>最新彈</span>
-                            <i class="fa-solid fa-chevron-up"></i>
-                          </a>
-                          <div class="collapse show" id="latest-collapse">
-                            <ul class="list-unstyled sub-menu-2">
-                              <li>
-                                <a href="#" class="nav-link active">超級勇氣</a>
-                              </li>
-                              <li>
-                                <a href="#" class="nav-link">超級交響樂</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </li>
-                        <li>
-                          <a href="#" class="nav-link d-flex justify-content-between"><span>朱紫系列</span> <i class="fa-solid fa-chevron-down"></i></a>
-                        </li>
-                        <li>
-                          <a href="#" class="nav-link d-flex justify-content-between"><span>劍盾系列</span> <i class="fa-solid fa-chevron-down"></i></a>
-                        </li>
-                      </ul>
+              <div class="accordion" id="menuAccordion">
+                <div class="fw-bold mb-2">Weiß Schwarz</div>
+
+                <div class="accordion-item border-0">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOnePiece">
+                      航海王
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseOnePiece"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                      <a href="#">最新彈</a>
+                      <a href="#">超級勇氣</a>
+                      <a href="#">超級交響樂</a>
                     </div>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link d-flex justify-content-between"><span>Vanguard</span> <i class="fa-solid fa-chevron-down"></i></a>
-                  </li>
-                  <li>
-                    <a href="#" class="nav-link d-flex justify-content-between"><span>遊戲王</span> <i class="fa-solid fa-chevron-down"></i></a>
-                  </li>
-                </ul>
-              </nav>
+                  </div>
+                </div>
+
+                <div class="accordion-item border-0">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapsePokemon">
+                      寶可夢
+                    </button>
+                  </h2>
+                  <div
+                    id="collapsePokemon"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                      <a href="#">最新彈</a>
+                      <a href="#">超級交響樂</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item border-0">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseVanguard">
+                      Vanguard
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseVanguard"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                      <a href="#">最新系列</a>
+                      <a href="#">特典包</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item border-0">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseGundam">
+                      鋼彈系列
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseGundam"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                      <a href="#">創壞者卡牌</a>
+                      <a href="#">水星的魔女</a>
+                      <a href="#">鐵血的孤兒</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item border-0">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseYugioh">
+                      遊戲王
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseYugioh"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                      <a href="#">最新卡包</a>
+                      <a href="#">結構牌組</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </aside>
           <section class="col-9">
             <div class="page-title text-center mb-5">
-              <p class="sub-title">/ PTGC /</p>
-              <h1 class="main-title">寶可夢 超級勇氣</h1>
+              <p class="sub-title fs-5 text-muted">/ PTGC /</p>
+              <h1 class="main-title fw-bold">寶可夢 超級勇氣</h1>
             </div>
 
-            <div class="row row-cols-2 g-4">
+            <div class="row row-cols-1 row-cols-lg-2 g-4">
               <div class="col">
-                <div class="card product-card">
+                <div class="card product-card h-100">
                   <div class="row g-0">
                     <div class="col-4">
-                      <div class="card-image-wrapper">
-                        <img src="https://via.placeholder.com/150x209" class="img-fluid" alt="寶可夢卡牌" />
-                        <button class="btn btn-favorite">
-                          <i class="fa-regular fa-heart"></i>
-                        </button>
-                      </div>
+                      <img
+                        src="https://via.placeholder.com/471x225/A9A9A9/FFFFFF?text=Card+Img"
+                        class="img-fluid rounded-start h-100 object-fit-cover"
+                        alt="寶可夢卡牌" />
                     </div>
                     <div class="col-8">
-                      <div class="card-body">
-                        <span class="badge product-badge">寶可夢</span>
+                      <div class="card-body d-flex flex-column h-100">
+                        <span
+                          class="badge product-badge align-self-start bg-secondary-subtle text-dark-emphasis mb-2"
+                          >寶可夢</span
+                        >
                         <div class="product-info">
-                          <p class="product-code">SV11WF - 001</p>
-                          <h5 class="product-name">蟲寶包</h5>
+                          <p class="product-code text-muted small">
+                            SV11WF - 001
+                          </p>
+                          <h5 class="product-name fw-bold">木棉球</h5>
                         </div>
-                        <div class="product-purchase">
-                          <div class="d-flex justify-content-between align-items-center">
+                        <div class="product-purchase mt-auto">
+                          <div
+                            class="d-flex justify-content-between align-items-center mb-2">
                             <div class="price-stock">
-                              <p class="price">NT $5</p>
-                              <p class="stock-status in-stock"><i class="fa-solid fa-circle"></i> 尚有庫存</p>
+                              <p class="price fs-5 fw-bold">NT $5</p>
+                              <del class="original-price">NT $15</del>
                             </div>
-                            <div class="input-group quantity-input">
-                              <span class="input-group-text">1</span>
-                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">1</a></li>
-                                <li><a class="dropdown-item" href="#">2</a></li>
-                                <li><a class="dropdown-item" href="#">3</a></li>
-                              </ul>
-                            </div>
+                            <p class="stock-status in-stock small">
+                              <i
+                                class="fa-solid fa-circle text-success fa-xs"></i>
+                              尚有庫存
+                            </p>
                           </div>
-                          <button class="btn btn-dark btn-add-to-cart">加入購物車</button>
+                          <button class="btn btn-dark btn-add-to-cart w-100">
+                            加入購物車
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
               <div class="col">
-                <div class="card product-card">
+                <div class="card product-card h-100">
                   <div class="row g-0">
                     <div class="col-4">
-                      <div class="card-image-wrapper">
-                        <img src="https://via.placeholder.com/150x209" class="img-fluid" alt="寶可夢卡牌" />
-                        <button class="btn btn-favorite">
-                          <i class="fa-regular fa-heart"></i>
-                        </button>
-                      </div>
+                      <img
+                        src="https://via.placeholder.com/471x225/A9A9A9/FFFFFF?text=Card+Img"
+                        class="img-fluid rounded-start h-100 object-fit-cover"
+                        alt="寶可夢卡牌" />
                     </div>
                     <div class="col-8">
-                      <div class="card-body">
-                        <span class="badge product-badge">寶可夢</span>
+                      <div class="card-body d-flex flex-column h-100">
+                        <span
+                          class="badge product-badge align-self-start bg-secondary-subtle text-dark-emphasis mb-2"
+                          >寶可夢</span
+                        >
                         <div class="product-info">
-                          <p class="product-code">SV11WF - 001</p>
-                          <h5 class="product-name">木棉球</h5>
+                          <p class="product-code text-muted small">
+                            SV11WF - 002
+                          </p>
+                          <h5 class="product-name fw-bold">蟲寶包</h5>
                         </div>
-                        <div class="product-purchase">
-                          <div class="d-flex justify-content-between align-items-center">
+                        <div class="product-purchase mt-auto">
+                          <div
+                            class="d-flex justify-content-between align-items-center mb-2">
                             <div class="price-stock">
-                              <p class="price">NT $5 <del class="original-price">NT $15</del></p>
-                              <p class="stock-status in-stock"><i class="fa-solid fa-circle"></i> 尚有庫存</p>
+                              <p class="price fs-5 fw-bold">NT $5</p>
                             </div>
-                            <div class="input-group quantity-input">
-                              <span class="input-group-text">1</span>
-                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">1</a></li>
-                              </ul>
-                            </div>
+                            <p class="stock-status in-stock small">
+                              <i
+                                class="fa-solid fa-circle text-success fa-xs"></i>
+                              尚有庫存
+                            </p>
                           </div>
-                          <button class="btn btn-dark btn-add-to-cart">加入購物車</button>
+                          <button class="btn btn-dark btn-add-to-cart w-100">
+                            加入購物車
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
               <div class="col">
-                <div class="card product-card">
+                <div class="card product-card h-100">
                   <div class="row g-0">
                     <div class="col-4">
-                      <div class="card-image-wrapper">
-                        <img src="https://via.placeholder.com/150x209" class="img-fluid" alt="寶可夢卡牌" />
-                        <button class="btn btn-favorite">
-                          <i class="fa-regular fa-heart"></i>
-                        </button>
-                      </div>
+                      <img
+                        src="https://via.placeholder.com/471x225/A9A9A9/FFFFFF?text=Card+Img"
+                        class="img-fluid rounded-start h-100 object-fit-cover"
+                        alt="寶可夢卡牌" />
                     </div>
                     <div class="col-8">
-                      <div class="card-body">
-                        <span class="badge product-badge">寶可夢</span>
+                      <div class="card-body d-flex flex-column h-100">
+                        <span
+                          class="badge product-badge align-self-start bg-secondary-subtle text-dark-emphasis mb-2"
+                          >寶可夢</span
+                        >
                         <div class="product-info">
-                          <p class="product-code">SV11WF - 001</p>
-                          <h5 class="product-name">蟲寶包</h5>
+                          <p class="product-code text-muted small">
+                            SV11WF - 003
+                          </p>
+                          <h5 class="product-name fw-bold">皮卡丘</h5>
                         </div>
-                        <div class="product-purchase">
-                          <div class="d-flex justify-content-between align-items-center">
+                        <div class="product-purchase mt-auto">
+                          <div
+                            class="d-flex justify-content-between align-items-center mb-2">
                             <div class="price-stock">
-                              <p class="price">NT $5</p>
-                              <p class="stock-status out-of-stock"><i class="fa-solid fa-circle"></i> 無庫存</p>
+                              <p class="price fs-5 fw-bold">NT $50</p>
                             </div>
-                            <div class="input-group quantity-input">
-                              <span class="input-group-text disabled">1</span>
-                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" disabled></button>
-                            </div>
+                            <p class="stock-status out-of-stock small">
+                              <i
+                                class="fa-solid fa-circle text-danger fa-xs"></i>
+                              無庫存
+                            </p>
                           </div>
-                          <button class="btn btn-dark btn-add-to-cart" disabled>加入購物車</button>
+                          <button
+                            class="btn btn-dark btn-add-to-cart w-100"
+                            disabled>
+                            加入購物車
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
               <div class="col">
-                <div class="card product-card">
+                <div class="card product-card h-100">
                   <div class="row g-0">
                     <div class="col-4">
-                      <div class="card-image-wrapper">
-                        <img src="https://via.placeholder.com/150x209" class="img-fluid" alt="寶可夢卡牌" />
-                        <button class="btn btn-favorite">
-                          <i class="fa-regular fa-heart"></i>
-                        </button>
-                      </div>
+                      <img
+                        src="https://via.placeholder.com/471x225/A9A9A9/FFFFFF?text=Card+Img"
+                        class="img-fluid rounded-start h-100 object-fit-cover"
+                        alt="寶可夢卡牌" />
                     </div>
                     <div class="col-8">
-                      <div class="card-body">
-                        <span class="badge product-badge">寶可夢</span>
+                      <div class="card-body d-flex flex-column h-100">
+                        <span
+                          class="badge product-badge align-self-start bg-secondary-subtle text-dark-emphasis mb-2"
+                          >寶可夢</span
+                        >
                         <div class="product-info">
-                          <p class="product-code">SV11WF - 001</p>
-                          <h5 class="product-name">木棉球</h5>
+                          <p class="product-code text-muted small">
+                            SV11WF - 004
+                          </p>
+                          <h5 class="product-name fw-bold">伊布</h5>
                         </div>
-                        <div class="product-purchase">
-                          <div class="d-flex justify-content-between align-items-center">
+                        <div class="product-purchase mt-auto">
+                          <div
+                            class="d-flex justify-content-between align-items-center mb-2">
                             <div class="price-stock">
-                              <p class="price">NT $5 <del class="original-price">NT $15</del></p>
-                              <p class="stock-status in-stock"><i class="fa-solid fa-circle"></i> 尚有庫存</p>
+                              <p class="price fs-5 fw-bold">NT $30</p>
+                              <del class="original-price">NT $45</del>
                             </div>
-                            <div class="input-group quantity-input">
-                              <span class="input-group-text">1</span>
-                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">1</a></li>
-                              </ul>
-                            </div>
+                            <p class="stock-status in-stock small">
+                              <i
+                                class="fa-solid fa-circle text-success fa-xs"></i>
+                              尚有庫存
+                            </p>
                           </div>
-                          <button class="btn btn-dark btn-add-to-cart">加入購物車</button>
+                          <button class="btn btn-dark btn-add-to-cart w-100">
+                            加入購物車
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
               <div class="col">
-                <div class="card product-card">
+                <div class="card product-card h-100">
                   <div class="row g-0">
                     <div class="col-4">
-                      <div class="card-image-wrapper">
-                        <img src="https://via.placeholder.com/150x209" class="img-fluid" alt="寶可夢卡牌" />
-                        <button class="btn btn-favorite">
-                          <i class="fa-regular fa-heart"></i>
-                        </button>
-                      </div>
+                      <img
+                        src="https://via.placeholder.com/471x225/A9A9A9/FFFFFF?text=Card+Img"
+                        class="img-fluid rounded-start h-100 object-fit-cover"
+                        alt="寶可夢卡牌" />
                     </div>
                     <div class="col-8">
-                      <div class="card-body">
-                        <span class="badge product-badge">寶可夢</span>
+                      <div class="card-body d-flex flex-column h-100">
+                        <span
+                          class="badge product-badge align-self-start bg-secondary-subtle text-dark-emphasis mb-2"
+                          >寶可夢</span
+                        >
                         <div class="product-info">
-                          <p class="product-code">SV11WF - 001</p>
-                          <h5 class="product-name">蟲寶包</h5>
+                          <p class="product-code text-muted small">
+                            SV11WF - 005
+                          </p>
+                          <h5 class="product-name fw-bold">卡比獸</h5>
                         </div>
-                        <div class="product-purchase">
-                          <div class="d-flex justify-content-between align-items-center">
+                        <div class="product-purchase mt-auto">
+                          <div
+                            class="d-flex justify-content-between align-items-center mb-2">
                             <div class="price-stock">
-                              <p class="price">NT $5</p>
-                              <p class="stock-status in-stock"><i class="fa-solid fa-circle"></i> 尚有庫存</p>
+                              <p class="price fs-5 fw-bold">NT $80</p>
                             </div>
-                            <div class="input-group quantity-input">
-                              <span class="input-group-text">1</span>
-                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">1</a></li>
-                                <li><a class="dropdown-item" href="#">2</a></li>
-                                <li><a class="dropdown-item" href="#">3</a></li>
-                              </ul>
-                            </div>
+                            <p class="stock-status in-stock small">
+                              <i
+                                class="fa-solid fa-circle text-success fa-xs"></i>
+                              尚有庫存
+                            </p>
                           </div>
-                          <button class="btn btn-dark btn-add-to-cart">加入購物車</button>
+                          <button class="btn btn-dark btn-add-to-cart w-100">
+                            加入購物車
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
               <div class="col">
-                <div class="card product-card">
+                <div class="card product-card h-100">
                   <div class="row g-0">
                     <div class="col-4">
-                      <div class="card-image-wrapper">
-                        <img src="https://via.placeholder.com/150x209" class="img-fluid" alt="寶可夢卡牌" />
-                        <button class="btn btn-favorite">
-                          <i class="fa-regular fa-heart"></i>
-                        </button>
-                      </div>
+                      <img
+                        src="https://via.placeholder.com/471x225/A9A9A9/FFFFFF?text=Card+Img"
+                        class="img-fluid rounded-start h-100 object-fit-cover"
+                        alt="寶可夢卡牌" />
                     </div>
                     <div class="col-8">
-                      <div class="card-body">
-                        <span class="badge product-badge">寶可夢</span>
+                      <div class="card-body d-flex flex-column h-100">
+                        <span
+                          class="badge product-badge align-self-start bg-secondary-subtle text-dark-emphasis mb-2"
+                          >寶可夢</span
+                        >
                         <div class="product-info">
-                          <p class="product-code">SV11WF - 001</p>
-                          <h5 class="product-name">木棉球</h5>
+                          <p class="product-code text-muted small">
+                            SV11WF - 006
+                          </p>
+                          <h5 class="product-name fw-bold">噴火龍</h5>
                         </div>
-                        <div class="product-purchase">
-                          <div class="d-flex justify-content-between align-items-center">
+                        <div class="product-purchase mt-auto">
+                          <div
+                            class="d-flex justify-content-between align-items-center mb-2">
                             <div class="price-stock">
-                              <p class="price">NT $5 <del class="original-price">NT $15</del></p>
-                              <p class="stock-status in-stock"><i class="fa-solid fa-circle"></i> 尚有庫存</p>
+                              <p class="price fs-5 fw-bold">NT $250</p>
+                              <del class="original-price">NT $300</del>
                             </div>
-                            <div class="input-group quantity-input">
-                              <span class="input-group-text">1</span>
-                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">1</a></li>
-                              </ul>
-                            </div>
+                            <p class="stock-status in-stock small">
+                              <i
+                                class="fa-solid fa-circle text-success fa-xs"></i>
+                              尚有庫存
+                            </p>
                           </div>
-                          <button class="btn btn-dark btn-add-to-cart">加入購物車</button>
+                          <button class="btn btn-dark btn-add-to-cart w-100">
+                            加入購物車
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
               <div class="col">
-                <div class="card product-card">
-                  <div class="row g-0">
-                    <div class="col-4">
-                      <div class="card-image-wrapper">
-                        <img src="https://via.placeholder.com/150x209" class="img-fluid" alt="寶可夢卡牌" />
-                        <button class="btn btn-favorite">
-                          <i class="fa-regular fa-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="col-8">
-                      <div class="card-body">
-                        <span class="badge product-badge">寶可夢</span>
-                        <div class="product-info">
-                          <p class="product-code">SV11WF - 001</p>
-                          <h5 class="product-name">蟲寶包</h5>
-                        </div>
-                        <div class="product-purchase">
-                          <div class="d-flex justify-content-between align-items-center">
-                            <div class="price-stock">
-                              <p class="price">NT $5</p>
-                              <p class="stock-status in-stock"><i class="fa-solid fa-circle"></i> 尚有庫存</p>
-                            </div>
-                            <div class="input-group quantity-input">
-                              <span class="input-group-text">1</span>
-                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">1</a></li>
-                                <li><a class="dropdown-item" href="#">2</a></li>
-                                <li><a class="dropdown-item" href="#">3</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                          <button class="btn btn-dark btn-add-to-cart">加入購物車</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="card product-card h-100 p-5 text-center">
+                  Card 7
                 </div>
               </div>
               <div class="col">
-                <div class="card product-card">
-                  <div class="row g-0">
-                    <div class="col-4">
-                      <div class="card-image-wrapper">
-                        <img src="https://via.placeholder.com/150x209" class="img-fluid" alt="寶可夢卡牌" />
-                        <button class="btn btn-favorite">
-                          <i class="fa-regular fa-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="col-8">
-                      <div class="card-body">
-                        <span class="badge product-badge">寶可夢</span>
-                        <div class="product-info">
-                          <p class="product-code">SV11WF - 001</p>
-                          <h5 class="product-name">木棉球</h5>
-                        </div>
-                        <div class="product-purchase">
-                          <div class="d-flex justify-content-between align-items-center">
-                            <div class="price-stock">
-                              <p class="price">NT $5 <del class="original-price">NT $15</del></p>
-                              <p class="stock-status in-stock"><i class="fa-solid fa-circle"></i> 尚有庫存</p>
-                            </div>
-                            <div class="input-group quantity-input">
-                              <span class="input-group-text">1</span>
-                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">1</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                          <button class="btn btn-dark btn-add-to-cart">加入購物車</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="card product-card h-100 p-5 text-center">
+                  Card 8
                 </div>
               </div>
               <div class="col">
-                <div class="card product-card">
-                  <div class="row g-0">
-                    <div class="col-4">
-                      <div class="card-image-wrapper">
-                        <img src="https://via.placeholder.com/150x209" class="img-fluid" alt="寶可夢卡牌" />
-                        <button class="btn btn-favorite">
-                          <i class="fa-regular fa-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="col-8">
-                      <div class="card-body">
-                        <span class="badge product-badge">寶可夢</span>
-                        <div class="product-info">
-                          <p class="product-code">SV11WF - 001</p>
-                          <h5 class="product-name">蟲寶包</h5>
-                        </div>
-                        <div class="product-purchase">
-                          <div class="d-flex justify-content-between align-items-center">
-                            <div class="price-stock">
-                              <p class="price">NT $5</p>
-                              <p class="stock-status in-stock"><i class="fa-solid fa-circle"></i> 尚有庫存</p>
-                            </div>
-                            <div class="input-group quantity-input">
-                              <span class="input-group-text">1</span>
-                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">1</a></li>
-                                <li><a class="dropdown-item" href="#">2</a></li>
-                                <li><a class="dropdown-item" href="#">3</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                          <button class="btn btn-dark btn-add-to-cart">加入購物車</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="card product-card h-100 p-5 text-center">
+                  Card 9
                 </div>
               </div>
               <div class="col">
-                <div class="card product-card">
-                  <div class="row g-0">
-                    <div class="col-4">
-                      <div class="card-image-wrapper">
-                        <img src="https://via.placeholder.com/150x209" class="img-fluid" alt="寶可夢卡牌" />
-                        <button class="btn btn-favorite">
-                          <i class="fa-regular fa-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="col-8">
-                      <div class="card-body">
-                        <span class="badge product-badge">寶可夢</span>
-                        <div class="product-info">
-                          <p class="product-code">SV11WF - 001</p>
-                          <h5 class="product-name">木棉球</h5>
-                        </div>
-                        <div class="product-purchase">
-                          <div class="d-flex justify-content-between align-items-center">
-                            <div class="price-stock">
-                              <p class="price">NT $5 <del class="original-price">NT $15</del></p>
-                              <p class="stock-status in-stock"><i class="fa-solid fa-circle"></i> 尚有庫存</p>
-                            </div>
-                            <div class="input-group quantity-input">
-                              <span class="input-group-text">1</span>
-                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">1</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                          <button class="btn btn-dark btn-add-to-cart">加入購物車</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="card product-card h-100 p-5 text-center">
+                  Card 10
                 </div>
               </div>
               <div class="col">
-                <div class="card product-card">
-                  <div class="row g-0">
-                    <div class="col-4">
-                      <div class="card-image-wrapper">
-                        <img src="https://via.placeholder.com/150x209" class="img-fluid" alt="寶可夢卡牌" />
-                        <button class="btn btn-favorite">
-                          <i class="fa-regular fa-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="col-8">
-                      <div class="card-body">
-                        <span class="badge product-badge">寶可夢</span>
-                        <div class="product-info">
-                          <p class="product-code">SV11WF - 001</p>
-                          <h5 class="product-name">蟲寶包</h5>
-                        </div>
-                        <div class="product-purchase">
-                          <div class="d-flex justify-content-between align-items-center">
-                            <div class="price-stock">
-                              <p class="price">NT $5</p>
-                              <p class="stock-status in-stock"><i class="fa-solid fa-circle"></i> 尚有庫存</p>
-                            </div>
-                            <div class="input-group quantity-input">
-                              <span class="input-group-text">1</span>
-                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">1</a></li>
-                                <li><a class="dropdown-item" href="#">2</a></li>
-                                <li><a class="dropdown-item" href="#">3</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                          <button class="btn btn-dark btn-add-to-cart">加入購物車</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="card product-card h-100 p-5 text-center">
+                  Card 11
                 </div>
               </div>
               <div class="col">
-                <div class="card product-card">
-                  <div class="row g-0">
-                    <div class="col-4">
-                      <div class="card-image-wrapper">
-                        <img src="https://via.placeholder.com/150x209" class="img-fluid" alt="寶可夢卡牌" />
-                        <button class="btn btn-favorite">
-                          <i class="fa-regular fa-heart"></i>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="col-8">
-                      <div class="card-body">
-                        <span class="badge product-badge">寶可夢</span>
-                        <div class="product-info">
-                          <p class="product-code">SV11WF - 001</p>
-                          <h5 class="product-name">木棉球</h5>
-                        </div>
-                        <div class="product-purchase">
-                          <div class="d-flex justify-content-between align-items-center">
-                            <div class="price-stock">
-                              <p class="price">NT $5 <del class="original-price">NT $15</del></p>
-                              <p class="stock-status in-stock"><i class="fa-solid fa-circle"></i> 尚有庫存</p>
-                            </div>
-                            <div class="input-group quantity-input">
-                              <span class="input-group-text">1</span>
-                              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">1</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                          <button class="btn btn-dark btn-add-to-cart">加入購物車</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div class="card product-card h-100 p-5 text-center">
+                  Card 12
                 </div>
               </div>
             </div>
@@ -572,17 +452,19 @@
             <nav aria-label="Page navigation" class="mt-5">
               <ul class="pagination justify-content-center">
                 <li class="page-item disabled">
-                  <a class="page-link" href="#"><i class="fa-solid fa-chevron-left"></i></a>
+                  <a class="page-link" href="#"
+                    ><i class="fa-solid fa-chevron-left"></i
+                  ></a>
                 </li>
                 <li class="page-item active">
                   <a class="page-link" href="#">1</a>
                 </li>
                 <li class="page-item"><a class="page-link" href="#">2</a></li>
                 <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item"><a class="page-link" href="#">5</a></li>
                 <li class="page-item">
-                  <a class="page-link" href="#"><i class="fa-solid fa-chevron-right"></i></a>
+                  <a class="page-link" href="#"
+                    ><i class="fa-solid fa-chevron-right"></i
+                  ></a>
                 </li>
               </ul>
             </nav>
@@ -592,11 +474,7 @@
     </main>
     <%- include('./layout/footer'); -%>
 
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
     <script type="module" src="../main.js"></script>
   </body>
 </html>
