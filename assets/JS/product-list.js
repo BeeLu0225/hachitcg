@@ -1,5 +1,5 @@
 console.log("✅ JS 已載入成功！");
-
+// 數量選擇器
 document.addEventListener("DOMContentLoaded", () => {
   const box = document.getElementById("quantityBox");
   if (!box) return;
@@ -20,3 +20,4 @@ document.addEventListener("DOMContentLoaded", () => {
     valueDisplay.textContent = quantity;
   });
 });
+// 數量選擇器 end
