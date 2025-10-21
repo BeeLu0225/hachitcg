@@ -1,0 +1,82 @@
+// 匯入文字
+@import "../utils/font";
+
+[data-app="product-list"] {
+  // 灰階顏色使用
+  .text-gray-100 {
+    color: var(--bs-gray-100, #e3e3e3) !important;
+  }
+  .text-gray-200 {
+    color: var(--bs-gray-200, #cccccc) !important;
+  }
+  .text-gray-300 {
+    color: var(--bs-gray-300, #aeaeae) !important;
+  }
+  .text-gray-400 {
+    color: var(--bs-gray-400, #898989) !important;
+  }
+  .text-gray-500 {
+    color: var(--bs-gray-500, #494949) !important;
+  }
+  .text-gray-600 {
+    color: var(--bs-gray-600, #6c757d) !important;
+  }
+  .text-gray-700 {
+    color: var(--bs-gray-700, #495057) !important;
+  }
+  .text-gray-800 {
+    color: var(--bs-gray-800, #343a40) !important;
+  }
+  .text-gray-900 {
+    color: var(--bs-gray-900, #212529) !important;
+  }
+  // 灰階顏色使用 end
+
+  .btn.btn-add {
+    background-color: #1c1c1c !important;
+    color: #fff !important;
+    border: none;
+  }
+
+  // 卡牌圖片
+  .card-bg {
+    background: #dde4e8;
+    border-radius: 8px;
+    padding: 9px;
+    box-sizing: border-box;
+  }
+
+  .card-img-box {
+    border-radius: inherit;
+    overflow: hidden;
+  }
+
+  .card-img-box img {
+    width: 100%; /* ⬅ 讓圖片剛好填滿欄寬 */
+    height: auto; /* 等比例縮放 */
+    display: block;
+    border-radius: inherit;
+  }
+
+  // 標籤
+  /* 通用標籤樣式 */
+  .tag {
+    border-radius: 4px 0 4px 0; // 左上與右下圓角
+    font-size: inherit;
+    line-height: normal;
+    background-color: transparent;
+  }
+  /* 寶可夢（橘色邊框、透明底） */
+  .tag-outline-primary {
+    color: $primary;
+    border: 1px solid $primary;
+    background-color: transparent;
+  }
+
+  /* 稀有度 RR（咖啡色邊框與字同色） */
+  .tag-outline-dark {
+    color: $dark;
+    border: 1px solid $dark;
+    background-color: transparent;
+  }
+}
