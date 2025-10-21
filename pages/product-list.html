@@ -156,35 +156,84 @@
 
                   <div class="h6-ch text-gray-300 mb-1">SV11WF - 042</div>
                   <h1 class="h4-ch text-gray-500 mb-2">木棉球</h1>
-                  <div class="h2-ch mb-3">
-                    NT$ 15
-                    <span class="text-muted small fw-normal">NT$ 15</span>
+                  <div class="mb-4">
+                    <span class="h2-ch">NT$15</span>
+
+                    <span
+                      class="body-md text-gray-400 text-decoration-line-through"
+                      >NT$15</span
+                    >
                   </div>
 
-                  <!-- 操作列：數量 + 加入購物車 + 愛心 -->
-                  <div class="d-flex align-items-stretch gap-2 mb-3">
-                    <div
-                      class="input-group input-group-sm"
-                      style="width: 120px"
+                  <!-- 庫存 -->
+                  <div class="d-flex align-items-center mb-5">
+                    <span
+                      class="rounded-circle bg-success me-1"
+                      style="width: 10px; height: 10px; display: inline-block"
+                    ></span>
+                    <span class="text-gray-400 body-sm">尚有庫存</span>
+                  </div>
+                  <!-- 庫存 end-->
+
+                  <!-- new3 -->
+                  <!-- 數量 + 加入購物車 + 收藏 -->
+                  <div class="d-flex align-items-center gap-3 mb-3">
+                    <!-- 數量選擇 -->
+                    <!-- <div
+                      class="quantity-select position-relative"
+                      style="width: 227px"
                     >
-                      <button class="btn btn-outline-secondary">-</button>
-                      <input
-                        type="number"
-                        class="form-control text-center"
-                        value="1"
-                        min="1"
-                      />
-                      <button class="btn btn-outline-secondary">+</button>
+                      <select class="form-select form-select-lg pe-5">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div> -->
+
+                    <!-- ++ -->
+                    <div
+                      class="quantity-box d-flex align-items-center justify-content-between"
+                      id="quantityBox"
+                    >
+                      <button
+                        class="btn-icon btn-minus"
+                        type="button"
+                        aria-label="減少數量"
+                      >
+                        <i class="bi bi-dash"></i>
+                      </button>
+
+                      <span class="quantity-value" id="quantityValue">1</span>
+
+                      <button
+                        class="btn-icon btn-plus"
+                        type="button"
+                        aria-label="增加數量"
+                      >
+                        <i class="bi bi-plus"></i>
+                      </button>
                     </div>
+
+                    <!-- ++ -->
+
+                    <!-- 加入購物車 -->
                     <a
-                      href="(選擇連結的html)"
+                      href="#"
                       target="_blank"
-                      class="btn btn-add w-100 text-center"
+                      class="btn btn-add flex-grow-1 text-center rounded-pill"
                     >
                       加入購物車
                     </a>
-                    <button class="btn btn-outline-secondary">
-                      <i class="bi bi-heart"></i>
+
+                    <!-- 收藏 -->
+                    <button
+                      class="btn btn-fav d-flex align-items-center justify-content-center"
+                      id="favBtn"
+                      aria-label="加入收藏"
+                    >
+                      <i class="bi bi-heart fs-4"></i>
                     </button>
                   </div>
 
@@ -289,6 +338,8 @@
 
       <%- include('./layout/footer'); -%>
 
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="../assets/js/product-list.js"></script>
       <script type="module" src="../main.js"></script>
     </body>
   </html>

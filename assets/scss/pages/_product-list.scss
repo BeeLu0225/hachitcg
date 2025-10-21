@@ -2,6 +2,43 @@
 @import "../utils/font";
 
 [data-app="product-list"] {
+  // 顏色設定
+  .text-gray-100 {
+    color: $gray-100;
+  }
+  .text-gray-200 {
+    color: $gray-200;
+  }
+  .text-gray-300 {
+    color: $gray-300;
+  }
+  .text-gray-400 {
+    color: $gray-400;
+  }
+  .text-gray-500 {
+    color: $gray-500;
+  }
+  .text-gray-600 {
+    color: $gray-600;
+  }
+  .text-gray-700 {
+    color: $gray-700;
+  }
+  .text-gray-800 {
+    color: $gray-800;
+  }
+  .text-gray-900 {
+    color: $gray-900;
+  }
+  .text-black {
+    color: $black;
+  }
+  .text-white {
+    color: $white;
+  }
+
+  // 顏色設定 end
+
   .btn.btn-add {
     background-color: #1c1c1c !important;
     color: #fff !important;
@@ -48,5 +85,110 @@
     color: $dark;
     border: 1px solid $dark;
     background-color: transparent;
+  }
+
+  // 收藏按鈕
+  .btn-fav {
+    background-color: #fff;
+    color: $black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+
+    &:hover i,
+    &.active i {
+      color: $primary; // 黃色
+    }
+  }
+
+  // new
+
+  .quantity-select {
+    position: relative;
+
+    .form-select {
+      height: 48px;
+      font-size: 1rem;
+      border-radius: 8px;
+      padding-left: 16px;
+      padding-right: 48px;
+      appearance: none; // 取消原生下拉箭頭
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      border: 1px solid $gray-300;
+      background-color: #fff;
+      color: $black;
+    }
+
+    i {
+      font-size: 1.2rem;
+      color: $black;
+      pointer-events: none; // 防止遮到 select 點擊
+    }
+  }
+
+  // 加入購物車
+  .btn-add {
+    background-color: $black;
+    color: $white;
+    padding: 12px 32px;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: lighten($black, 10%);
+    }
+  }
+
+  // 收藏
+  .btn-fav {
+    background-color: #fff;
+    color: $black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $gray-300;
+    transition: all 0.3s ease;
+
+    &:hover i,
+    &.active i {
+      color: $primary; // 黃色
+    }
+
+    &:hover {
+      background-color: $gray-100;
+    }
+  }
+
+  // ++
+  .quantity-box {
+    width: 227px;
+    height: 48px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 0 16px;
+    font-size: 1.25rem;
+    user-select: none;
+
+    .btn-icon {
+      background: none;
+      border: none;
+      color: #333;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      transition: none; // 取消hover/active動畫
+    }
+
+    .quantity-value {
+      font-weight: 500;
+    }
   }
 }
