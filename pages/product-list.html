@@ -48,8 +48,8 @@
         </nav>
         <!-- breadcrumb-end -->
 
-        <!-- new -->
-        <div class="container-xxl my-4">
+        <!-- 區塊主內容 -->
+        <div class="my-8">
           <div class="row g-4">
             <!-- 左側：類別/搜尋 -->
             <aside class="col-12 col-lg-3">
@@ -104,43 +104,58 @@
             </aside>
 
             <!-- 右側：主內容 -->
-            <main class="col-12 col-lg-9">
+            <main class="col-12 col-lg-9 ps-6">
               <!-- 返回 + 標題 -->
               <div class="d-flex align-items-center mb-3 gap-2">
                 <a
                   href="product-list.html"
-                  class="link-secondary d-inline-flex align-items-center"
+                  class="h6-ch link-secondary d-inline-flex align-items-center text-decoration-none"
                 >
-                  <i class="bi bi-arrow-left me-1"></i> 回上層
+                  <i class="bi bi-arrow-left me-1"></i> 回上頁
                 </a>
+              </div>
+              <!-- 標題文字 -->
+              <div class="div mb-7">
+                <p class="h1-ch">胖嘟嘟ex</p>
               </div>
 
               <!-- 主卡內容：圖片 + 資訊 -->
               <div class="row g-4 align-items-start">
                 <!-- 大圖區（左） -->
-                <div class="col-12 col-lg-6">
-                  <div
-                    class="ratio ratio-3x4 rounded overflow-hidden shadow-sm"
-                  >
-                    <img
-                      src="https://placehold.co/800x1066"
-                      class="w-100 h-100 object-fit-cover"
-                      alt="卡牌大圖"
-                    />
+                <div class="col-12 col-lg-4">
+                  <div class="card-bg p-2">
+                    <div class="card-img-box">
+                      <img
+                        src="/assets/images/product-card-1.png"
+                        class="w-100 h-auto d-block"
+                        alt="卡牌大圖"
+                      />
+                    </div>
                   </div>
                 </div>
 
                 <!-- 資訊/操作區（右） -->
                 <div class="col-12 col-lg-6">
-                  <div class="d-flex align-items-center gap-2 mb-2">
-                    <span class="badge bg-warning text-dark">實卡</span>
-                    <span class="badge bg-light text-dark border"
-                      >稀有度 RR</span
+                  <!-- 標籤 -->
+                  <div class="d-flex align-items-center gap-2 mb-5">
+                    <!-- 寶可夢：橘色邊框、透明底 -->
+                    <span
+                      class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md"
                     >
-                  </div>
+                      寶可夢
+                    </span>
 
-                  <h1 class="h3 fw-bold mb-2">胖嘟嘟 ex</h1>
-                  <div class="text-muted small mb-1">SV11WF - 042</div>
+                    <!-- 稀有度 RR：咖啡色邊框 + 同色文字 -->
+                    <span
+                      class="tag tag-outline-dark d-inline-flex align-items-center justify-content-center px-2 py-1 body-md"
+                    >
+                      稀有度 RR
+                    </span>
+                  </div>
+                  <!-- 標籤 end -->
+
+                  <div class="h6-ch mb-1">SV11WF - 042</div>
+                  <h1 class="h3 fw-bold mb-2">木棉球</h1>
                   <div class="fs-5 fw-bold mb-3">
                     NT$ 15
                     <span class="text-muted small fw-normal">NT$ 15</span>
@@ -161,7 +176,13 @@
                       />
                       <button class="btn btn-outline-secondary">+</button>
                     </div>
-                    <button class="btn btn-dark flex-grow-1">加入購物車</button>
+                    <a
+                      href="(選擇連結的html)"
+                      target="_blank"
+                      class="btn btn-add w-100 text-center"
+                    >
+                      加入購物車
+                    </a>
                     <button class="btn btn-outline-secondary">
                       <i class="bi bi-heart"></i>
                     </button>
@@ -263,7 +284,7 @@
           </div>
         </div>
 
-        <!-- new-end -->
+        <!-- 區塊主內容-end -->
       </div>
 
       <%- include('./layout/footer'); -%>

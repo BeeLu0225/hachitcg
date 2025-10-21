@@ -2,9 +2,51 @@
 @import "../utils/font";
 
 [data-app="product-list"] {
-  .button {
-    border-radius: 100px;
-    border: 1px solid var(--Neutral-black, #1c1c1c);
-    background: var(--Neutral-black, #1c1c1c);
+  .btn.btn-add {
+    background-color: #1c1c1c !important;
+    color: #fff !important;
+    border: none;
+  }
+
+  // 卡牌圖片
+  .card-bg {
+    background: #dde4e8;
+    border-radius: 8px;
+    padding: 9px;
+    box-sizing: border-box;
+  }
+
+  .card-img-box {
+    border-radius: inherit;
+    overflow: hidden;
+  }
+
+  .card-img-box img {
+    width: 100%; /* ⬅ 讓圖片剛好填滿欄寬 */
+    height: auto; /* 等比例縮放 */
+    display: block;
+    border-radius: inherit;
+  }
+
+  // 標籤
+  /* 通用標籤樣式 */
+  .tag {
+    border-radius: 4px 0 4px 0; // 左上與右下圓角
+    font-size: inherit;
+    line-height: normal;
+    background-color: transparent;
+  }
+  /* 寶可夢（橘色邊框、透明底） */
+  .tag-outline-primary {
+    color: $primary;
+    border: 1px solid $primary;
+    background-color: transparent;
+  }
+
+  /* 稀有度 RR（咖啡色邊框與字同色） */
+  .tag-outline-dark {
+    color: $dark;
+    border: 1px solid $dark;
+    background-color: transparent;
   }
 }
