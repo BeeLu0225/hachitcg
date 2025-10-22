@@ -39,6 +39,10 @@
 
   // 顏色設定 end
 
+  body {
+    background-image: url(/assets/images/Bg_1920_1080.png);
+  }
+
   .btn.btn-add {
     background-color: #1c1c1c !important;
     color: #fff !important;
@@ -87,60 +91,7 @@
     background-color: transparent;
   }
 
-  // 收藏按鈕
-  .btn-fav {
-    background-color: #fff;
-    color: $black;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-
-    &:hover i,
-    &.active i {
-      color: $primary; // 黃色
-    }
-  }
-
   // new
-
-  .quantity-select {
-    position: relative;
-
-    .form-select {
-      height: 48px;
-      font-size: 1rem;
-      border-radius: 8px;
-      padding-left: 16px;
-      padding-right: 48px;
-      appearance: none; // 取消原生下拉箭頭
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      border: 1px solid $gray-300;
-      background-color: #fff;
-      color: $black;
-    }
-
-    i {
-      font-size: 1.2rem;
-      color: $black;
-      pointer-events: none; // 防止遮到 select 點擊
-    }
-  }
-
-  // 加入購物車
-  .btn-add {
-    background-color: $black;
-    color: $white;
-    padding: 12px 32px;
-    font-weight: 600;
-    border: none;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: lighten($black, 10%);
-    }
-  }
-
   // 收藏
   .btn-fav {
     background-color: #fff;
@@ -148,7 +99,6 @@
     border-radius: 50%;
     width: 40px;
     height: 40px;
-    border: 1px solid $gray-300;
     transition: all 0.3s ease;
 
     &:hover i,
