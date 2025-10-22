@@ -22,17 +22,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 // input end
 
-// 愛心icon
+// 愛心通用icon
+// 🟡 改為 querySelectorAll 支援多個收藏按鈕
+const favBtns = document.querySelectorAll(".btn-fav");
 
-const favBtn = document.getElementById("favBtn");
-
-favBtn.addEventListener("click", () => {
-  const icon = favBtn.querySelector("i");
-  favBtn.classList.toggle("active");
-  if (favBtn.classList.contains("active")) {
-    icon.classList.replace("bi-heart", "bi-heart-fill"); // 變實心
-  } else {
-    icon.classList.replace("bi-heart-fill", "bi-heart"); // 變空心
-  }
+favBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const icon = btn.querySelector("i");
+    btn.classList.toggle("active");
+    if (btn.classList.contains("active")) {
+      icon.classList.replace("bi-heart", "bi-heart-fill");
+    } else {
+      icon.classList.replace("bi-heart-fill", "bi-heart");
+    }
+  });
 });
-// 愛心icon end

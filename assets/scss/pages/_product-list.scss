@@ -240,4 +240,98 @@
       color: #000;
     }
   }
+
+  // try-4
+  // 外層網格容器（取代 row/col）
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // 🟡 改這裡 → 一排兩張卡
+    gap: 24px; // 🟡 上下、左右間距 24px
+    max-width: 1426px; // 🟡 限制總寬（等於 col-9）
+    margin: 0 auto; // 🟡 水平置中
+  }
+  .product-grid-two {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 100%; // 🟡 加上這行
+    max-width: 1426px;
+    margin: 0 auto;
+  }
+
+  // 單張卡牌
+  .product-card {
+    padding: 16px !important;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 4px;
+    width: 100% !important;
+    max-width: 680px;
+    margin: 0 auto;
+
+    .d-flex {
+      width: 100%;
+    }
+
+    .product-img {
+      width: 150px;
+      margin-right: 16px;
+
+      img {
+        width: 100%;
+        border-radius: 4px;
+        display: block;
+      }
+    }
+
+    .card-body {
+      padding: 0;
+      flex-grow: 1;
+    }
+
+    // 加入購物車按鈕
+    .btn-add {
+      background-color: #1c1c1c;
+      color: #fff;
+      padding: 12px 24px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #000;
+      }
+    }
+
+    // 收藏愛心按鈕
+    .btn-fav {
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      i {
+        font-size: 24px;
+        color: #1c1c1c;
+        transition: color 0.2s;
+      }
+
+      &:hover i {
+        color: #f5c400;
+      }
+
+      &.active i {
+        color: #f5c400;
+      }
+    }
+  }
 }

@@ -135,7 +135,7 @@
                 </div>
 
                 <!-- 資訊/操作區（右） -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-8">
                   <!-- 標籤 -->
                   <div class="d-flex align-items-center gap-2 mb-5">
                     <!-- 寶可夢：橘色邊框、透明底 -->
@@ -178,20 +178,6 @@
                   <!-- new3 -->
                   <!-- 數量 + 加入購物車 + 收藏 -->
                   <div class="d-flex align-items-center gap-3 mb-3">
-                    <!-- 數量選擇 -->
-                    <!-- <div
-                      class="quantity-select position-relative"
-                      style="width: 227px"
-                    >
-                      <select class="form-select form-select-lg pe-5">
-                        <option value="1" selected>1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
-                    </div> -->
-
                     <!-- input -->
                     <div
                       class="quantity-box d-flex align-items-center justify-content-between"
@@ -215,18 +201,9 @@
                         <i class="bi bi-plus"></i>
                       </button>
                     </div>
-
-                    <!--input -->
+                    <!--input end-->
 
                     <!-- 加入購物車 -->
-                    <!-- <a
-                      href="#"
-                      target="_blank"
-                      class="btn btn-add flex-grow-1 text-center rounded-pill"
-                    >
-                      加入購物車
-                    </a> -->
-
                     <a href="#" target="_blank" class="btn btn-add">
                       <span class="add-text">加入購物車</span>
                       <span class="icon">
@@ -331,53 +308,72 @@
                   </h2>
                 </div>
 
-                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
-                  <!-- 單張卡片 -->
-                  <div class="col">
-                    <div class="card h-100 shadow-sm border-0">
-                      <div class="ratio ratio-3x4">
+                <!-- try-4 -->
+                <!-- 🟡 修改：把 row/col 改成自訂 grid 容器 -->
+                <div class="product-grid-two">
+                  <div class="card product-card border-0 p-3">
+                    <div class="d-flex align-items-start">
+                      <!-- 左：圖片 -->
+                      <div class="product-img flex-shrink-0 me-3">
                         <img
-                          src="https://placehold.co/400x533"
-                          class="card-img-top object-fit-cover"
-                          alt="ver"
+                          src="/assets/images/product-card-2.png"
+                          class="img-fluid rounded"
+                          alt="product"
                         />
                       </div>
-                      <div class="card-body p-2">
+
+                      <!-- 右：文字內容 -->
+                      <div class="card-body p-0 flex-grow-1">
                         <div
-                          class="d-flex justify-content-between align-items-start mb-1"
+                          class="d-flex justify-content-between align-items-start mb-2"
                         >
-                          <span class="badge bg-warning text-dark">實卡</span>
-                          <button class="btn btn-sm btn-outline-secondary">
-                            <i class="bi bi-heart"></i>
-                          </button>
-                        </div>
-                        <div class="small text-muted">SV1VWF - 001</div>
-                        <div class="fw-bold">NT$ 55</div>
-                      </div>
-                      <div class="card-footer bg-transparent">
-                        <div class="d-flex gap-2">
-                          <div
-                            class="input-group input-group-sm"
-                            style="width: 110px"
+                          <span
+                            class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md"
                           >
-                            <button class="btn btn-outline-secondary">-</button>
-                            <input
-                              type="number"
-                              class="form-control text-center"
-                              value="1"
-                            />
-                            <button class="btn btn-outline-secondary">+</button>
-                          </div>
-                          <button class="btn btn-dark btn-sm flex-fill">
-                            加入購物車
+                            寶可夢
+                          </span>
+
+                          <button
+                            class="btn btn-fav d-flex align-items-center justify-content-center"
+                            aria-label="加入收藏"
+                          >
+                            <i class="bi bi-heart fs-4"></i>
                           </button>
                         </div>
+
+                        <div class="text-muted small mb-1">SV11WF - 001</div>
+                        <div class="fw-bold fs-5">蟲寶包</div>
+                        <div class="fw-bold fs-6 text-dark">NT $5</div>
+
+                        <div class="d-flex align-items-center mb-5">
+                          <span
+                            class="rounded-circle bg-success me-1"
+                            style="
+                              width: 10px;
+                              height: 10px;
+                              display: inline-block;
+                            "
+                          ></span>
+                          <span class="text-gray-400 body-sm">尚有庫存</span>
+                        </div>
+
+                        <a href="#" target="_blank" class="btn btn-add">
+                          <span class="add-text">加入購物車</span>
+                          <span class="icon">
+                            <i class="bi bi-arrow-right"></i>
+                          </span>
+                        </a>
                       </div>
                     </div>
                   </div>
 
-                  <!-- 複製 .col 重覆多張 -->
+                  <!-- 重複多張卡牌 -->
+                  <div class="card product-card border-0 p-3">…</div>
+                  <div class="card product-card border-0 p-3">…</div>
+                  <div class="card product-card border-0 p-3">…</div>
                 </div>
+
+                <!-- try-4 -->
               </section>
             </main>
           </div>
