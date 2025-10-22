@@ -119,7 +119,7 @@
     justify-content: center;
     gap: 24px;
 
-    /* 🟡 原本是固定寬 227px，改成自動撐滿中間欄位 */
+    /* 原本是固定寬 227px，改成自動撐滿中間欄位 */
     width: 100%; // ✅ 讓按鈕自動填滿「grid 的中間區塊」
     max-width: 100%; // 避免壓縮
     height: 44px;
@@ -330,7 +330,6 @@
         height: 100%;
         overflow: hidden; // 防止圖片超出邊界
 
-        // 🟡 加這段確保底色貼齊邊界
         &.no-padding {
           padding: 0; // 移除內距
         }
