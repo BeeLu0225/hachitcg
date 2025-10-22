@@ -264,7 +264,7 @@
     }
   }
 
-  // try-4
+  //grid
   // 外層網格容器（取代 row/col）
   .product-grid {
     display: grid;
@@ -277,7 +277,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    width: 100%; // 🟡 加上這行
+    width: 100%;
     max-width: 1426px;
     margin: 0 auto;
   }
@@ -304,16 +304,35 @@
       width: 100%;
     }
 
+    // 圖片修改
     .product-img {
       width: 150px;
       margin-right: 16px;
 
+      .card-bg {
+        background-color: #dde4e8; // 灰藍色背景
+        border-radius: 4px; // 外層圓角
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; // 防止圖片超出邊界
+
+        // 🟡 加這段確保底色貼齊邊界
+        &.no-padding {
+          padding: 0; // 移除內距
+        }
+      }
+
       img {
         width: 100%;
-        border-radius: 4px;
+        height: auto;
         display: block;
+        border-radius: 4px; // 內層圓角相同
       }
     }
+    // 圖片修改 end
 
     .card-body {
       padding: 0;
