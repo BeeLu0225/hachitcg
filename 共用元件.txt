@@ -80,3 +80,241 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 // input end
+
+
+Product Card
+
+HTML
+ <!-- 卡牌 -->
+                  <div class="card product-card border-0 p-2 rounded-2">
+                    <div class="d-flex align-items-start">
+                      <!-- 左：圖片 -->
+                      <div class="product-img flex-shrink-0 me-3">
+                        <div class="card-bg no-padding">
+                          <img
+                            src="/assets/images/product-card-6.png"
+                            class="img-fluid rounded"
+                            alt="product"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- 右：文字內容 -->
+                      <div class="card-body p-0 flex-grow-1">
+                        <div
+                          class="d-flex justify-content-between align-items-start mb-2"
+                        >
+                          <span
+                            class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md"
+                          >
+                            寶可夢
+                          </span>
+
+                          <button
+                            class="btn btn-fav d-flex align-items-center justify-content-center"
+                            aria-label="加入收藏"
+                          >
+                            <i class="bi bi-heart fs-4"></i>
+                          </button>
+                        </div>
+
+                        <div class="body-md text-gray-300 mb-1">
+                          SV11WF - 002
+                        </div>
+                        <div class="h6-ch text-gray-500 mb-1">()</div>
+                        <!-- 加入input 群組-->
+                        <div class="detail d-flex justify-content-between">
+                          <div class="detail-left">
+                            <div class="h5-ch text-black mb-1">NT$5</div>
+
+                            <div class="d-flex align-items-center mb-5">
+                              <span
+                                class="rounded-circle bg-success me-1"
+                                style="
+                                  width: 10px;
+                                  height: 10px;
+                                  display: inline-block;
+                                "
+                              ></span>
+                              <span class="text-gray-400 body-sm"
+                                >尚有庫存</span
+                              >
+                            </div>
+                          </div>
+                          <div class="detail-right">
+                            <!-- input-->
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between"
+                              id="quantityBox"
+                            >
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量"
+                              >
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value" id="quantityValue"
+                                >1</span
+                              >
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量"
+                              >
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+
+                            <!-- input-->
+                          </div>
+                        </div>
+
+                        <a href="#" target="_blank" class="btn btn-add">
+                          <span class="add-text">加入購物車</span>
+                          <span class="icon">
+                            <i class="bi bi-arrow-right"></i>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+SCSS
+ // 標籤
+  /* 通用標籤樣式 */
+  .tag {
+    border-radius: 4px 0 4px 0; // 左上與右下圓角
+    font-size: inherit;
+    line-height: normal;
+    background-color: transparent;
+  }
+  /* 寶可夢（橘色邊框、透明底） */
+  .tag-outline-primary {
+    color: $primary;
+    border: 1px solid $primary;
+    background-color: transparent;
+  }
+ // 標籤 end
+
+//grid
+  // 外層網格容器（取代 row/col）
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // 一排兩張卡
+    gap: 24px; //  上下、左右間距 24px
+    max-width: 1426px; //  限制總寬（等於 col-9）
+    margin: 0 auto; //  水平置中
+  }
+  .product-grid-two {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 100%;
+    max-width: 1426px;
+    margin: 0 auto;
+  }
+
+  // 單張卡牌
+  .product-card {
+    padding: 16px !important;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 4px;
+    width: 100% !important;
+    max-width: 680px;
+    margin: 0 auto;
+
+    // 使卡牌不要浮起飄移
+    transition: none;
+    &:hover {
+      box-shadow: none !important;
+      transform: none !important;
+    }
+    // 使卡牌不要浮起飄移 end
+
+    .d-flex {
+      width: 100%;
+    }
+
+    // 圖片修改
+    .product-img {
+      width: 150px;
+      margin-right: 16px;
+
+      .card-bg {
+        background-color: #dde4e8; // 灰藍色背景
+        border-radius: 4px; // 外層圓角
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; // 防止圖片超出邊界
+
+        &.no-padding {
+          padding: 0; // 移除內距
+        }
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 4px; // 內層圓角相同
+      }
+    }
+    // 圖片修改 end
+
+    .card-body {
+      padding: 0;
+      flex-grow: 1;
+    }
+
+    // 加入購物車按鈕
+    .btn-add {
+      background-color: #1c1c1c;
+      color: #fff;
+      padding: 12px 24px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #000;
+      }
+    }
+
+    // 收藏愛心按鈕
+    .btn-fav {
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: #f0f0f0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      i {
+        font-size: 24px;
+        color: #1c1c1c;
+        transition: color 0.2s;
+      }
+
+      &:hover i {
+        color: $primary;
+      }
+
+      &.active i {
+        color: $primary;
+      }
+    }
+  }
