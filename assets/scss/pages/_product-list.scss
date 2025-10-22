@@ -49,6 +49,17 @@
     background-position: center;
   }
 
+  // breadcrumb
+  .breadcrumb {
+    --bs-breadcrumb-divider-color: #898989;
+    --bs-breadcrumb-divider: "/";
+
+    .breadcrumb-item + .breadcrumb-item::before {
+      color: $gray-400;
+    }
+  }
+  // breadcrumb end
+
   // 卡牌圖片
   .card-bg {
     background: #dde4e8;
