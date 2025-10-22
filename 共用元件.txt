@@ -85,7 +85,9 @@ document.addEventListener("DOMContentLoaded", () => {
 Product Card
 
 HTML
- <!-- 卡牌 -->
+  <!-- 卡牌  -->
+<div class="product-grid-two">
+ <!-- 第一章卡牌  -->
                   <div class="card product-card border-0 p-2 rounded-2">
                     <div class="d-flex align-items-start">
                       <!-- 左：圖片 -->
@@ -121,7 +123,7 @@ HTML
                         <div class="body-md text-gray-300 mb-1">
                           SV11WF - 002
                         </div>
-                        <div class="h6-ch text-gray-500 mb-1">()</div>
+                        <div class="h6-ch text-gray-500 mb-1">(卡牌名稱)</div>
                         <!-- 加入input 群組-->
                         <div class="detail d-flex justify-content-between">
                           <div class="detail-left">
@@ -181,6 +183,9 @@ HTML
                       </div>
                     </div>
                   </div>
+<!-- 第一章卡牌 end -->
+</div>
+
 
 SCSS
  // 標籤
