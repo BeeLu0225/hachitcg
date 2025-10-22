@@ -37,17 +37,79 @@
     color: $white;
   }
 
+  .text-primary {
+    color: $primary;
+  }
+
   // 顏色設定 end
 
   body {
     background-image: url(/assets/images/Bg_1920_1080.png);
+    background-size: cover;
+    background-position: center;
   }
 
+  // 加入購物車btn
   .btn.btn-add {
-    background-color: #1c1c1c !important;
-    color: #fff !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    width: 227px;
+    height: 44px;
+    padding: 12px 32px;
+    background-color: $black;
+    color: $white;
     border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    // 預設不顯示 icon
+    .icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+      pointer-events: none;
+      transition: all 0.2s ease;
+    }
+
+    // hover 效果
+    &:hover {
+      background-color: $black;
+      color: $white;
+
+      .icon {
+        width: 28px;
+        height: 28px;
+        background-color: $white;
+        border-radius: 50%;
+        opacity: 1;
+
+        i {
+          color: $black;
+          font-size: 16px;
+        }
+      }
+    }
+
+    &:active,
+    &:focus {
+      background-color: $black;
+      color: $white;
+      outline: none;
+      box-shadow: none;
+    }
   }
+
+  // 加入購物車btn end
 
   // 卡牌圖片
   .card-bg {
@@ -91,33 +153,13 @@
     background-color: transparent;
   }
 
-  // new
-  // 收藏
-  .btn-fav {
-    background-color: #fff;
-    color: $black;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    transition: all 0.3s ease;
-
-    &:hover i,
-    &.active i {
-      color: $primary; // 黃色
-    }
-
-    &:hover {
-      background-color: $gray-100;
-    }
-  }
-
-  // ++
+  // input
   .quantity-box {
     width: 227px;
     height: 48px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: $white;
     padding: 0 16px;
     font-size: 1.25rem;
     user-select: none;
@@ -125,20 +167,77 @@
     .btn-icon {
       background: none;
       border: none;
-      color: #333;
+      color: #494949;
       font-size: 1.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      width: 32px;
-      height: 32px;
       border-radius: 6px;
-      transition: none; // 取消hover/active動畫
+      transition: none;
+    }
+  }
+
+  // 愛心icon
+  .btn-fav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $white;
+    border: none;
+    cursor: pointer;
+
+    i {
+      font-size: 24px;
+      color: $black;
     }
 
-    .quantity-value {
-      font-weight: 500;
+    // hover 時變成實心黃色愛心
+    &:hover {
+      background-color: $white;
+      i {
+        color: $primary;
+        &.bi-heart {
+          content: none; // 強制刷新 icon 狀態（避免閃爍）
+        }
+      }
+    }
+
+    &.active {
+      background-color: $white;
+
+      i {
+        color: $primary; // 點擊後實心黃色
+      }
+    }
+  }
+
+  .card-info {
+    border-radius: 8px;
+    background-color: $white;
+    line-height: 1.6;
+    font-size: 15px;
+    color: #1c1c1c;
+
+    .card-body {
+      padding: 16px; // 內距
+    }
+
+    hr {
+      opacity: 0.2;
+      margin: 16px 0;
+    }
+
+    p,
+    .small {
+      margin-bottom: 0.5rem;
+    }
+
+    .fw-bold {
+      color: #000;
     }
   }
 }

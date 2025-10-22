@@ -192,7 +192,7 @@
                       </select>
                     </div> -->
 
-                    <!-- ++ -->
+                    <!-- input -->
                     <div
                       class="quantity-box d-flex align-items-center justify-content-between"
                       id="quantityBox"
@@ -216,15 +216,22 @@
                       </button>
                     </div>
 
-                    <!-- ++ -->
+                    <!--input -->
 
                     <!-- 加入購物車 -->
-                    <a
+                    <!-- <a
                       href="#"
                       target="_blank"
                       class="btn btn-add flex-grow-1 text-center rounded-pill"
                     >
                       加入購物車
+                    </a> -->
+
+                    <a href="#" target="_blank" class="btn btn-add">
+                      <span class="add-text">加入購物車</span>
+                      <span class="icon">
+                        <i class="bi bi-arrow-right"></i>
+                      </span>
                     </a>
 
                     <!-- 收藏 -->
@@ -237,46 +244,89 @@
                     </button>
                   </div>
 
-                  <!-- 規格/說明卡 -->
-                  <div class="card border-0 shadow-sm">
-                    <div class="card-body">
-                      <div class="row g-3">
+                  <!-- 卡牌規格 -->
+                  <div class="card border-0 shadow-sm card-info">
+                    <div class="card-body p-5">
+                      <div class="row g-1">
+                        <p class="h6-ch text-black">/ 卡牌說明 /</p>
+
                         <div class="col-6">
-                          <div class="text-muted small">屬性</div>
-                          <div>異界</div>
+                          <div class="body-sm text-gray-400">
+                            系列
+                            <span class="body-sm text-gray-500">寶可夢</span>
+                          </div>
+                        </div>
+
+                        <div class="col-6">
+                          <div class="body-sm text-gray-400">
+                            HP <span class="body-sm text-gray-500">270</span>
+                          </div>
+                        </div>
+
+                        <div class="col-6">
+                          <div class="body-sm text-gray-400">
+                            屬性 <span class="body-sm text-gray-500">超</span>
+                          </div>
+                        </div>
+
+                        <div class="col-6">
+                          <div class="body-sm text-gray-400">
+                            弱點 <span class="body-sm text-gray-500">惡</span>
+                          </div>
                         </div>
                         <div class="col-6">
-                          <div class="text-muted small">HP</div>
-                          <div>270</div>
+                          <div class="body-sm text-gray-400">
+                            抵抗 <span class="body-sm text-gray-500">鬥</span>
+                          </div>
                         </div>
                         <div class="col-6">
-                          <div class="text-muted small">階級</div>
-                          <div>2</div>
-                        </div>
-                        <div class="col-6">
-                          <div class="text-muted small">稀有度</div>
-                          <div>RR</div>
+                          <div class="body-sm text-gray-400">
+                            撤退 <span class="body-sm text-gray-500">3</span>
+                          </div>
                         </div>
                       </div>
 
                       <hr class="my-3" />
-                      <div class="small text-muted mb-1">／卡牌說明／</div>
-                      <p class="mb-0 small text-secondary">
-                        特性：海之親觸。當你將這隻寶可夢從手牌進化到場上的時候…
-                      </p>
+
+                      <div class="mb-3">
+                        <div class="h6-ch text-gray-500 mb-1">
+                          特性：海之詛咒
+                        </div>
+                        <p class="body-sm text-gray-400 mb-0">
+                          只要這隻寶可夢在戰鬥場上，對手無法從手牌使出「物品卡」，也無法附上「寶可夢道具」卡。
+                        </p>
+                      </div>
+
+                      <div class="mb-3">
+                        <div class="h6-ch text-gray-500 mb-1">
+                          招式：（超）（無）力量壓制　80+
+                        </div>
+                        <p class="body-sm text-gray-400 mb-0">
+                          若身上附有的能量比使用這個招式所需的能量多 2
+                          個，則增加 80 點傷害。
+                        </p>
+                      </div>
+
+                      <div class="body-sm text-gray-400">
+                        繪師：PLANTA lgarashi
+                      </div>
                     </div>
                   </div>
+
+                  <!--卡牌規格 end -->
                 </div>
               </div>
 
               <!-- 分隔 -->
               <div class="my-6"></div>
 
+              <!-- end -->
+
               <!-- 其他版本列表 -->
               <section aria-labelledby="ver-title">
-                <div class="d-flex align-items-center gap-2 mb-3">
-                  <span class="text-warning fw-semibold">／ VERSION ／</span>
-                  <h2 id="ver-title" class="h4 fw-bold mb-0">
+                <div class="gap-2 mb-3">
+                  <h2 class="mb-2 fs-4 fw-bold text-primary">/ VERSION /</h2>
+                  <h2 class="mb-5 fs-1 fw-bold text-black">
                     胖嘟嘟 ex 其他版本
                   </h2>
                 </div>

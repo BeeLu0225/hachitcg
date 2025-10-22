@@ -1,5 +1,5 @@
 console.log("✅ JS 已載入成功！");
-// 數量選擇器
+// input
 document.addEventListener("DOMContentLoaded", () => {
   const box = document.getElementById("quantityBox");
   if (!box) return;
@@ -20,4 +20,19 @@ document.addEventListener("DOMContentLoaded", () => {
     valueDisplay.textContent = quantity;
   });
 });
-// 數量選擇器 end
+// input end
+
+// 愛心icon
+
+const favBtn = document.getElementById("favBtn");
+
+favBtn.addEventListener("click", () => {
+  const icon = favBtn.querySelector("i");
+  favBtn.classList.toggle("active");
+  if (favBtn.classList.contains("active")) {
+    icon.classList.replace("bi-heart", "bi-heart-fill"); // 變實心
+  } else {
+    icon.classList.replace("bi-heart-fill", "bi-heart"); // 變空心
+  }
+});
+// 愛心icon end
