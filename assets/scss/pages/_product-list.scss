@@ -176,6 +176,16 @@
     padding: 0 16px;
     font-size: 1.25rem;
     user-select: none;
+    transition: none;
+
+    //  移除任何 hover 浮起或陰影效果
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: none; // 不要陰影
+      transform: none; // 不要浮起
+      border-color: #ccc; // 保持一致
+    }
 
     .btn-icon {
       background: none;
@@ -281,6 +291,14 @@
     width: 100% !important;
     max-width: 680px;
     margin: 0 auto;
+
+    // 使卡牌不要浮起飄移
+    transition: none;
+    &:hover {
+      box-shadow: none !important;
+      transform: none !important;
+    }
+    // 使卡牌不要浮起飄移 end
 
     .d-flex {
       width: 100%;
