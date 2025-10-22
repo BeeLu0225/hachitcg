@@ -71,6 +71,17 @@
   .accordion-body a:hover {
     color: #f0b400;
   }
+
+  .btn-add-to-cart {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+
+    &:hover {
+      background-color: #333;
+      border-color: #333;
+    }
+  }
 }
 
 // 應用限定區域樣式在html 標籤上加入 data-app="site"
