@@ -1,0 +1,82 @@
+input
+
+HTML
+<!-- input-->
+<div
+class="quantity-box d-flex align-items-center justify-content-between"
+id="quantityBox"
+>
+<button
+class="btn-icon btn-minus"
+type="button"
+aria-label="減少數量"
+>
+<i class="bi bi-dash"></i>
+</button>
+
+<span class="quantity-value">1</span>
+
+<button
+class="btn-icon btn-plus"
+type="button"
+aria-label="增加數量">
+<i class="bi bi-plus"></i>
+</button>
+</div>
+<!-- input end-->          
+
+
+
+SCSS
+ // input
+  .quantity-box {
+    width: 227px;
+    height: 48px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: $white;
+    padding: 0 16px;
+    font-size: 1.25rem;
+    user-select: none;
+
+    .btn-icon {
+      background: none;
+      border: none;
+      color: #494949;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: none;
+    }
+  }
+ // input end
+
+
+JS
+// input
+document.addEventListener("DOMContentLoaded", () => {
+  const boxes = document.querySelectorAll(".quantity-box");
+  if (!boxes.length) return;
+
+  boxes.forEach((box) => {
+    const minusBtn = box.querySelector(".btn-minus");
+    const plusBtn = box.querySelector(".btn-plus");
+    const valueDisplay = box.querySelector(".quantity-value");
+
+    let quantity = parseInt(valueDisplay.textContent);
+
+    minusBtn.addEventListener("click", () => {
+      if (quantity > 1) quantity--;
+      valueDisplay.textContent = quantity;
+    });
+
+    plusBtn.addEventListener("click", () => {
+      quantity++;
+      valueDisplay.textContent = quantity;
+    });
+  });
+});
+// input end
