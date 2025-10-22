@@ -326,11 +326,11 @@
       }
 
       &:hover i {
-        color: #f5c400;
+        color: $primary;
       }
 
       &.active i {
-        color: #f5c400;
+        color: $primary;
       }
     }
   }
