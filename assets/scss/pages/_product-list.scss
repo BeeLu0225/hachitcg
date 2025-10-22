@@ -49,14 +49,70 @@
     background-position: center;
   }
 
+  // 卡牌圖片
+  .card-bg {
+    background: #dde4e8;
+    border-radius: 8px;
+    padding: 9px;
+    box-sizing: border-box;
+  }
+
+  .card-img-box {
+    border-radius: inherit;
+    overflow: hidden;
+  }
+
+  .card-img-box img {
+    width: 100%; /* ⬅ 讓圖片剛好填滿欄寬 */
+    height: auto; /* 等比例縮放 */
+    display: block;
+    border-radius: inherit;
+  }
+
+  // 標籤
+  /* 通用標籤樣式 */
+  .tag {
+    border-radius: 4px 0 4px 0; // 左上與右下圓角
+    font-size: inherit;
+    line-height: normal;
+    background-color: transparent;
+  }
+  /* 寶可夢（橘色邊框、透明底） */
+  .tag-outline-primary {
+    color: $primary;
+    border: 1px solid $primary;
+    background-color: transparent;
+  }
+
+  /* 稀有度 RR（咖啡色邊框與字同色） */
+  .tag-outline-dark {
+    color: $dark;
+    border: 1px solid $dark;
+    background-color: transparent;
+  }
+
+  // 數量 + 加入購物車 + 收藏
+  // 🟡 外層容器：控制整體對齊與間距
+  .action-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto; // 左: 數量 / 中: 購物車 / 右: 收藏
+    column-gap: 16px; // 🟡 三者間距固定 16px
+    align-items: center;
+    width: 100%; // 撐滿整行
+  }
+
   // 加入購物車btn
   .btn.btn-add {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 24px;
-    width: 227px;
+
+    /* 🟡 原本是固定寬 227px，改成自動撐滿中間欄位 */
+    width: 100%; // ✅ 讓按鈕自動填滿「grid 的中間區塊」
+    max-width: 100%; // 避免壓縮
     height: 44px;
+
     padding: 12px 32px;
     background-color: $black;
     color: $white;
@@ -108,50 +164,7 @@
       box-shadow: none;
     }
   }
-
-  // 加入購物車btn end
-
-  // 卡牌圖片
-  .card-bg {
-    background: #dde4e8;
-    border-radius: 8px;
-    padding: 9px;
-    box-sizing: border-box;
-  }
-
-  .card-img-box {
-    border-radius: inherit;
-    overflow: hidden;
-  }
-
-  .card-img-box img {
-    width: 100%; /* ⬅ 讓圖片剛好填滿欄寬 */
-    height: auto; /* 等比例縮放 */
-    display: block;
-    border-radius: inherit;
-  }
-
-  // 標籤
-  /* 通用標籤樣式 */
-  .tag {
-    border-radius: 4px 0 4px 0; // 左上與右下圓角
-    font-size: inherit;
-    line-height: normal;
-    background-color: transparent;
-  }
-  /* 寶可夢（橘色邊框、透明底） */
-  .tag-outline-primary {
-    color: $primary;
-    border: 1px solid $primary;
-    background-color: transparent;
-  }
-
-  /* 稀有度 RR（咖啡色邊框與字同色） */
-  .tag-outline-dark {
-    color: $dark;
-    border: 1px solid $dark;
-    background-color: transparent;
-  }
+  // 數量 + 加入購物車 + 收藏 end
 
   // input
   .quantity-box {
