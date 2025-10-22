@@ -1,25 +1,31 @@
 console.log("✅ JS 已載入成功！");
 // input
+
 document.addEventListener("DOMContentLoaded", () => {
-  const box = document.getElementById("quantityBox");
-  if (!box) return;
+  // 🟡 找出所有 .quantity-box
+  const boxes = document.querySelectorAll(".quantity-box");
+  if (!boxes.length) return;
 
-  const minusBtn = box.querySelector(".btn-minus");
-  const plusBtn = box.querySelector(".btn-plus");
-  const valueDisplay = box.querySelector(".quantity-value");
+  boxes.forEach((box) => {
+    const minusBtn = box.querySelector(".btn-minus");
+    const plusBtn = box.querySelector(".btn-plus");
+    const valueDisplay = box.querySelector(".quantity-value");
 
-  let quantity = parseInt(valueDisplay.textContent);
+    // 🟡 各自維護獨立數量
+    let quantity = parseInt(valueDisplay.textContent);
 
-  minusBtn.addEventListener("click", () => {
-    if (quantity > 1) quantity--;
-    valueDisplay.textContent = quantity;
-  });
+    minusBtn.addEventListener("click", () => {
+      if (quantity > 1) quantity--;
+      valueDisplay.textContent = quantity;
+    });
 
-  plusBtn.addEventListener("click", () => {
-    quantity++;
-    valueDisplay.textContent = quantity;
+    plusBtn.addEventListener("click", () => {
+      quantity++;
+      valueDisplay.textContent = quantity;
+    });
   });
 });
+
 // input end
 
 // 愛心通用icon

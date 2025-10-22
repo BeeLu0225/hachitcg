@@ -190,7 +190,7 @@
                         <i class="bi bi-dash"></i>
                       </button>
 
-                      <span class="quantity-value" id="quantityValue">1</span>
+                      <span class="quantity-value">1</span>
 
                       <button
                         class="btn-icon btn-plus"
@@ -300,7 +300,7 @@
 
               <!-- 其他版本列表 -->
               <section aria-labelledby="ver-title">
-                <div class="gap-2 mb-3">
+                <div class="gap-2 mb-7">
                   <h2 class="mb-2 fs-4 fw-bold text-primary">/ VERSION /</h2>
                   <h2 class="mb-5 fs-1 fw-bold text-black">
                     胖嘟嘟 ex 其他版本
@@ -308,7 +308,7 @@
                 </div>
 
                 <!-- try-4 -->
-                <!-- 🟡 修改：把 row/col 改成自訂 grid 容器 -->
+                <!--  修改：把 row/col 改成自訂 grid 容器 -->
                 <div class="product-grid-two">
                   <div class="card product-card border-0 p-3">
                     <div class="d-flex align-items-start">
@@ -367,7 +367,97 @@
                   </div>
 
                   <!-- 重複多張卡牌 -->
-                  <div class="card product-card border-0 p-3">…</div>
+                  <div class="card product-card border-0 p-3">
+                    <div class="d-flex align-items-start">
+                      <!-- 左：圖片 -->
+                      <div class="product-img flex-shrink-0 me-3">
+                        <img
+                          src="/assets/images/product-card-2.png"
+                          class="img-fluid rounded"
+                          alt="product"
+                        />
+                      </div>
+
+                      <!-- 右：文字內容 -->
+                      <div class="card-body p-0 flex-grow-1">
+                        <div
+                          class="d-flex justify-content-between align-items-start mb-2"
+                        >
+                          <span
+                            class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md"
+                          >
+                            寶可夢
+                          </span>
+
+                          <button
+                            class="btn btn-fav d-flex align-items-center justify-content-center"
+                            aria-label="加入收藏"
+                          >
+                            <i class="bi bi-heart fs-4"></i>
+                          </button>
+                        </div>
+
+                        <div class="text-muted small mb-1">SV11WF - 001</div>
+                        <div class="fw-bold fs-5">蟲寶包</div>
+                        <!-- 加入input 群組-->
+                        <div class="detail">
+                          <div class="detail-left">
+                            <div class="fw-bold fs-6 text-dark">NT $5</div>
+
+                            <div class="d-flex align-items-center mb-5">
+                              <span
+                                class="rounded-circle bg-success me-1"
+                                style="
+                                  width: 10px;
+                                  height: 10px;
+                                  display: inline-block;
+                                "
+                              ></span>
+                              <span class="text-gray-400 body-sm"
+                                >尚有庫存</span
+                              >
+                            </div>
+                          </div>
+                          <div class="detail-right">
+                            <!-- input-->
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between"
+                              id="quantityBox"
+                            >
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量"
+                              >
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value" id="quantityValue"
+                                >1</span
+                              >
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量"
+                              >
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+
+                            <!-- input-->
+                          </div>
+                        </div>
+
+                        <a href="#" target="_blank" class="btn btn-add">
+                          <span class="add-text">加入購物車</span>
+                          <span class="icon">
+                            <i class="bi bi-arrow-right"></i>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                   <div class="card product-card border-0 p-3">…</div>
                   <div class="card product-card border-0 p-3">…</div>
                 </div>
