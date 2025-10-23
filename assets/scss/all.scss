@@ -1,13 +1,21 @@
-@use "sass:color";
+// 匯入 Bootstrap 的功能與變數 (順序很重要)
 @import "../../node_modules/bootstrap/scss/functions";
 
 @import "./utils/variables";
 
-@import "./utils/variables-dark";
+// 匯入完整的 Bootstrap 函式庫
 
+@import "../../node_modules/bootstrap";
+
+// 匯入自訂樣式檔案
 @import "./layout/header.scss";
 @import "./layout/footer.scss";
 @import "./pages/product-list.scss";
 @import "./pages/index.scss";
+@import "custom.scss";
+// @import "./pages/products.scss"; (覆蓋到首頁樣式)
 
-@import "../../node_modules/bootstrap";
+// 匯入 Q&A 頁面使用的樣式
+
+// @import "./pages/Q&A-scss/Specifications.scss"; (覆蓋到全域樣式)
+// @import "./pages/Q&A-scss/style.scss"; (覆蓋到全域樣式)

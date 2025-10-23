@@ -7,7 +7,8 @@ $font-sizes: (
   5: $h5-font-size, // 20px
   6: $h6-font-size, // 16px
   7: 48px, // 3rem
-  8: 12px // 12px
+  8: 12px, // 12px
+  9:14px // 14px
 ) !default;
 
 display-1~7 
@@ -58,4 +59,29 @@ $dark:      #5B3400 !default;
 
 
 !!若要使用新的元件、樣式  請自行命名與bs5沒有使用並衝突的類別名稱 以免其他頁面跑版(重要)!!
-// 測試
+
+
+
+自訂樣式 以註解分類 寫在_custom.scss
+ [data-app="site"]{
+   .btn { border-radius: .75rem; }
+   .product-card { background-color: #f9f9f9; }
+   .navbar { background-color: #fff; border-bottom: 1px solid #ddd; }
+   }
+ 範例內容僅供參考  請依實際需求修改
+獨立空間樣式 引用寫法
+
+
+應用限定區域樣式在html 標籤上加入 data-app="site"
+使用樣式寫在最外層↓
+<!DOCTYPE html>
+<html lang="zh-Hant" data-app="site" <--寫在這裡>
+  <head>
+    <meta charset="UTF-8" />
+    <title>首頁</title>
+  </head>
+  <body>
+    <button class="btn btn-primary">送出</button>
+    <div class="product-card">卡片內容</div>
+  </body>
+ </html>
