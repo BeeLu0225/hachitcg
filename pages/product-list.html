@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+  <html lang="zh-Hant" data-app="product-list">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>product-list</title>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700&display=swap"
+        rel="stylesheet"
+      />
+
+      <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet"
+      />
+    </head>
+    <body>
+      <%- include('./layout/header'); -%>
+      <div class="container">
+        <!-- breadcrumb -->
+        <nav aria-label="breadcrumb" class="mr-2 my-6">
+          <ol
+            class="breadcrumb mb-0 body-sm text-gray-400 lh-base fw-normal font-noto"
+          >
+            <li class="breadcrumb-item">
+              <a href="#" class="text-gray-400 text-decoration-none">首頁</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="#" class="text-gray-400 text-decoration-none"
+                >選擇商品</a
+              >
+            </li>
+
+            <li class="breadcrumb-item">
+              <a href="#" class="text-gray-400 text-decoration-none"
+                >寶可夢 超級勇氣</a
+              >
+            </li>
+
+            <li
+              class="breadcrumb-item active text-black fw-normal"
+              aria-current="page"
+            >
+              胖嘟嘟ex
+            </li>
+          </ol>
+        </nav>
+        <!-- breadcrumb-end -->
+
+        <!-- 區塊主內容 -->
+        <div class="my-8">
+          <div class="row g-4">
+            <!-- 左側：類別/搜尋 (待修改)-->
+            <aside class="col-12 col-lg-3">
+              <div class="card border-0 shadow-sm sticky-top" style="top: 88px">
+                <div class="card-body">
+                  <div class="input-group mb-3">
+                    <input
+                      type="text"
+                      class="form-control form-control-sm"
+                      placeholder="搜尋卡牌"
+                    />
+                    <button class="btn btn-outline-secondary btn-sm">
+                      <i class="bi bi-search"></i>
+                    </button>
+                  </div>
+
+                  <nav id="categoryNav" class="nav nav-pills flex-column gap-2">
+                    <a class="nav-link fw-bold" href="#">Weiß Schwarz</a>
+                    <a class="nav-link fw-bold" href="#">航海王</a>
+
+                    <div class="nav-item">
+                      <button
+                        class="btn w-100 d-flex justify-content-between align-items-center px-0 border-0 bg-transparent fw-bold"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#grp-pokemon"
+                        aria-expanded="true"
+                      >
+                        寶可夢
+                        <i class="bi bi-chevron-down small"></i>
+                      </button>
+                      <div id="grp-pokemon" class="collapse show ps-3">
+                        <a class="nav-link small" href="#">最新彈</a>
+                        <a
+                          class="nav-link small text-warning fw-semibold"
+                          href="#"
+                          >超級勇氣</a
+                        >
+                        <a class="nav-link small text-muted" href="#"
+                          >超級交響樂</a
+                        >
+                      </div>
+                    </div>
+
+                    <a class="nav-link fw-bold" href="#">朱紫系列</a>
+                    <a class="nav-link fw-bold" href="#">劍盾系列</a>
+                    <a class="nav-link fw-bold" href="#">Vanguard</a>
+                    <a class="nav-link fw-bold" href="#">遊戲王</a>
+                  </nav>
+                </div>
+              </div>
+            </aside>
+            <!-- 左側：類別/搜尋 (待修改)-->
+
+            <!-- 右側：主內容 -->
+            <main class="col-12 col-lg-9 ps-6">
+              <!-- 返回 + 標題 -->
+              <div class="d-flex align-items-center mb-3 gap-2">
+                <a
+                  href="product-list.html"
+                  class="h6-ch link-secondary d-inline-flex align-items-center text-decoration-none"
+                >
+                  <i class="bi bi-arrow-left me-1"></i> 回上頁
+                </a>
+              </div>
+              <!-- 標題文字 -->
+              <div class="div mb-7">
+                <p class="h1-ch">寶可夢ex</p>
+              </div>
+
+              <!-- 主卡內容：圖片 + 資訊 -->
+              <div class="row g-4 align-items-start">
+                <!-- 大圖區（左） -->
+                <div class="col-12 col-lg-4">
+                  <div class="card-bg p-2">
+                    <div class="card-img-box">
+                      <img
+                        src="/assets/images/product-card-1.png"
+                        class="w-100 h-auto d-block"
+                        alt="卡牌大圖"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 資訊/操作區（右） -->
+                <div class="col-12 col-lg-8">
+                  <!-- 標籤 -->
+                  <div class="d-flex align-items-center gap-2 mb-5">
+                    <!-- 寶可夢：橘色邊框、透明底 -->
+                    <span
+                      class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md"
+                    >
+                      寶可夢
+                    </span>
+
+                    <!-- 稀有度 RR：咖啡色邊框 + 同色文字 -->
+                    <span
+                      class="tag tag-outline-dark d-inline-flex align-items-center justify-content-center px-2 py-1 body-md"
+                    >
+                      稀有度 RR
+                    </span>
+                  </div>
+                  <!-- 標籤 end -->
+
+                  <div class="h6-ch text-gray-300 mb-1">SV11WF - 042</div>
+                  <h1 class="h4-ch text-gray-500 mb-2">胖嘟嘟ex</h1>
+                  <div class="mb-4">
+                    <span class="h2-ch">NT$5</span>
+
+                    <span
+                      class="body-md text-gray-400 text-decoration-line-through"
+                      >NT$15</span
+                    >
+                  </div>
+
+                  <!-- 庫存 -->
+                  <div class="d-flex align-items-center mb-5">
+                    <span
+                      class="rounded-circle bg-success me-1"
+                      style="width: 10px; height: 10px; display: inline-block"
+                    ></span>
+                    <span class="text-gray-400 body-sm">尚有庫存</span>
+                  </div>
+                  <!-- 庫存 end-->
+
+                  <!-- 數量 + 加入購物車 + 收藏 -->
+                  <div class="action-row mb-3">
+                    <!-- input -->
+                    <div
+                      class="quantity-box d-flex align-items-center justify-content-between"
+                      id="quantityBox"
+                    >
+                      <button
+                        class="btn-icon btn-minus"
+                        type="button"
+                        aria-label="減少數量"
+                      >
+                        <i class="bi bi-dash"></i>
+                      </button>
+
+                      <span class="quantity-value">1</span>
+
+                      <button
+                        class="btn-icon btn-plus"
+                        type="button"
+                        aria-label="增加數量"
+                      >
+                        <i class="bi bi-plus"></i>
+                      </button>
+                    </div>
+                    <!--input end-->
+
+                    <!-- 加入購物車 -->
+                    <a href="#" target="_blank" class="btn btn-add">
+                      <span class="add-text">加入購物車</span>
+                      <span class="icon">
+                        <i class="bi bi-arrow-right"></i>
+                      </span>
+                    </a>
+
+                    <!-- 收藏 -->
+                    <button
+                      class="btn btn-fav d-flex align-items-center justify-content-center"
+                      id="favBtn"
+                      aria-label="加入收藏"
+                    >
+                      <i class="bi bi-heart fs-4"></i>
+                    </button>
+                  </div>
+                  <!-- 數量 + 加入購物車 + 收藏 end -->
+
+                  <!-- 卡牌規格 -->
+                  <div class="card border-0 shadow-sm card-info">
+                    <div class="card-body p-5">
+                      <div class="row g-1">
+                        <p class="h6-ch text-black">/ 卡牌說明 /</p>
+
+                        <div class="col-6">
+                          <div class="body-sm text-gray-400">
+                            系列
+                            <span class="body-sm text-gray-500">寶可夢</span>
+                          </div>
+                        </div>
+
+                        <div class="col-6">
+                          <div class="body-sm text-gray-400">
+                            HP <span class="body-sm text-gray-500">270</span>
+                          </div>
+                        </div>
+
+                        <div class="col-6">
+                          <div class="body-sm text-gray-400">
+                            屬性 <span class="body-sm text-gray-500">超</span>
+                          </div>
+                        </div>
+
+                        <div class="col-6">
+                          <div class="body-sm text-gray-400">
+                            弱點 <span class="body-sm text-gray-500">惡</span>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="body-sm text-gray-400">
+                            抵抗 <span class="body-sm text-gray-500">鬥</span>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div class="body-sm text-gray-400">
+                            撤退 <span class="body-sm text-gray-500">3</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <hr class="my-3" />
+
+                      <div class="mb-3">
+                        <div class="h6-ch text-gray-500 mb-1">
+                          特性：海之詛咒
+                        </div>
+                        <p class="body-sm text-gray-400 mb-0">
+                          只要這隻寶可夢在戰鬥場上，對手無法從手牌使出「物品卡」，也無法附上「寶可夢道具」卡。
+                        </p>
+                      </div>
+
+                      <div class="mb-3">
+                        <div class="h6-ch text-gray-500 mb-1">
+                          招式：（超）（無）力量壓制　80+
+                        </div>
+                        <p class="body-sm text-gray-400 mb-0">
+                          若身上附有的能量比使用這個招式所需的能量多 2
+                          個，則增加 80 點傷害。
+                        </p>
+                      </div>
+
+                      <div class="body-sm text-gray-400">
+                        繪師：PLANTA lgarashi
+                      </div>
+                    </div>
+                  </div>
+                  <!--卡牌規格 end -->
+                </div>
+              </div>
+
+              <!-- 分隔 -->
+              <div class="my-6"></div>
+
+              <!-- end -->
+
+              <!-- 其他版本列表 -->
+              <section aria-labelledby="ver-title">
+                <div class="gap-2 mb-7">
+                  <h2 class="mb-2 fs-4 fw-bold text-primary">/ VERSION /</h2>
+                  <h2 class="mb-5 fs-1 fw-bold text-black">
+                    寶可夢ex 其他版本
+                  </h2>
+                </div>
+
+                <!-- 自訂 grid 容器  -->
+                <div class="product-grid-two">
+                  <!-- 01卡牌 -->
+                  <div class="card product-card border-0 p-2 rounded-2">
+                    <div class="d-flex align-items-start">
+                      <!-- 左：圖片 -->
+                      <div class="product-img flex-shrink-0 me-3">
+                        <div class="card-bg no-padding">
+                          <img
+                            src="/assets/images/product-card-5.png"
+                            class="img-fluid rounded"
+                            alt="product"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- 右：文字內容 -->
+                      <div class="card-body p-0 flex-grow-1">
+                        <div
+                          class="d-flex justify-content-between align-items-start mb-2"
+                        >
+                          <span
+                            class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md"
+                          >
+                            寶可夢
+                          </span>
+
+                          <button
+                            class="btn btn-fav d-flex align-items-center justify-content-center"
+                            aria-label="加入收藏"
+                          >
+                            <i class="bi bi-heart fs-4"></i>
+                          </button>
+                        </div>
+
+                        <div class="body-md text-gray-300 mb-1">
+                          SV11WF - 001
+                        </div>
+                        <div class="h6-ch text-gray-500 mb-1">愛管侍</div>
+                        <!-- 加入input 群組-->
+                        <div class="detail d-flex justify-content-between">
+                          <div class="detail-left">
+                            <div class="h5-ch text-black mb-1">
+                              NT$5<span
+                                class="body-sm text-gray-400 text-decoration-line-through ps-1"
+                                >NT$15</span
+                              >
+                            </div>
+
+                            <div class="d-flex align-items-center mb-5">
+                              <span
+                                class="rounded-circle bg-success me-1"
+                                style="
+                                  width: 10px;
+                                  height: 10px;
+                                  display: inline-block;
+                                "
+                              ></span>
+                              <span class="text-gray-400 body-sm"
+                                >尚有庫存</span
+                              >
+                            </div>
+                          </div>
+                          <div class="detail-right">
+                            <!-- input-->
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between"
+                              id="quantityBox"
+                            >
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量"
+                              >
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value" id="quantityValue"
+                                >1</span
+                              >
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量"
+                              >
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+
+                            <!-- input-->
+                          </div>
+                        </div>
+
+                        <a href="#" target="_blank" class="btn btn-add">
+                          <span class="add-text">加入購物車</span>
+                          <span class="icon">
+                            <i class="bi bi-arrow-right"></i>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 02卡牌 -->
+                  <div class="card product-card border-0 p-2 rounded-2">
+                    <div class="d-flex align-items-start">
+                      <!-- 左：圖片 -->
+                      <div class="product-img flex-shrink-0 me-3">
+                        <div class="card-bg no-padding">
+                          <img
+                            src="/assets/images/product-card-6.png"
+                            class="img-fluid rounded"
+                            alt="product"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- 右：文字內容 -->
+                      <div class="card-body p-0 flex-grow-1">
+                        <div
+                          class="d-flex justify-content-between align-items-start mb-2"
+                        >
+                          <span
+                            class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md"
+                          >
+                            寶可夢
+                          </span>
+
+                          <button
+                            class="btn btn-fav d-flex align-items-center justify-content-center"
+                            aria-label="加入收藏"
+                          >
+                            <i class="bi bi-heart fs-4"></i>
+                          </button>
+                        </div>
+
+                        <div class="body-md text-gray-300 mb-1">
+                          SV11WF - 002
+                        </div>
+                        <div class="h6-ch text-gray-500 mb-1">超能妙喵</div>
+                        <!-- 加入input 群組-->
+                        <div class="detail d-flex justify-content-between">
+                          <div class="detail-left">
+                            <div class="h5-ch text-black mb-1">NT$5</div>
+
+                            <div class="d-flex align-items-center mb-5">
+                              <span
+                                class="rounded-circle bg-success me-1"
+                                style="
+                                  width: 10px;
+                                  height: 10px;
+                                  display: inline-block;
+                                "
+                              ></span>
+                              <span class="text-gray-400 body-sm"
+                                >尚有庫存</span
+                              >
+                            </div>
+                          </div>
+                          <div class="detail-right">
+                            <!-- input-->
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between"
+                              id="quantityBox"
+                            >
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量"
+                              >
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value" id="quantityValue"
+                                >1</span
+                              >
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量"
+                              >
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+
+                            <!-- input-->
+                          </div>
+                        </div>
+
+                        <a href="#" target="_blank" class="btn btn-add">
+                          <span class="add-text">加入購物車</span>
+                          <span class="icon">
+                            <i class="bi bi-arrow-right"></i>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 03卡牌 -->
+                  <div class="card product-card border-0 p-2 rounded-2">
+                    <div class="d-flex align-items-start">
+                      <!-- 左：圖片 -->
+                      <div class="product-img flex-shrink-0 me-3">
+                        <div class="card-bg no-padding">
+                          <img
+                            src="/assets/images/product-card-7.png"
+                            class="img-fluid rounded"
+                            alt="product"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- 右：文字內容 -->
+                      <div class="card-body p-0 flex-grow-1">
+                        <div
+                          class="d-flex justify-content-between align-items-start mb-2"
+                        >
+                          <span
+                            class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md"
+                          >
+                            寶可夢
+                          </span>
+
+                          <button
+                            class="btn btn-fav d-flex align-items-center justify-content-center"
+                            aria-label="加入收藏"
+                          >
+                            <i class="bi bi-heart fs-4"></i>
+                          </button>
+                        </div>
+
+                        <div class="body-md text-gray-300 mb-1">
+                          SV11WF - 003
+                        </div>
+                        <div class="h6-ch text-gray-500 mb-1">波克基斯</div>
+                        <!-- 加入input 群組-->
+                        <div class="detail d-flex justify-content-between">
+                          <div class="detail-left">
+                            <div class="h5-ch text-black mb-1">NT$5</div>
+
+                            <div class="d-flex align-items-center mb-5">
+                              <span
+                                class="rounded-circle bg-success me-1"
+                                style="
+                                  width: 10px;
+                                  height: 10px;
+                                  display: inline-block;
+                                "
+                              ></span>
+                              <span class="text-gray-400 body-sm"
+                                >尚有庫存</span
+                              >
+                            </div>
+                          </div>
+                          <div class="detail-right">
+                            <!-- input-->
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between"
+                              id="quantityBox"
+                            >
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量"
+                              >
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value" id="quantityValue"
+                                >1</span
+                              >
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量"
+                              >
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+
+                            <!-- input-->
+                          </div>
+                        </div>
+
+                        <a href="#" target="_blank" class="btn btn-add">
+                          <span class="add-text">加入購物車</span>
+                          <span class="icon">
+                            <i class="bi bi-arrow-right"></i>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 04卡牌 -->
+                  <div class="card product-card border-0 p-2 rounded-2">
+                    <div class="d-flex align-items-start">
+                      <!-- 左：圖片 -->
+                      <div class="product-img flex-shrink-0 me-3">
+                        <div class="card-bg no-padding">
+                          <img
+                            src="/assets/images/product-card-8.png"
+                            class="img-fluid rounded"
+                            alt="product"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- 右：文字內容 -->
+                      <div class="card-body p-0 flex-grow-1">
+                        <div
+                          class="d-flex justify-content-between align-items-start mb-2"
+                        >
+                          <span
+                            class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md"
+                          >
+                            寶可夢
+                          </span>
+
+                          <button
+                            class="btn btn-fav d-flex align-items-center justify-content-center"
+                            aria-label="加入收藏"
+                          >
+                            <i class="bi bi-heart fs-4"></i>
+                          </button>
+                        </div>
+
+                        <div class="body-md text-gray-300 mb-1">
+                          SV11WF - 004
+                        </div>
+                        <div class="h6-ch text-gray-500 mb-1">由克希</div>
+                        <!-- 加入input 群組-->
+                        <div class="detail d-flex justify-content-between">
+                          <div class="detail-left">
+                            <div class="h5-ch text-black mb-1">
+                              NT$5<span
+                                class="body-sm text-gray-400 text-decoration-line-through ps-1"
+                                >NT$15</span
+                              >
+                            </div>
+
+                            <div class="d-flex align-items-center mb-5">
+                              <span
+                                class="rounded-circle bg-success me-1"
+                                style="
+                                  width: 10px;
+                                  height: 10px;
+                                  display: inline-block;
+                                "
+                              ></span>
+                              <span class="text-gray-400 body-sm"
+                                >尚有庫存</span
+                              >
+                            </div>
+                          </div>
+                          <div class="detail-right">
+                            <!-- input-->
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between"
+                              id="quantityBox"
+                            >
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量"
+                              >
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value" id="quantityValue"
+                                >1</span
+                              >
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量"
+                              >
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+
+                            <!-- input-->
+                          </div>
+                        </div>
+
+                        <a href="#" target="_blank" class="btn btn-add">
+                          <span class="add-text">加入購物車</span>
+                          <span class="icon">
+                            <i class="bi bi-arrow-right"></i>
+                          </span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 其他版本列表 end -->
+              </section>
+            </main>
+          </div>
+        </div>
+
+        <!-- 區塊主內容-end -->
+      </div>
+
+      <%- include('./layout/footer'); -%>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="../assets/js/product-list.js"></script>
+      <script type="module" src="../main.js"></script>
+    </body>
+  </html>
+</html>

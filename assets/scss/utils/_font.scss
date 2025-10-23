@@ -1,0 +1,96 @@
+// ---------- Font Families ----------
+$font-ch: "Noto Sans", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
+  sans-serif;
+$font-en: "Montserrat", $font-ch;
+
+// ---------- Mixins ----------
+@mixin heading($font-family, $size, $weight, $line, $spacing) {
+  font-family: $font-family;
+  font-size: $size;
+  font-style: normal;
+  font-weight: $weight;
+  line-height: $line;
+  letter-spacing: $spacing;
+}
+
+@mixin bodyText($size, $weight, $line, $spacing) {
+  font-family: $font-ch;
+  font-size: $size;
+  font-style: normal;
+  font-weight: $weight;
+  line-height: $line;
+  letter-spacing: $spacing;
+}
+
+// ---------- Text Style - Chinese ----------
+.display-ch {
+  @include heading($font-ch, 56px, 700, 67.2px, 2.24px);
+}
+.h1-ch {
+  @include heading($font-ch, 40px, 700, 48px, 1.6px);
+}
+.h2-ch {
+  @include heading($font-ch, 32px, 700, 38.4px, 1.28px);
+}
+.h3-ch {
+  @include heading($font-ch, 28px, 700, 33.6px, 1.12px);
+}
+.h4-ch {
+  @include heading($font-ch, 24px, 700, 28.8px, 0.96px);
+}
+.h5-ch {
+  @include heading($font-ch, 20px, 700, 24px, 0.8px);
+}
+.h6-ch {
+  @include heading($font-ch, 16px, 700, 19.2px, 0.64px);
+}
+
+.body-lg {
+  @include bodyText(20px, 500, 30px, 0.4px);
+}
+.body-md {
+  @include bodyText(16px, 500, 24px, 0.32px);
+}
+.body-sm {
+  @include bodyText(14px, 500, 21px, 0.28px);
+}
+.caption {
+  @include bodyText(12px, 400, 18px, 0.24px);
+}
+
+// ---------- Text Style - English (titles only) ----------
+.display-en {
+  @include heading($font-en, 56px, 700, 67.2px, 2.24px);
+}
+.h1-en {
+  @include heading($font-en, 40px, 700, 48px, 1.6px);
+}
+.h2-en {
+  @include heading($font-en, 32px, 700, 38.4px, 1.28px);
+}
+.h3-en {
+  @include heading($font-en, 28px, 700, 33.6px, 1.12px);
+}
+.h4-en {
+  @include heading($font-en, 24px, 700, 28.8px, 0.96px);
+}
+.h5-en {
+  @include heading($font-en, 20px, 700, 24px, 0.8px);
+}
+.h6-en {
+  @include heading($font-en, 16px, 700, 19.2px, 0.64px);
+}
+
+// ---------- Utility Classes ----------
+.lh-heading {
+  line-height: 1.2;
+} // 標題用
+.lh-body {
+  line-height: 1.5;
+} // 內文用
+.font-ch {
+  font-family: $font-ch;
+}
+.font-en {
+  font-family: $font-en;
+}
