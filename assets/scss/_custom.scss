@@ -7,79 +7,363 @@
 //獨立空間樣式 引用寫法
 
 [data-app="products"] {
-  .product-list-page {
-    font-family: "Noto Sans TC", sans-serif;
+  // 覆蓋 .container 寬度，改成 1296px
+  @media (min-width: 1400px) {
+    .container,
+    .container-xxl {
+      // Figma 規範: 1920px (螢幕) - 312px (左) - 312px (右) = 1296px
+      // 覆蓋 _variables.scss 中預設的 1320px
+      max-width: 1296px;
+    }
   }
-
-  /* Sidebar Menu Styles */
+  // 元件：側邊選單 (Aside Menu)
   .menu-box {
-    width: 100%; /* Changed from 260px to 100% for responsiveness */
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
-    padding: 12px;
+    /* [修正] 替換為 Flex 佈局來強制垂直排列 */
+    .accordion-body {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 0; // 移除 accordion-body 預設的 padding
+      padding-bottom: 0;
+
+      a {
+        padding: 4px 0;
+        color: $gray-600;
+        text-decoration: none;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
   }
 
-  .search-box {
-    position: relative;
-    margin-bottom: 10px;
+  // 元件：頁面標題 (.page-title)
+  .page-title {
+    // [修正] 移除 text-center 後，預設即為靠左
+    // 但可明確指定以防萬一
+    text-align: left;
+
+    // 父層容器維持 mb-5 (48px) (來自 HTML)
+    // 這符合 "寶可夢 超級勇氣 與 卡片列表 間距：48px" 的要求
+
+    // 1. 副標題 (/ PTGC /)
+    .sub-title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 28.8px;
+      letter-spacing: 4%;
+      color: $primary !important; // 確保顏色生效
+
+      // [修正] 設定與下方主標題的間距
+      margin-bottom: 8px;
+    }
+
+    // 2. 主標題 (寶可夢 超級勇氣)
+    .main-title {
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 48px;
+      letter-spacing: 4%;
+      color: $black;
+    }
   }
 
-  .search-box input {
+  // 元件：Product Card (.product-card)
+  //
+  .product-card {
+    /*
+      ================================================
+      [核心修正 1] 解決卡片寬度無法撐滿的問題
+      ================================================
+      覆蓋 Bootstrap 預設的 "width: 18rem;"
+      讓卡片寬度 100% 撐滿父層的 .col
+    */
     width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 6px 32px 6px 10px;
-  }
 
-  .search-box i {
-    position: absolute;
-    right: 10px;
-    top: 8px;
-    color: #555;
-  }
-
-  .accordion-button {
-    font-weight: 700;
-    background-color: transparent;
-    color: #000;
-    padding: 6px 0;
-    box-shadow: none;
-  }
-
-  .accordion-button::after {
-    filter: invert(0.4);
-  }
-
-  .accordion-button:not(.collapsed) {
-    color: #f0b400;
-    background-color: transparent;
-    box-shadow: none;
-  }
-
-  .accordion-body {
-    padding: 0 0 0 12px;
-  }
-
-  .accordion-body a {
+    // 關閉 .card 預設的 "display: flex"
     display: block;
-    color: #6c757d;
-    text-decoration: none;
-    padding: 4px 0;
+
+    // 來自 Figma 的外殼規格
+    border: none;
+    border-radius: 4px;
+    box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+
+    // ------------------------------------
+    // 1. 左側相框 (col-4)
+    // ------------------------------------
+    .product-card-image-frame {
+      padding: 8px;
+      background-color: #dde4e8;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      height: 100%;
+      // (HTML 中已加入 d-flex, align-items-center, justify-content-center)
+
+      /*
+        ================================================
+        [核心修正 2] 解決圖片壓縮與上下留白的問題
+        ================================================
+        移除 width/height。
+        img-fluid 預設的 "max-width: 100%" 會讓圖片正確縮放 (寬度 150px)。
+        父層的 d-flex + align-items-center 會讓它完美垂直置中。
+      */
+      .img-fluid {
+        object-fit: contain; // 確保 150x209 的圖片 完整顯示
+      }
+    }
+
+    // ------------------------------------
+    // 2. 右側內容 (col-8)
+    // ------------------------------------
+    .card-body {
+      padding: 8px;
+      background-color: #ffffff;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      height: 100%; // 確保 .card-body 也 100% 高
+    }
+
+    // ------------------------------------
+    // 9.1 收藏按鈕 (btn-favorite)
+    // ------------------------------------
+    .btn-favorite {
+      // 這是 "按鈕容器" 的樣式 (圓形背景)
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      padding: 8px; // 這是按鈕容器的內距
+      background-color: #f0f0f0; // 灰色底
+      border: none;
+
+      // 確保 icon 垂直水平置中
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+
+      // 來自 Figma (image_180e0c.png) 針對 "Icon 本身" 的精確規格
+      .bi-heart {
+        font-size: 20px; // Bootstrap Icons 的 font-size 通常控制 icon 的大小
+        // 這裡設定為 20px，以便能塞進 40x40px (padding 8px) 的容器
+        color: #1c1c1c; // 來自 Figma 的 Neutral/black
+
+        &::before {
+          font-weight: 700 !important; // 700 等同 "bold"
+        }
+      }
+
+      // 狀態
+      z-index: 5;
+      &:hover,
+      &:focus {
+        // [修正] hover 時愛心本身不變色，只變背景色 (如果 Figma 沒有特別指示)
+        background-color: #e0e0e0; // 灰色底加深
+        box-shadow: none;
+
+        .bi-heart {
+          color: $danger; // 愛心 hover 時變紅色 (Figma 沒有特別指示，假設變色)
+        }
+      }
+      // 如果 hover 時愛心不變色，請將上面的 .bi-heart color 移除
+    }
+
+    // ------------------------------------
+    // 3. 標籤 (.tag)
+    // ------------------------------------
+    .tag {
+      padding: 4px 8px;
+      border: 1px solid $primary;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 500;
+      color: $primary;
+      line-height: 24px;
+      letter-spacing: 2%;
+    }
+
+    // ------------------------------------
+    // 4. & 5. 產品資訊 (.product-info)
+    // ------------------------------------
+    .product-info {
+      margin-top: 8px;
+    }
+
+    .product-code {
+      font-size: 16px;
+      font-weight: 500;
+      color: #aeaeae;
+      line-height: 24px;
+      letter-spacing: 2%;
+      margin-bottom: 4px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #494949;
+      line-height: 19.2px;
+      letter-spacing: 4%;
+      margin-bottom: 8px;
+    }
+
+    // ------------------------------------
+    // 6. & 7. 價格與庫存
+    // ------------------------------------
+    .product-purchase {
+      .d-flex.justify-content-between {
+        margin-bottom: 12px;
+      }
+    }
+
+    .price-stock {
+      .price {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1c1c1c;
+        line-height: 24px;
+        letter-spacing: 4%;
+        margin-bottom: 4px;
+      }
+
+      .stock-status {
+        font-size: 14px;
+        font-weight: 500;
+        color: #898989;
+        line-height: 21px;
+        letter-spacing: 2%;
+        margin-bottom: 0;
+
+        .fa-circle {
+          color: #51a779;
+          font-size: 0.75em;
+          vertical-align: middle;
+        }
+
+        &.out-of-stock {
+          .fa-circle {
+            color: $danger;
+          }
+        }
+      }
+    }
+
+    // ------------------------------------
+    // 8. 加入購物車按鈕
+    // ------------------------------------
+    .btn-add-to-cart {
+      height: 44px;
+      padding: 12px 32px;
+      border-radius: 100px;
+      background-color: #1c1c1c;
+      border: 1px solid #1c1c1c;
+      font-size: 16px;
+      font-weight: 700;
+      color: #fefefe;
+      line-height: 1;
+      letter-spacing: 4%;
+
+      &:hover {
+        background-color: $dark;
+        border-color: $dark;
+      }
+
+      &:disabled {
+        background-color: $gray-100;
+        border-color: $gray-100;
+        color: $gray-400;
+      }
+    }
   }
+  .pagination {
+    // 移除 Bootstrap 預設的 margin (如果需要更精確控制)
+    // margin-bottom: 0;
 
-  .accordion-body a:hover {
-    color: #f0b400;
-  }
+    // 處理項目間距 (Gap Strategy)
+    .page-item {
+      // 1. 移除 Bootstrap 預設的 margin-left
+      margin-left: 0;
 
-  .btn-add-to-cart {
-    background-color: #000;
-    border-color: #000;
-    color: #fff;
+      // 2. 設定數字按鈕之間的 8px 間距
+      //    nth-child(n+3) 選取第 3 個 li (數字 2) 開始的所有 li
+      //    :not(:last-child) 排除最後一個 li (右箭頭)
+      &:nth-child(n + 3):not(:last-child) {
+        margin-left: 8px;
+      }
 
-    &:hover {
-      background-color: #333;
-      border-color: #333;
+      // 3. 設定第一個數字按鈕 (數字 1) 與左箭頭的 24px 間距
+      //    nth-child(2) 選取第 2 個 li (數字 1)
+      &:nth-child(2) {
+        margin-left: 24px;
+      }
+
+      // 4. 設定右箭頭與最後一個數字按鈕的 24px 間距
+      &:last-child {
+        margin-left: 24px;
+      }
+    }
+
+    // 通用按鈕樣式 (.page-link)
+    .page-link {
+      // 來自 Figma (Pagination Item & Icon Button)
+      width: 32px;
+      height: 32px;
+      padding: 8px; // Figma 規格
+
+      // 重設 Bootstrap 樣式
+      border: none;
+      background-color: transparent;
+      color: $black; // 預設黑色文字/圖標
+      border-radius: 0; // 先重設，再單獨設定
+
+      // 確保內容 (數字/圖標) 垂直水平置中
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1; // 確保文字垂直置中
+
+      // 圖標樣式 (Font Awesome)
+      .fa-solid {
+        font-size: 12px; // 稍微調整圖標大小以適應 32x32 (padding 8px)
+      }
+
+      // 移除焦點時的藍色外框 (可選)
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    // 箭頭按鈕樣式 (第一個和最後一個 li)
+    .page-item:first-child .page-link,
+    .page-item:last-child .page-link {
+      // 來自 Figma (Icon Button)
+      border-radius: 100px; // 圓形
+      // background-color: transparent; // 已在通用樣式設定
+      // color: $black; // 已在通用樣式設定
+    }
+
+    // 當前頁面 (Active) 樣式
+    .page-item.active .page-link {
+      // 來自 Figma (Pagination Item - Active)
+      background-color: $primary; // $primary: #E4B112
+      color: $light; // 使用 $dark (#5B3400) 提供更好的對比度
+      border-radius: 19px; // Figma 規格
+      z-index: 1; // 確保在其他按鈕之上 (Bootstrap 預設)
+    }
+
+    // 禁用 (Disabled) 樣式
+    .page-item.disabled .page-link {
+      color: $gray-400; // 使用灰色表示禁用
+      background-color: transparent;
+      // pointer-events: none; // Bootstrap 預設已有
+      // cursor: auto; // Bootstrap 預設已有
+    }
+
+    // 滑鼠懸停 (Hover) 樣式 (非 Active, 非 Disabled)
+    .page-item:not(.active):not(.disabled) .page-link:hover {
+      background-color: $gray-100; // 提供一個淡淡的 hover 背景色
     }
   }
 }
