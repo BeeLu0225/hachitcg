@@ -7,23 +7,52 @@
 //獨立空間樣式 引用寫法
 
 [data-app="products"] {
-  // 覆蓋 .container 寬度，改成 1296px
+  main.product-list-page > .container {
+    // my 40px (上下 margin)
+    margin-top: 40px;
+    margin-bottom: 40px;
+    // mx 12px (左右留白)
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  // --- 平板以上的樣式 (可選，如果平板間距不同) ---
+  // (例：Bootstrap 的 sm 斷點是 576px)
+  @media (min-width: 576px) {
+    main.product-list-page > .container {
+      // 如果平板需要不同的上下 margin (例如 60px)，可以在這裡覆蓋
+      // Bootstrap 在 sm 以上會自動恢復 container 預設的 padding
+      // 如果需要覆蓋，也可以在這裡寫
+    }
+  }
+
+  // --- 桌機樣式 (對應 $xxl 斷點 1400px 開始) ---
   @media (min-width: 1400px) {
     .container,
     .container-xxl {
-      // Figma 規範: 1920px (螢幕) - 312px (左) - 312px (右) = 1296px
-      // 覆蓋 _variables.scss 中預設的 1320px
       max-width: 1296px;
     }
   }
-  // 元件：側邊選單 (Aside Menu)
+
+  // --- 超大螢幕樣式 (1920px 或更寬) ---
+  // (對應 Figma 1920*1080, mx 312px, my 80px)
+  @media (min-width: 1920px) {
+    main.product-list-page > .container {
+      // my 80px (覆蓋手機版的 40px)
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+    // max-width: 1296px 會繼續生效，自動產生 312px 的左右 margin
+  }
+
+  // 元件：側邊選單
   .menu-box {
-    /* [修正] 替換為 Flex 佈局來強制垂直排列 */
+    // 垂直排列
     .accordion-body {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      padding-top: 0; // 移除 accordion-body 預設的 padding
+      padding-top: 0;
       padding-bottom: 0;
 
       a {
@@ -40,12 +69,7 @@
 
   // 元件：頁面標題 (.page-title)
   .page-title {
-    // [修正] 移除 text-center 後，預設即為靠左
-    // 但可明確指定以防萬一
     text-align: left;
-
-    // 父層容器維持 mb-5 (48px) (來自 HTML)
-    // 這符合 "寶可夢 超級勇氣 與 卡片列表 間距：48px" 的要求
 
     // 1. 副標題 (/ PTGC /)
     .sub-title {
@@ -54,9 +78,7 @@
       font-size: 24px;
       line-height: 28.8px;
       letter-spacing: 4%;
-      color: $primary !important; // 確保顏色生效
-
-      // [修正] 設定與下方主標題的間距
+      color: $primary;
       margin-bottom: 8px;
     }
 
@@ -70,54 +92,28 @@
     }
   }
 
-  // 元件：Product Card (.product-card)
-  //
+  // 元件：Product Card 整張卡片
   .product-card {
-    /*
-      ================================================
-      [核心修正 1] 解決卡片寬度無法撐滿的問題
-      ================================================
-      覆蓋 Bootstrap 預設的 "width: 18rem;"
-      讓卡片寬度 100% 撐滿父層的 .col
-    */
     width: 100%;
-
-    // 關閉 .card 預設的 "display: flex"
     display: block;
-
-    // 來自 Figma 的外殼規格
     border: none;
     border-radius: 4px;
     box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.04);
     overflow: hidden;
 
-    // ------------------------------------
     // 1. 左側相框 (col-4)
-    // ------------------------------------
     .product-card-image-frame {
       padding: 8px;
       background-color: #dde4e8;
       border-top-left-radius: 4px;
       border-bottom-left-radius: 4px;
       height: 100%;
-      // (HTML 中已加入 d-flex, align-items-center, justify-content-center)
 
-      /*
-        ================================================
-        [核心修正 2] 解決圖片壓縮與上下留白的問題
-        ================================================
-        移除 width/height。
-        img-fluid 預設的 "max-width: 100%" 會讓圖片正確縮放 (寬度 150px)。
-        父層的 d-flex + align-items-center 會讓它完美垂直置中。
-      */
       .img-fluid {
         object-fit: contain; // 確保 150x209 的圖片 完整顯示
       }
     }
-
-    // ------------------------------------
     // 2. 右側內容 (col-8)
-    // ------------------------------------
     .card-body {
       padding: 8px;
       background-color: #ffffff;
@@ -126,53 +122,7 @@
       height: 100%; // 確保 .card-body 也 100% 高
     }
 
-    // ------------------------------------
-    // 9.1 收藏按鈕 (btn-favorite)
-    // ------------------------------------
-    .btn-favorite {
-      // 這是 "按鈕容器" 的樣式 (圓形背景)
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      padding: 8px; // 這是按鈕容器的內距
-      background-color: #f0f0f0; // 灰色底
-      border: none;
-
-      // 確保 icon 垂直水平置中
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1;
-
-      // 來自 Figma (image_180e0c.png) 針對 "Icon 本身" 的精確規格
-      .bi-heart {
-        font-size: 20px; // Bootstrap Icons 的 font-size 通常控制 icon 的大小
-        // 這裡設定為 20px，以便能塞進 40x40px (padding 8px) 的容器
-        color: #1c1c1c; // 來自 Figma 的 Neutral/black
-
-        &::before {
-          font-weight: 700 !important; // 700 等同 "bold"
-        }
-      }
-
-      // 狀態
-      z-index: 5;
-      &:hover,
-      &:focus {
-        // [修正] hover 時愛心本身不變色，只變背景色 (如果 Figma 沒有特別指示)
-        background-color: #e0e0e0; // 灰色底加深
-        box-shadow: none;
-
-        .bi-heart {
-          color: $danger; // 愛心 hover 時變紅色 (Figma 沒有特別指示，假設變色)
-        }
-      }
-      // 如果 hover 時愛心不變色，請將上面的 .bi-heart color 移除
-    }
-
-    // ------------------------------------
-    // 3. 標籤 (.tag)
-    // ------------------------------------
+    // 3. 寶可夢標籤
     .tag {
       padding: 4px 8px;
       border: 1px solid $primary;
@@ -184,9 +134,7 @@
       letter-spacing: 2%;
     }
 
-    // ------------------------------------
-    // 4. & 5. 產品資訊 (.product-info)
-    // ------------------------------------
+    // 4. & 5. 卡片資訊 SV11WF - 001 & 蟲寶包
     .product-info {
       margin-top: 8px;
     }
@@ -209,9 +157,7 @@
       margin-bottom: 8px;
     }
 
-    // ------------------------------------
-    // 6. & 7. 價格與庫存
-    // ------------------------------------
+    // 6. & 7. 價格與庫存 NT $5 & 尚有庫存
     .product-purchase {
       .d-flex.justify-content-between {
         margin-bottom: 12px;
@@ -250,56 +196,114 @@
       }
     }
 
-    // ------------------------------------
     // 8. 加入購物車按鈕
-    // ------------------------------------
-    .btn-add-to-cart {
+    .btn-add {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px; // 文字和 icon 的間距
+      width: 100%; // 來自您舊的 w-100，確保滿版
       height: 44px;
       padding: 12px 32px;
-      border-radius: 100px;
-      background-color: #1c1c1c;
-      border: 1px solid #1c1c1c;
-      font-size: 16px;
+      background-color: $black; // 確保 $black 已定義
+      color: $white; // 確保 $white 已定義
+      border: none;
+      border-radius: 999px; // 膠囊外型
       font-weight: 700;
-      color: #fefefe;
-      line-height: 1;
-      letter-spacing: 4%;
+      font-size: 16px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease; // 讓動畫更流暢
 
-      &:hover {
-        background-color: $dark;
-        border-color: $dark;
+      // 預設狀態：隱藏 icon
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 0; // 寬度為 0
+        height: 0; // 高度為 0
+        opacity: 0; // 完全透明
+        overflow: hidden;
+        pointer-events: none;
+        transition: all 0.2s ease;
       }
 
-      &:disabled {
-        background-color: $gray-100;
-        border-color: $gray-100;
-        color: $gray-400;
+      // 滑鼠 hover 狀態：顯示 icon
+      &:hover {
+        background-color: $black;
+        color: $white;
+
+        .icon {
+          width: 28px; // 變回 28px
+          height: 28px; // 變回 28px
+          background-color: $white; // 白色圓底
+          border-radius: 50%;
+          opacity: 1; // 顯示
+
+          i {
+            color: $black; // 黑色箭頭
+            font-size: 16px;
+          }
+        }
+      }
+
+      &:active,
+      &:focus {
+        background-color: $black;
+        color: $white;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    // 9. 收藏愛心按鈕
+    .btn-fav {
+      width: 40px; // 尺寸與您原本的 .btn-favorite 相同 (40px)
+      height: 40px; // 所以版面不會跑掉
+      border: none;
+      background: #f0f0f0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 5; // 來自您原本的 SCSS，確保按鈕在最上層
+
+      i {
+        font-size: 24px; // 來自組員的 SCSS
+        color: #1c1c1c;
+        transition: color 0.2s;
+      }
+
+      // hover 狀態 (變橘色)
+      &:hover i {
+        color: $primary; // $primary 應為您們定義的橘色
+      }
+
+      // active 狀態 (變橘色)
+      &.active i {
+        color: $primary; // $primary 應為您們定義的橘色
       }
     }
   }
+
+  // 10. 分頁元件
   .pagination {
-    // 移除 Bootstrap 預設的 margin (如果需要更精確控制)
-    // margin-bottom: 0;
-
-    // 處理項目間距 (Gap Strategy)
     .page-item {
-      // 1. 移除 Bootstrap 預設的 margin-left
-      margin-left: 0;
-
-      // 2. 設定數字按鈕之間的 8px 間距
+      // 1. 設定數字按鈕之間的 8px 間距
       //    nth-child(n+3) 選取第 3 個 li (數字 2) 開始的所有 li
       //    :not(:last-child) 排除最後一個 li (右箭頭)
       &:nth-child(n + 3):not(:last-child) {
         margin-left: 8px;
       }
 
-      // 3. 設定第一個數字按鈕 (數字 1) 與左箭頭的 24px 間距
+      // 2. 設定第一個數字按鈕 (數字 1) 與左箭頭的 24px 間距
       //    nth-child(2) 選取第 2 個 li (數字 1)
       &:nth-child(2) {
         margin-left: 24px;
       }
 
-      // 4. 設定右箭頭與最後一個數字按鈕的 24px 間距
+      // 3. 設定右箭頭與最後一個數字按鈕的 24px 間距
       &:last-child {
         margin-left: 24px;
       }
@@ -307,10 +311,9 @@
 
     // 通用按鈕樣式 (.page-link)
     .page-link {
-      // 來自 Figma (Pagination Item & Icon Button)
       width: 32px;
       height: 32px;
-      padding: 8px; // Figma 規格
+      padding: 8px;
 
       // 重設 Bootstrap 樣式
       border: none;
@@ -323,11 +326,6 @@
       align-items: center;
       justify-content: center;
       line-height: 1; // 確保文字垂直置中
-
-      // 圖標樣式 (Font Awesome)
-      .fa-solid {
-        font-size: 12px; // 稍微調整圖標大小以適應 32x32 (padding 8px)
-      }
 
       // 移除焦點時的藍色外框 (可選)
       &:focus {
@@ -364,6 +362,31 @@
     // 滑鼠懸停 (Hover) 樣式 (非 Active, 非 Disabled)
     .page-item:not(.active):not(.disabled) .page-link:hover {
       background-color: $gray-100; // 提供一個淡淡的 hover 背景色
+    }
+  }
+
+  // 購物車庫存-數量控制器元件
+  .quantity-box {
+    width: 117px;
+    height: 48px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: $white;
+    padding: 0 16px;
+    font-size: 1.25rem;
+    user-select: none;
+
+    .btn-icon {
+      background: none;
+      border: none;
+      color: #494949;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: none;
     }
   }
 }
