@@ -1,0 +1,72 @@
+ .accordion-button::after {
+     display: none;
+ }
+
+ .accordion-button {
+     position: relative;
+ }
+
+
+
+ .SVG-switch .accordion-item:nth-child(-n + 3) .accordion-button::before {
+     content: none;
+ }
+
+
+ .accordion-button::before {
+     content: "";
+     position: absolute;
+     right: 1.25rem;
+     top: 50%;
+     width: 24px;
+     height: 24px;
+
+     /* 確保初始狀態是 0 度 */
+     transform: translateY(-50%) rotate(0deg);
+
+     /* 確保過渡效果涵蓋 transform 屬性 */
+     transition:
+         transform 0.2s ease-in-out 0s,
+         background-image 0.2s ease-in-out 0s;
+
+     background-image: url(../images/Q&A-img/Icons.svg);
+     background-repeat: no-repeat;
+     background-size: contain;
+ }
+
+ .Left-menu .accordion-button::before {
+     right: 0rem;
+     /* 緊貼右側 0 rem */
+ }
+
+
+ /* 展開狀態 (當按鈕沒有 .collapsed 類別時): 旋轉 90 度 */
+ .accordion-button:not(.collapsed)::before {
+     /* 應用 90 度的旋轉 */
+     transform: translateY(-50%) rotate(90deg);
+ }
+
+ /* 隱藏第 1, 2, 3 個手風琴項目的預設箭頭 */
+ .Left-menu .accordion-item:nth-child(1) .accordion-button::after,
+ .Left-menu .accordion-item:nth-child(2) .accordion-button::after,
+ .Left-menu .accordion-item:nth-child(3) .accordion-button::after {
+     /* 移除或隱藏箭頭的標準方法 */
+     display: none;
+
+ }
+
+
+ /* 調整手風琴按鈕的內間距 */
+ .m-1620>.accordion-button {
+     padding: 0.5rem 0;
+ }
+
+ /* 調整手風琴內容的內間距 */
+ .accordion-body {
+     padding: 2rem 2rem;
+ }
+
+ /* 調整每個手風琴項目之間的間距 */
+ .accordion-item {
+     margin-bottom: 0.5rem;
+ }

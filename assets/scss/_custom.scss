@@ -419,13 +419,15 @@
     background-color: black;
     color: white;
     border: 1px solid white;
-    margin: 0 auto;
+    // margin: 0 auto;
     background-color: white;
     color: black;
     font-family: "Noto Sans", sans-serif;
 
     font-weight: 700 !important;
   }
+
+  .container {}
 
   p,
   a,
@@ -444,10 +446,10 @@
   *::before,
   *::after {
     /* flex-direction: column; */
-    margin: 0;
+
     padding: 0;
     /* background-color: black;
-      color: white; */
+            color: white; */
     line-height: 1.5;
 
     text-decoration: none;
@@ -817,6 +819,8 @@
     padding: 2rem 24px;
     margin-bottom: 2rem;
   }
+
+
 }
 
 // 應用限定區域樣式在html 標籤上加入 data-app="site"
