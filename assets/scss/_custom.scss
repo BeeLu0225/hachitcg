@@ -24,6 +24,536 @@
     }
 }
 
+[data-app="products"] {
+  main.product-list-page > .container {
+    // my 40px (上下 margin)
+    margin-top: 40px;
+    margin-bottom: 40px;
+    // mx 12px (左右留白)
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  // --- 平板以上的樣式 (可選，如果平板間距不同) ---
+  // (例：Bootstrap 的 sm 斷點是 576px)
+  @media (min-width: 576px) {
+    main.product-list-page > .container {
+      // 如果平板需要不同的上下 margin (例如 60px)，可以在這裡覆蓋
+      // Bootstrap 在 sm 以上會自動恢復 container 預設的 padding
+      // 如果需要覆蓋，也可以在這裡寫
+    }
+  }
+
+  // --- 桌機樣式 (對應 $xxl 斷點 1400px 開始) ---
+  @media (min-width: 1400px) {
+
+    .container,
+    .container-xxl {
+      max-width: 1296px;
+    }
+  }
+
+  // --- 超大螢幕樣式 (1920px 或更寬) ---
+  // (對應 Figma 1920*1080, mx 312px, my 80px)
+  @media (min-width: 1920px) {
+    main.product-list-page > .container {
+      // my 80px (覆蓋手機版的 40px)
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+    // max-width: 1296px 會繼續生效，自動產生 312px 的左右 margin
+  }
+
+  // 元件：側邊選單
+  .menu-box {
+    // 垂直排列
+    .accordion-body {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      a {
+        padding: 4px 0;
+        color: $gray-600;
+        text-decoration: none;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  // 元件：頁面標題 (.page-title)
+  .page-title {
+    text-align: left;
+
+    // 1. 副標題 (/ PTGC /)
+    .sub-title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 28.8px;
+      letter-spacing: 4%;
+      color: $primary;
+      margin-bottom: 8px;
+    }
+
+    // 2. 主標題 (寶可夢 超級勇氣)
+    .main-title {
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 48px;
+      letter-spacing: 4%;
+      color: $black;
+    }
+  }
+
+  // 元件：Product Card 整張卡片
+  .product-card {
+    width: 100%;
+    display: block;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+
+    // 1. 左側相框 (col-4)
+    .product-card-image-frame {
+      padding: 8px;
+      background-color: #dde4e8;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      height: 100%;
+
+      .img-fluid {
+        object-fit: contain; // 確保 150x209 的圖片 完整顯示
+      }
+    }
+    // 2. 右側內容 (col-8)
+    .card-body {
+      padding: 8px;
+      background-color: #ffffff;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      height: 100%; // 確保 .card-body 也 100% 高
+    }
+
+    // 3. 寶可夢標籤
+    .tag {
+      padding: 4px 8px;
+      border: 1px solid $primary;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 500;
+      color: $primary;
+      line-height: 24px;
+      letter-spacing: 2%;
+    }
+
+    // 4. & 5. 卡片資訊 SV11WF - 001 & 蟲寶包
+    .product-info {
+      margin-top: 8px;
+    }
+
+    .product-code {
+      font-size: 16px;
+      font-weight: 500;
+      color: #aeaeae;
+      line-height: 24px;
+      letter-spacing: 2%;
+      margin-bottom: 4px;
+    }
+
+    .product-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #494949;
+      line-height: 19.2px;
+      letter-spacing: 4%;
+      margin-bottom: 8px;
+    }
+
+    // 6. & 7. 價格與庫存 NT $5 & 尚有庫存
+    .product-purchase {
+      .d-flex.justify-content-between {
+        margin-bottom: 12px;
+      }
+    }
+
+    .price-stock {
+      .price {
+        font-size: 20px;
+        font-weight: 700;
+        color: #1c1c1c;
+        line-height: 24px;
+        letter-spacing: 4%;
+        margin-bottom: 4px;
+      }
+
+      .stock-status {
+        font-size: 14px;
+        font-weight: 500;
+        color: #898989;
+        line-height: 21px;
+        letter-spacing: 2%;
+        margin-bottom: 0;
+
+        .fa-circle {
+          color: #51a779;
+          font-size: 0.75em;
+          vertical-align: middle;
+        }
+
+        &.out-of-stock {
+          .fa-circle {
+            color: $danger;
+          }
+        }
+      }
+    }
+
+    // 8. 加入購物車按鈕
+    .btn-add {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px; // 文字和 icon 的間距
+      width: 100%; // 來自您舊的 w-100，確保滿版
+      height: 44px;
+      padding: 12px 32px;
+      background-color: $black; // 確保 $black 已定義
+      color: $white; // 確保 $white 已定義
+      border: none;
+      border-radius: 999px; // 膠囊外型
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease; // 讓動畫更流暢
+
+      // 預設狀態：隱藏 icon
+      .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 0; // 寬度為 0
+        height: 0; // 高度為 0
+        opacity: 0; // 完全透明
+        overflow: hidden;
+        pointer-events: none;
+        transition: all 0.2s ease;
+      }
+
+      // 滑鼠 hover 狀態：顯示 icon
+      &:hover {
+        background-color: $black;
+        color: $white;
+
+        .icon {
+          width: 28px; // 變回 28px
+          height: 28px; // 變回 28px
+          background-color: $white; // 白色圓底
+          border-radius: 50%;
+          opacity: 1; // 顯示
+
+          i {
+            color: $black; // 黑色箭頭
+            font-size: 16px;
+          }
+        }
+      }
+
+      &:active,
+      &:focus {
+        background-color: $black;
+        color: $white;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    // 9. 收藏愛心按鈕
+    .btn-fav {
+      width: 40px; // 尺寸與您原本的 .btn-favorite 相同 (40px)
+      height: 40px; // 所以版面不會跑掉
+      border: none;
+      background: #f0f0f0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 5; // 來自您原本的 SCSS，確保按鈕在最上層
+
+      i {
+        font-size: 24px; // 來自組員的 SCSS
+        color: #1c1c1c;
+        transition: color 0.2s;
+      }
+
+      // hover 狀態 (變橘色)
+      &:hover i {
+        color: $primary; // $primary 應為您們定義的橘色
+      }
+
+      // active 狀態 (變橘色)
+      &.active i {
+        color: $primary; // $primary 應為您們定義的橘色
+      }
+    }
+  }
+
+  // 10. 分頁元件
+  .pagination {
+    .page-item {
+      // 1. 設定數字按鈕之間的 8px 間距
+      //    nth-child(n+3) 選取第 3 個 li (數字 2) 開始的所有 li
+      //    :not(:last-child) 排除最後一個 li (右箭頭)
+      &:nth-child(n + 3):not(:last-child) {
+        margin-left: 8px;
+      }
+
+      // 2. 設定第一個數字按鈕 (數字 1) 與左箭頭的 24px 間距
+      //    nth-child(2) 選取第 2 個 li (數字 1)
+      &:nth-child(2) {
+        margin-left: 24px;
+      }
+
+      // 3. 設定右箭頭與最後一個數字按鈕的 24px 間距
+      &:last-child {
+        margin-left: 24px;
+      }
+    }
+
+    // 通用按鈕樣式 (.page-link)
+    .page-link {
+      width: 32px;
+      height: 32px;
+      padding: 8px;
+
+      // 重設 Bootstrap 樣式
+      border: none;
+      background-color: transparent;
+      color: $black; // 預設黑色文字/圖標
+      border-radius: 0; // 先重設，再單獨設定
+
+      // 確保內容 (數字/圖標) 垂直水平置中
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1; // 確保文字垂直置中
+
+      // 移除焦點時的藍色外框 (可選)
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    // 箭頭按鈕樣式 (第一個和最後一個 li)
+    .page-item:first-child .page-link,
+    .page-item:last-child .page-link {
+      // 來自 Figma (Icon Button)
+      border-radius: 100px; // 圓形
+      // background-color: transparent; // 已在通用樣式設定
+      // color: $black; // 已在通用樣式設定
+    }
+
+    // 當前頁面 (Active) 樣式
+    .page-item.active .page-link {
+      // 來自 Figma (Pagination Item - Active)
+      background-color: $primary; // $primary: #E4B112
+      color: $light; // 使用 $dark (#5B3400) 提供更好的對比度
+      border-radius: 19px; // Figma 規格
+      z-index: 1; // 確保在其他按鈕之上 (Bootstrap 預設)
+    }
+
+    // 禁用 (Disabled) 樣式
+    .page-item.disabled .page-link {
+      color: $gray-400; // 使用灰色表示禁用
+      background-color: transparent;
+      // pointer-events: none; // Bootstrap 預設已有
+      // cursor: auto; // Bootstrap 預設已有
+    }
+
+    // 滑鼠懸停 (Hover) 樣式 (非 Active, 非 Disabled)
+    .page-item:not(.active):not(.disabled) .page-link:hover {
+      background-color: $gray-100; // 提供一個淡淡的 hover 背景色
+    }
+  }
+
+  // 購物車庫存-數量控制器元件
+  .quantity-box {
+    width: 117px;
+    height: 48px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: $white;
+    padding: 0 16px;
+    font-size: 1.25rem;
+    user-select: none;
+
+    .btn-icon {
+      background: none;
+      border: none;
+      color: #494949;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: none;
+    }
+  }
+}
+
+[data-app="Q&A-style"] {
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    margin: 0 auto;
+    background-color: white;
+    color: black;
+    font-family: "Noto Sans", sans-serif;
+
+    font-weight: 700 !important;
+  }
+
+  p,
+  a,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: black;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+    /* flex-direction: column; */
+    margin: 0;
+    padding: 0;
+    /* background-color: black;
+      color: white; */
+    line-height: 1.5;
+
+    text-decoration: none;
+    list-style: none;
+    text-align: start;
+    box-sizing: border-box;
+    font-family: "Noto Sans", sans-serif;
+
+    font-weight: 700 !important;
+  }
+
+  a,
+  a:hover,
+  a:focus,
+  a:active,
+  a:visited {
+    color: inherit;
+    text-decoration: none;
+    flex-wrap: wrap;
+
+  }
+
+  /* 
+     // ------------------------------------
+     // 手風琴 按鈕 箭頭 自訂
+     // ------------------------------------ 
+     */
+  .accordion-button::after {
+    display: none;
+  }
+
+  .accordion-button {
+    position: relative;
+  }
+
+
+
+  .SVG-switch .accordion-item:nth-child(-n + 3) .accordion-button::before {
+    content: none;
+  }
+
+
+  .accordion-button::before {
+    content: "";
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+
+    /* 確保初始狀態是 0 度 */
+    transform: translateY(-50%) rotate(0deg);
+
+    /* 確保過渡效果涵蓋 transform 屬性 */
+    transition:
+      transform 0.2s ease-in-out 0s,
+      background-image 0.2s ease-in-out 0s;
+
+    background-image: url(../images/Q&A-img/Icons.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .Left-menu .accordion-button::before {
+    right: 0rem;
+    /* 緊貼右側 0 rem */
+  }
+
+  #Right-menu .fs-20 {
+    font-size: 20px !important;
+  }
+
+  .p-100 {
+    padding: 10px 0;
+  }
+
+  /* 展開狀態 (當按鈕沒有 .collapsed 類別時): 旋轉 90 度 */
+  .accordion-button:not(.collapsed)::before {
+    /* 應用 90 度的旋轉 */
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+  /* 隱藏第 1, 2, 3 個手風琴項目的預設箭頭 */
+  .Left-menu .accordion-item:nth-child(1) .accordion-button::after,
+  .Left-menu .accordion-item:nth-child(2) .accordion-button::after,
+  .Left-menu .accordion-item:nth-child(3) .accordion-button::after {
+    /* 移除或隱藏箭頭的標準方法 */
+    display: none;
+
+  }
+
+
+  /* 調整手風琴按鈕的內間距 */
+  .m-1620>.accordion-button {
+    padding: 0.5rem 0;
+  }
+
+  /* 調整手風琴內容的內間距 */
+  .accordion-body {
+    padding: 2rem 2rem;
+  }
+
+  /* 調整每個手風琴項目之間的間距 */
+  .accordion-item {
+    margin-bottom: 0.5rem;
+  }
 
 
 
@@ -31,13 +561,263 @@
 
 
 
+  /* 
+     // ------------------------------------
+     //特定顏色
+     // ------------------------------------ 
+     */
+
+  .text-color-primary {
+    /* color: $primary; */
+    color: #E4B112 !important;
+  }
+
+  .text-color-primary::before {
+    color: #E4B112 !important;
+  }
+
+
+  /* 
+     // ------------------------------------
+     //Left-menu  搜尋框 調整
+     // ------------------------------------ 
+     */
+  .form-control {
+    padding: 12px 0 !important;
+    border-right: none;
+    padding-left: 16px !important;
+  }
+
+  /* 
+     // ------------------------------------
+     //Left-menu  部局
+     // ------------------------------------ 
+     */
+  .item-text-wh {
+    width: 150px;
+    height: 50px;
+  }
+
+  /* //nav */
+  .Left-menu-border,
+  .Left-menu-svg-border {
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+    color: #CCCCCC;
+  }
+
+  .Left-menu-svg-border {
+    border-radius: 1px solid #ffffff00 !important;
+  }
+
+  .m-1620 {
+    margin: 16px 20px;
+  }
+
+  .h-30 {
+    height: 30px;
+  }
+
+  /* 
+     // ------------------------------------
+     //Left-menu & Right-menu 部局
+     // ------------------------------------ 
+     */
+
+  .content-main {
+    flex: 1;
+  }
+
+  .border-bottom-1 {
+    padding: 16px;
+    padding-bottom: 20px;
+  }
+
+  /* 
+     // ------------------------------------
+     //Left-menu & Right-menu width
+     // ------------------------------------ 
+     */
+  /*  margin */
+  .m-0a {
+    margin: 0 auto;
+  }
+
+  .Left-menu-style {
+    width: 306px;
+  }
+
+  .Right-menu-style {
+    width: 996px;
+  }
+
+  /* 特定樣式 */
+  .h-20 {
+    height: 20px;
+  }
+
+  .h-24 {
+    height: 24px;
+  }
+
+  .h-29 {
+    height: 29px;
+  }
+
+  .h-36 {
+    height: 36px;
+  }
+
+  .h-40 {
+    height: 40px;
+  }
+
+  .h-48 {
+    height: 48px;
+  }
+
+  .fs-16 {
+    font-size: 16px;
+  }
+
+  .fs-20 {
+    font-size: 20px;
+  }
+
+  .fs-48 {
+    font-size: 48px;
+  }
+
+  .border-bottom-1 {
+    border-bottom: 1px solid #CCCCCC;
+    /* nav-button-border border-bottom*/
+  }
+
+  /* 
+     // ------------------------------------
+     //bootstrap 取消樣式
+     // ------------------------------------ 
+     */
+  .page-link {
+    border-color: rgba(255, 255, 255, 0) !important;
+  }
+
+  .page-number>.page-link {
+    border-color: rgba(255, 255, 255, 0) !important;
+    padding: 0.375rem 0.85rem;
+  }
+
+  .accordion>* {
+    border: none;
+    /* 外框 線框取消 */
+  }
+
+  /* 
+     // ------------------------------------
+     // page number
+     頁碼:hover，效果
+     // ------------------------------------ 
+     */
+  .border-bottom-2:hover {
+    color: #FFFFFF;
+    background-color: #E4B112;
+    /* background-color: $primary; */
+    border-bottom-color: 1px solid #E4B112;
+    /* border-bottom: 1px solid $primary; */
+    padding: 0.375rem 0.85rem;
+    border-radius: 50%;
+    transition: border-radius 0.3s ease, background-color 0.3s ease;
+  }
+
+  /* 
+     // ------------------------------------
+     // page number
+     頁碼箭頭:hover，效果
+     // ------------------------------------ 
+     */
+  .page-item:last-child .page-link {
+    border-top-right-radius: 1rem !important;
+    border-bottom-right-radius: 1rem !important;
+
+  }
+
+  .page-item:first-child .page-link {
+    border-top-left-radius: 1rem !important;
+    border-bottom-left-radius: 1rem !important;
+
+  }
+
+  .border-bottom-3 {
+    padding: 0.625rem 0.521rem;
+  }
+
+  .border-bottom-3:hover {
+    color: #FFFFFF;
+    background-color: #E4B112;
+    /* background-color: $primary; */
+    border-bottom-color: 1px solid #E4B112;
+    /* border-bottom: 1px solid $primary; */
+    padding: 0.5rem 0.5rem;
+
+
+    border-radius: 50%;
+    transition: border-radius 0.3s ease,
+      background-color 0.3s ease;
+  }
 
 
 
+  /* article */
 
+  /* 
+     // ------------------------------------
+     // 下拉式選單-圖片背景色
+     // ------------------------------------ 
+     */
+  .img-b-color {
+    background-color: #E3E3E3;
+    display: flex;
+    align-items: center;
+  }
 
+  /* 
+     // ------------------------------------
+     // web Q&A 圖片大小
+     // ------------------------------------ 
+     */
+  .img-com-Q {
+    width: 41px;
+    height: 40px;
+    margin-right: 16px;
+  }
 
+  .img-com-A {
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+  }
 
+  /* 
+     // ------------------------------------
+     // web Q&A 圖片- padding 水平調整
+     // ------------------------------------ 
+     */
+  .accordion-button,
+  .accordion-body {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* 
+     // ------------------------------------
+     // web Q&A 圖片- 圖片-文字Q 調整
+     // ------------------------------------ 
+     */
+  .A-com {
+    padding: 2rem 24px;
+    margin-bottom: 2rem;
+  }
+}
 
 // 應用限定區域樣式在html 標籤上加入 data-app="site"
 // 使用樣式寫在最外層↓
