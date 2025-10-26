@@ -12,6 +12,9 @@
     img{
         max-width: 100%;
     }
+    .bg-F0F0F0{
+        background-color: #F0F0F0;
+    }
     .p-20px{
         padding: 20px;
     }
@@ -22,6 +25,46 @@
     .text-gray-300{
         color:$gray-300;
     }
+    // btn
+    .btn-black{
+        color:$white;
+        background-color:$black;
+        &:hover {
+            background-color: $primary;
+        }
+    }
+    .btn-primary{        
+        background-color:$primary;
+        border-color:$white;
+        span{
+            color:$white;
+        }
+        &:hover {
+            color:$primary;
+            background-color:$white;
+            border-color:$primary;
+            span{
+                color:$primary;
+            }
+        }
+    }
+
+    // input
+    .quantity-box {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: $white;
+        user-select: none;
+
+        .btn-icon {
+            background: none;
+            border: none;
+            color: #494949;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+    }
+    // input end
 }
 
 [data-app="products"] {
