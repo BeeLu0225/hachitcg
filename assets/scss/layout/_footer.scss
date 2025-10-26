@@ -1,6 +1,6 @@
 .bg-footer{
   position: relative;
-  background: url('/assets/images/10008.png') no-repeat center center;
+  background: url('/assets/images/footer-banner.png') no-repeat center center;
   background-size: cover;
   min-height: 176px;
   z-index: 0; /* 讓遮罩疊在圖上 */
@@ -26,9 +26,6 @@
 .bg-footer > * {
   position: relative;
   z-index: 2;
-}
-.bg-banner{
-  background: url('/assets/images/10008.png') no-repeat center center;
 }
 
 .bg-F0F0F0{
