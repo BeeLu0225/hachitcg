@@ -575,7 +575,6 @@ transition: none; // 移除過渡效果
     content: none;
   }
 
-
   .accordion-button::before {
     content: "";
     position: absolute;
@@ -597,9 +596,43 @@ transition: none; // 移除過渡效果
     background-size: contain;
   }
 
-  .Left-menu .accordion-button::before {
+  .Right-menu-button::before {
+    content: "";
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+
+    /* 確保初始狀態是 0 度 */
+    transform: translateY(-50%) rotate(0deg);
+
+    /* 確保過渡效果涵蓋 transform 屬性 */
+    transition:
+      transform 0.2s ease-in-out 0s,
+      background-image 0.2s ease-in-out 0s;
+
+    background-image: url(../images/Q&A-img//Arrow-up.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .Left-menu .accordion-button::before,
+  .Right-menu-button {
     right: 0rem;
     /* 緊貼右側 0 rem */
+  }
+
+  /* 展開狀態 (當按鈕沒有 .collapsed 類別時): 旋轉 90 度 */
+  .accordion-button:not(.collapsed)::before {
+    /* 應用 90 度的旋轉 */
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+  /* 展開狀態 (當按鈕沒有 .collapsed 類別時): 旋轉 180 度 */
+  .Right-menu-button:not(.collapsed)::before {
+    /* 應用 180 度的旋轉 */
+    transform: translateY(-50%) rotate(-180deg);
   }
 
   #Right-menu .fs-20 {
@@ -616,11 +649,7 @@ transition: none; // 移除過渡效果
     vertical-align: bottom;
   }
 
-  /* 展開狀態 (當按鈕沒有 .collapsed 類別時): 旋轉 90 度 */
-  .accordion-button:not(.collapsed)::before {
-    /* 應用 90 度的旋轉 */
-    transform: translateY(-50%) rotate(90deg);
-  }
+
 
   /* 隱藏第 1, 2, 3 個手風琴項目的預設箭頭 */
   .Left-menu .accordion-item:nth-child(1) .accordion-button::after,
@@ -775,6 +804,7 @@ transition: none; // 移除過渡效果
   .h-72 {
     height: 72px;
   }
+
   // font-size
   .fs-16 {
     font-size: 16px;
