@@ -7,113 +7,156 @@
     <title>Cart</title>
   </head>
   
-  <body>
-    <%- include('./layout/header'); -%> 
-    <div class="container-md">
+    <body>
+        <%- include('./layout/header'); -%>
+        
+        <section class="bg-F0F0F0">
+            <div class="container-md"> <!-- breadcrumb -->
+                <nav aria-label="breadcrumb" class="mr-2 py-6">
+                    <ol class="breadcrumb mb-0 body-sm text-gray-400 lh-base fw-normal font-noto">
+                    <li class="breadcrumb-item">
+                        <a href="index.html" class="text-gray-400 text-decoration-none">首頁</a>
+                    </li>
+                    <li class="breadcrumb-item active text-black fw-normal" aria-current="page">
+                        購物車
+                    </li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
 
-      <h1 class="md-1">購物車</h1>
+        <section class="py-8 bg-F0F0F0"> <!-- content -->
+            <div class="container-md"> <!-- title -->
+                <h4 class="text-primary mb-2">/ Cart /</h4>
+                <h1 class="mb-7">購物車</h1>
+            </div>
+    
+            <div class="container-md"> <!-- cartList -->
+                <div class="mb-6 p-20px rounded-1 bg-light">
+                    <table class="has-product table table-borderless">
+                        <thead>
+                            <tr class="table-info">
+                                <th class="py-3 px-5 text-center" scope="col" style="width: 104px;">
+                                    <input class="all-selected form-check-input" type="checkbox" value="" id="checkDefault">
+                                </th>
+                                <th class="py-3 px-5 text-center" scope="col" style="width: 504px;">商品</th>
+                                <th class="py-3 px-5 text-center" scope="col" style="width: 181.33px;">單價</th>
+                                <th class="py-3 px-5 text-center" scope="col" style="width: 181.33px;">數量</th>
+                                <th class="py-3 px-5 text-center" scope="col" style="width: 181.33px;">小計</th>
+                                <th class="py-3 px-5 text-center" scope="col" style="width: 104px;">刪除</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="cart-items align-middle">
+                                <th class="py-6 px-5 text-center" scope="row">
+                                    <input class="form-check-input" type="checkbox" value="" id="checkDefault" checked>
+                                </th>
+                                <td class="py-6 px-5 d-flex">
+                                    <div class="d-flex">
+                                        <div class="me-2" style="width: 6rem;">
+                                            <a href="#">
+                                                <img src="/assets/images/product-card-4.png" class="card-img-top" alt="card">
+                                            </a>
+                                        </div>
+                                        <div>                             
+                                            <span class="mb-2 badge border border-primary px-2 py-1 text-primary text-bg-transparent fs-6" style="border-radius: 4px 0 4px 0;">寶可夢</span>
+                                            <p class="mb-1 text-gray-300">SV11WF-002</p>
+                                            <p><a class="link-secondary text-decoration-none" href="#">寶包繭（精靈球閃）</a></p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-5 text-center">NT$ <span class="price-single">15</span></td>
+                                <td class="py-6 px-5">
+                                    <div class="quantity-box d-flex align-items-center justify-content-between" id="quantityBox1">
+                                        <button class="btn-icon btn-minus" type="button" aria-label="減少數量"><i class="bi bi-dash"></i></button>
+                                        <span class="quantity-value">4</span>
+                                        <button class="btn-icon btn-plus" type="button" aria-label="增加數量"><i class="bi bi-plus"></i></button>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-5 text-center fw-bold">NT$ <span class="price-sum"></span></td>
+                                <td class="py-6 px-5 text-center">
+                                    <button type="button" class="btn btn-link btn-delete">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
 
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">
-              <input class="form-check-input" type="checkbox" value="" id="checkDefault">
-            </th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-            <th scope="col">單價</th>
-            <th scope="col">數量</th>
-            <th scope="col">總計</th>
-            <th scope="col">刪除</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="align-middle">
-            <th scope="row">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="checkDefault"  checked>
-              </div>
-            </th>
-            <td>
-              商品圖
-            </td>
-            <td>
-              <h6>寶可夢</h6>              
-              <h3>
-                <a href="">寶包繭（精靈球閃）</a>
-              </h3>
-              <h6>SV11WF-002</h6>
-            </td>
-            <td>$15</td>
-            <td>
-              <select class="form-select">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4" selected>4</option>
-              </select>
-            </td>
-            <td>$60</td>
-            <td>
-              <button type="button" class="btn btn-link">                
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-                  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-                </svg>
-              </button>
-            </td>
-          </tr>
-          <tr class="align-middle">
-            <th scope="row">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="checkDefault">
-              </div>
-            </th>
-            <td>
-              商品圖
-            </td>
-            <td>
-              <h6>WS</h6>              
-              <h3>
-                <a href="">I'm yours　天海春香</a>
-              </h3>
-              <h6>IAS/SES2-41</h6>
-            </td>
-            <td>$140</td>
-            <td>
-              <select class="form-select">
-                <option value="1" selected>1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-              </select>
-            </td>
-            <td>$140</td>
-            <td>
-              <button type="button" class="btn btn-link">                
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-                  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-                </svg>
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                            <tr class="cart-items align-middle">
+                                <th class="py-6 px-5 text-center" scope="row">
+                                    <input class="form-check-input" type="checkbox" value="" id="checkDefault" checked>
+                                </th>
+                                <td class="py-6 px-5 d-flex">
+                                    <div class="d-flex">
+                                        <div class="me-2" style="width: 6rem;">
+                                            <a href="#">
+                                                <img src="/assets/images/product-card-9.png" alt="card">
+                                            </a>
+                                        </div>
+                                        <div class="">
+                                            <span class="mb-2 badge border border-primary px-2 py-1 text-primary text-bg-transparent fs-6" style="border-radius: 4px 0 4px 0;">WS</span>
+                                            <p class="mb-1 text-gray-300">IAS/SES2-41</p>
+                                            <p><a class="link-secondary text-decoration-none" href="#">I'm yours　天海春香</a></p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-5 text-center">NT$ <span class="price-single">140</span></td>
+                                <td class="py-6 px-5">
+                                    <div class="quantity-box d-flex align-items-center justify-content-between" id="quantityBox2">
+                                        <button class="btn-icon btn-minus" type="button" aria-label="減少數量"><i class="bi bi-dash"></i></button>
+                                        <span class="quantity-value">1</span>
+                                        <button class="btn-icon btn-plus" type="button" aria-label="增加數量"><i class="bi bi-plus"></i></button>
+                                    </div>
+                                </td>
+                                <td class="py-6 px-5 text-center fw-bold">NT$ <span class="price-sum"></span></td>
+                                <td class="py-6 px-5 text-center">
+                                    <button type="button" class="btn btn-link btn-delete">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-      <div class="d-flex justify-content-end">
-        <p class="me-3">商品總金額</p>
-        <p>$60</p>
-      </div>
+                    <div class="none-product d-none py-6"> <!-- none-product -->
+                        <div class="mb-6 text-center">
+                            <svg style="width:100px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>cart-remove</title><path d="M14.1 8.5L12 6.4L9.9 8.5L8.5 7.1L10.6 5L8.5 2.9L9.9 1.5L12 3.6L14.1 1.5L15.5 2.9L13.4 5L15.5 7.1L14.1 8.5M7 18C8.1 18 9 18.9 9 20S8.1 22 7 22 5 21.1 5 20 5.9 18 7 18M17 18C18.1 18 19 18.9 19 20S18.1 22 17 22 15 21.1 15 20 15.9 18 17 18M7.2 14.8C7.2 14.9 7.3 15 7.4 15H19V17H7C5.9 17 5 16.1 5 15C5 14.6 5.1 14.3 5.2 14L6.5 11.6L3 4H1V2H4.3L8.6 11H15.6L19.5 4L21.2 5L17.3 12C17 12.6 16.3 13 15.6 13H8.1L7.2 14.6V14.8Z" /></svg>
+                        </div>
+                        <h4 class="mb-0 text-center">您的購物車目前空空如也</h4>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="container-md"> <!-- total-price -->
+                <div class="has-product mb-7 p-20px d-flex bg-light rounded-1 justify-content-end align-items-center">
+                    <p class="mb-0 me-6 fs-5">商品總金額</p>
+                    <p class="mb-0 fs-2 text-primary fw-bold">NT$ <span class="total-price"></span></p>
+                </div>
+            </div>
+    
+            <div class="container-md"> <!-- buy-btn -->
+                <div class="has-product d-flex justify-content-end">
+                    <button type="button" class="btn btn-black text-light py-3 px-32px me-5" style="width: 255px;">繼續購物</button>
+                    <button type="button" class="btn btn-primary d-flex justify-content-between py-3 px-32px text-light" style="width: 255px;">
+                        <span class="me-auto">前往結帳</span>
+                        <span class="icon"><i class="bi bi-arrow-right"></i></span>
+                    </button>
+                </div>
+                <div class="none-product d-none d-flex justify-content-end">
+                    <button type="button" class="btn btn-black text-light py-3 px-32px me-5" style="width: 255px;">返回首頁</button>
+                    <button type="button" class="btn btn-primary d-flex justify-content-between py-3 px-32px text-light" style="width: 255px;">
+                        <span class="me-auto">前往購物</span>
+                        <span class="icon"><i class="bi bi-arrow-right"></i></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <%- include('./layout/footer'); -%>
 
-
-      <div class="d-flex justify-content-end">
-        <button type="button" class="btn btn-primary me-3">繼續購物</button>
-        <button type="button" class="btn btn-primary">前往結帳</button>
-      </div>
-    </div>
-    <%- include('./layout/footer') -%>
-
-    <script type="module" src="../main.js"></script>
-  </body>
+        <script type="module" src="../main.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="../assets/js/cart.js"></script>
+    </body>
 </html>
