@@ -566,7 +566,7 @@
     background-color: black;
     color: white;
     border: 1px solid white;
-    // margin: 0 auto;
+    /* // margin: 0 auto; */
     background-color: white;
     color: black;
     font-family: "Noto Sans", sans-serif;
@@ -574,8 +574,7 @@
     font-weight: 700 !important;
   }
 
-  .container {
-  }
+  .container {}
 
   p,
   a,
@@ -589,12 +588,13 @@
     color: black;
   }
 
+
   *,
   *::before,
   *::after {
     /* flex-direction: column; */
 
-    padding: 0;
+
     /* background-color: black;
             color: white; */
     line-height: 1.5;
@@ -616,6 +616,7 @@
     color: inherit;
     text-decoration: none;
     flex-wrap: wrap;
+
   }
 
   /* 
@@ -630,6 +631,8 @@
   .accordion-button {
     position: relative;
   }
+
+
 
   .SVG-switch .accordion-item:nth-child(-n + 3) .accordion-button::before {
     content: none;
@@ -647,7 +650,8 @@
     transform: translateY(-50%) rotate(0deg);
 
     /* 確保過渡效果涵蓋 transform 屬性 */
-    transition: transform 0.2s ease-in-out 0s,
+    transition:
+      transform 0.2s ease-in-out 0s,
       background-image 0.2s ease-in-out 0s;
 
     background-image: url(../images/Q&A-img/Icons.svg);
@@ -655,9 +659,43 @@
     background-size: contain;
   }
 
-  .Left-menu .accordion-button::before {
+  .Right-menu-button::before {
+    content: "";
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+
+    /* 確保初始狀態是 0 度 */
+    transform: translateY(-50%) rotate(0deg);
+
+    /* 確保過渡效果涵蓋 transform 屬性 */
+    transition:
+      transform 0.2s ease-in-out 0s,
+      background-image 0.2s ease-in-out 0s;
+
+    background-image: url(../images/Q&A-img//Arrow-up.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .Left-menu .accordion-button::before,
+  .Right-menu-button {
     right: 0rem;
     /* 緊貼右側 0 rem */
+  }
+
+  /* 展開狀態 (當按鈕沒有 .collapsed 類別時): 旋轉 90 度 */
+  .accordion-button:not(.collapsed)::before {
+    /* 應用 90 度的旋轉 */
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+  /* 展開狀態 (當按鈕沒有 .collapsed 類別時): 旋轉 180 度 */
+  .Right-menu-button:not(.collapsed)::before {
+    /* 應用 180 度的旋轉 */
+    transform: translateY(-50%) rotate(-180deg);
   }
 
   #Right-menu .fs-20 {
@@ -668,11 +706,13 @@
     padding: 10px 0;
   }
 
-  /* 展開狀態 (當按鈕沒有 .collapsed 類別時): 旋轉 90 度 */
-  .accordion-button:not(.collapsed)::before {
-    /* 應用 90 度的旋轉 */
-    transform: translateY(-50%) rotate(90deg);
+  .p-text {
+    padding-top: 50px;
+
+    vertical-align: bottom;
   }
+
+
 
   /* 隱藏第 1, 2, 3 個手風琴項目的預設箭頭 */
   .Left-menu .accordion-item:nth-child(1) .accordion-button::after,
@@ -680,15 +720,21 @@
   .Left-menu .accordion-item:nth-child(3) .accordion-button::after {
     /* 移除或隱藏箭頭的標準方法 */
     display: none;
+
   }
 
+
   /* 調整手風琴按鈕的內間距 */
-  .m-1620 > .accordion-button {
+  .m-1620>.accordion-button {
     padding: 0.5rem 0;
   }
 
   /* 調整手風琴內容的內間距 */
-  .accordion-body {
+  .Left-menu>.accordion-body {
+    padding: 1rem 2rem;
+  }
+
+  .Right-menu>.accordion-body {
     padding: 2rem 2rem;
   }
 
@@ -696,6 +742,12 @@
   .accordion-item {
     margin-bottom: 0.5rem;
   }
+
+
+
+
+
+
 
   /* 
      // ------------------------------------
@@ -705,12 +757,13 @@
 
   .text-color-primary {
     /* color: $primary; */
-    color: #e4b112 !important;
+    color: #E4B112 !important;
   }
 
   .text-color-primary::before {
-    color: #e4b112 !important;
+    color: #E4B112 !important;
   }
+
 
   /* 
      // ------------------------------------
@@ -736,9 +789,9 @@
   /* //nav */
   .Left-menu-border,
   .Left-menu-svg-border {
-    border: 1px solid #cccccc;
+    border: 1px solid #CCCCCC;
     border-radius: 8px;
-    color: #cccccc;
+    color: #CCCCCC;
   }
 
   .Left-menu-svg-border {
@@ -811,6 +864,11 @@
     height: 48px;
   }
 
+  .h-72 {
+    height: 72px;
+  }
+
+  // font-size
   .fs-16 {
     font-size: 16px;
   }
@@ -819,12 +877,16 @@
     font-size: 20px;
   }
 
+  .fs-24 {
+    font-size: 24px;
+  }
+
   .fs-48 {
     font-size: 48px;
   }
 
   .border-bottom-1 {
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid #CCCCCC;
     /* nav-button-border border-bottom*/
   }
 
@@ -837,12 +899,12 @@
     border-color: rgba(255, 255, 255, 0) !important;
   }
 
-  .page-number > .page-link {
+  .page-number>.page-link {
     border-color: rgba(255, 255, 255, 0) !important;
     padding: 0.375rem 0.85rem;
   }
 
-  .accordion > * {
+  .accordion>* {
     border: none;
     /* 外框 線框取消 */
   }
@@ -854,10 +916,10 @@
      // ------------------------------------ 
      */
   .border-bottom-2:hover {
-    color: #ffffff;
-    background-color: #e4b112;
+    color: #FFFFFF;
+    background-color: #E4B112;
     /* background-color: $primary; */
-    border-bottom-color: 1px solid #e4b112;
+    border-bottom-color: 1px solid #E4B112;
     /* border-bottom: 1px solid $primary; */
     padding: 0.375rem 0.85rem;
     border-radius: 50%;
@@ -873,11 +935,13 @@
   .page-item:last-child .page-link {
     border-top-right-radius: 1rem !important;
     border-bottom-right-radius: 1rem !important;
+
   }
 
   .page-item:first-child .page-link {
     border-top-left-radius: 1rem !important;
     border-bottom-left-radius: 1rem !important;
+
   }
 
   .border-bottom-3 {
@@ -885,16 +949,20 @@
   }
 
   .border-bottom-3:hover {
-    color: #ffffff;
-    background-color: #e4b112;
+    color: #FFFFFF;
+    background-color: #E4B112;
     /* background-color: $primary; */
-    border-bottom-color: 1px solid #e4b112;
+    border-bottom-color: 1px solid #E4B112;
     /* border-bottom: 1px solid $primary; */
     padding: 0.5rem 0.5rem;
 
+
     border-radius: 50%;
-    transition: border-radius 0.3s ease, background-color 0.3s ease;
+    transition: border-radius 0.3s ease,
+      background-color 0.3s ease;
   }
+
+
 
   /* article */
 
@@ -904,7 +972,7 @@
      // ------------------------------------ 
      */
   .img-b-color {
-    background-color: #e3e3e3;
+    background-color: #E3E3E3;
     display: flex;
     align-items: center;
   }
@@ -935,7 +1003,14 @@
   .accordion-body {
     padding-left: 24px;
     padding-right: 24px;
+
   }
+
+  // 
+  //   .Right-menu>.accordion-button {
+  //     padding-top: 24px;
+  //     padding-bottom: 24px;
+  //   }
 
   /* 
      // ------------------------------------
@@ -946,6 +1021,8 @@
     padding: 2rem 24px;
     margin-bottom: 2rem;
   }
+
+
 }
 
 // 應用限定區域樣式在html 標籤上加入 data-app="site"
