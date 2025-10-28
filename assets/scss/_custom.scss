@@ -961,7 +961,37 @@ transition: none; // 移除過渡效果
 
 
 }
+[data-app="index"] {
+.about-card {
+  background-color: #222;
+  padding: 80px 20px;
+  border-radius: 1rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
 
+.about-card i {
+  transition: transform 0.4s ease;
+}
+
+.about-title,
+.about-desc {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.4s ease;
+}
+
+.about-card:hover i {
+  transform: scale(0.8);
+}
+
+.about-card:hover .about-title,
+.about-card:hover .about-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
 // 應用限定區域樣式在html 標籤上加入 data-app="site"
 // 使用樣式寫在最外層↓
 // <!DOCTYPE html>
