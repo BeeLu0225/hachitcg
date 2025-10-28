@@ -33,6 +33,7 @@
             <a href="#" class="text-gray-400 text-decoration-none">選擇商品</a>
           </li>
 
+          <!--! 麵包屑待定 -->
           <!-- <li class="breadcrumb-item">
               <a href="#" class="text-gray-400 text-decoration-none"
                 >胖嘟嘟ex</a
@@ -51,18 +52,20 @@
 
     <main class="product-list-page">
       <div class="container">
-        <div class="row gx-5">
-          <aside class="col-3">
-            <div class="menu-box">
+        <div class="row gx-4">
+          <aside class="col-3 p-3">
+            <div class="menu-box p-5">
               <div class="search-box">
                 <input type="text" placeholder="搜尋卡牌" />
                 <i class="bi bi-search"></i>
               </div>
 
-              <div class="accordion" id="menuAccordion">
-                <div class="fw-bold mb-2">Weiß Schwarz</div>
+              <hr class="my-custom-divider" />
 
-                <div class="accordion-item border-0">
+              <div class="accordion" id="menuAccordion">
+                <div class="fw-bold mb-5">Weiß Schwarz</div>
+
+                <div class="accordion-item border-0 mb-5">
                   <h2 class="accordion-header">
                     <button
                       class="accordion-button collapsed"
@@ -78,11 +81,13 @@
                     data-bs-parent="#menuAccordion">
                     <div class="accordion-body">
                       <a href="#">最新彈</a>
+                      <a href="#">超級勇氣</a>
+                      <a href="#">超級交響樂</a>
                     </div>
                   </div>
                 </div>
 
-                <div class="accordion-item border-0">
+                <div class="accordion-item border-0 mb-5">
                   <h2 class="accordion-header">
                     <button
                       class="accordion-button collapsed"
@@ -98,13 +103,12 @@
                     data-bs-parent="#menuAccordion">
                     <div class="accordion-body">
                       <a href="#">最新彈</a>
-                      <a href="#">超級勇氣</a>
                       <a href="#">超級交響樂</a>
                     </div>
                   </div>
                 </div>
 
-                <div class="accordion-item border-0">
+                <div class="accordion-item border-0 mb-5">
                   <h2 class="accordion-header">
                     <button
                       class="accordion-button collapsed"
@@ -125,7 +129,29 @@
                   </div>
                 </div>
 
-                <div class="accordion-item border-0">
+                <div class="accordion-item border-0 mb-5">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseGundam">
+                      鋼彈系列
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseGundam"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                      <a href="#">創壞者卡牌</a>
+                      <a href="#">水星的魔女</a>
+                      <a href="#">鐵血的孤兒</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item border-0 mb-5">
                   <h2 class="accordion-header">
                     <button
                       class="accordion-button collapsed"
@@ -148,7 +174,7 @@
               </div>
             </div>
           </aside>
-          <section class="col-9">
+          <section class="col-9 p-3">
             <div class="page-title mb-7">
               <p class="sub-title fs-5">/ PTGC /</p>
               <h1 class="main-title fw-bold">寶可夢 超級勇氣</h1>
