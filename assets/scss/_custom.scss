@@ -85,7 +85,7 @@
     // 48px
     8: 12px,
     // 12px
-    9: 14px // 14px,,,,,,,
+    9: 14px // 14px,,,,,,,,
   ) !default;
   // scss-docs-end font-sizes
 
@@ -535,7 +535,7 @@
   // 元件：側邊選單
   .menu-box {
     width: 100%;
-    background: #fff;
+    background: #f0f0f0;
     border-radius: 8px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
     padding: 12px;
@@ -569,6 +569,10 @@
     opacity: 1; // 覆蓋 Bootstrap 可能的透明度設定
     // width: 100%;                   // 預設寬度是 100%，通常不需要特別設定
     // width: 274px;                  // 如果您堅持要固定 274px 寬 (不建議，會影響響應式)
+  }
+
+  .accordion-item {
+    background-color: #f0f0f0;
   }
 
   .accordion-button {
