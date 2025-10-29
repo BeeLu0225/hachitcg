@@ -676,40 +676,9 @@ main.product-list-page>.container {
   .text--Global-variables-index {
     color: #898989;
   }
-
-  //   *,
-  //   *::before,
-  //   *::after {
-  //     /* flex-direction: column; */
-  // 
-  //     /* background-color: black;
-  //             color: white; */
-  //     line-height: 1.5;
-  // 
-  //     text-decoration: none;
-  //     list-style: none;
-  //     text-align: start;
-  //     box-sizing: border-box;
-  //     font-family: "Noto Sans", sans-serif;
-  // 
-  //     font-weight: 700 !important;
-  //   }
-  // 
-  //   a,
-  //   a:hover,
-  //   a:focus,
-  //   a:active,
-  //   a:visited {
-  //     color: inherit;
-  //     text-decoration: none;
-  //     flex-wrap: wrap;
-  //   }
-
-  /* 
      // ------------------------------------
      // 手風琴 按鈕 箭頭 自訂
      // ------------------------------------ 
-     */
   .accordion-button::after {
     display: none;
   }
@@ -821,11 +790,10 @@ main.product-list-page>.container {
     margin-bottom: 0.5rem;
   }
 
-  /* 
      // ------------------------------------
      //特定顏色
      // ------------------------------------ 
-     */
+
 
   .text-color-primary {
     /* color: $primary; */
@@ -836,22 +804,19 @@ main.product-list-page>.container {
     color: #e4b112 !important;
   }
 
-  /* 
      // ------------------------------------
      //Left-menu  搜尋框 調整
      // ------------------------------------ 
-     */
+
   .form-control {
     padding: 12px 0 !important;
     border-right: none;
     padding-left: 16px !important;
   }
-
-  /* 
      // ------------------------------------
      //Left-menu  部局
      // ------------------------------------ 
-     */
+
   .item-text-wh {
     width: 150px;
     height: 50px;
@@ -876,13 +841,9 @@ main.product-list-page>.container {
   .h-30 {
     height: 30px;
   }
-
-  /* 
      // ------------------------------------
      //Left-menu & Right-menu 部局
      // ------------------------------------ 
-     */
-
   .content-main {
     flex: 1;
   }
@@ -966,14 +927,11 @@ main.product-list-page>.container {
     /* nav-button-border border-bottom*/
   }
 
-  /* 
+
      // ------------------------------------
      //bootstrap 取消樣式
      // ------------------------------------ 
-     */
-  //   .page-link {
-  //     border-color: rgba(255, 255, 255, 0) !important;
-  //   }
+
 
   .page-number>.page-link {
     border-color: rgba(255, 255, 255, 0) !important;
@@ -985,12 +943,12 @@ main.product-list-page>.container {
     /* 外框 線框取消 */
   }
 
-  /* 
+
      // ------------------------------------
      // page number
-     頁碼:hover，效果
+    //  頁碼:hover，效果
      // ------------------------------------ 
-     */
+
   // 10. 分頁元件
   .pagination {
     .page-item {
@@ -1074,22 +1032,22 @@ main.product-list-page>.container {
 
   /* article */
 
-  /* 
+
      // ------------------------------------
      // 下拉式選單-圖片背景色
      // ------------------------------------ 
-     */
+  
   .img-b-color {
     background-color: #e3e3e3;
     display: flex;
     align-items: center;
   }
 
-  /* 
+
      // ------------------------------------
      // web Q&A 圖片大小
      // ------------------------------------ 
-     */
+ 
   .img-com-Q {
     width: 41px;
     height: 40px;
@@ -1102,28 +1060,22 @@ main.product-list-page>.container {
     margin-right: 16px;
   }
 
-  /* 
+
      // ------------------------------------
      // web Q&A 圖片- padding 水平調整
      // ------------------------------------ 
-     */
+ 
   .accordion-button,
   .accordion-body {
     padding-left: 24px;
     padding-right: 24px;
   }
 
-  //
-  //   .Right-menu>.accordion-button {
-  //     padding-top: 24px;
-  //     padding-bottom: 24px;
-  //   }
 
-  /* 
      // ------------------------------------
      // web Q&A 圖片- 圖片-文字Q 調整
      // ------------------------------------ 
-     */
+     
   .A-com {
     padding: 2rem 24px;
     margin-bottom: 2rem;
