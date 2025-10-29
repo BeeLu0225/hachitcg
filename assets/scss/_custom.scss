@@ -6,65 +6,63 @@
 // 範例內容僅供參考  請依實際需求修改
 //獨立空間樣式 引用寫法
 
+[data-app="cart"] {
+  img {
+    max-width: 100%;
+  }
+  .bg-F0F0F0 {
+    background-color: #f0f0f0;
+  }
+  .p-20px {
+    padding: 20px;
+  }
+  .px-32px {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .text-gray-300 {
+    color: $gray-300;
+  }
+  // btn
+  .btn-black {
+    color: $white;
+    background-color: $black;
+    &:hover {
+      background-color: $primary;
+    }
+  }
+  .btn-primary {
+    background-color: $primary;
+    border-color: $white;
+    span {
+      color: $white;
+    }
+    &:hover {
+      color: $primary;
+      background-color: $white;
+      border-color: $primary;
+      span {
+        color: $primary;
+      }
+    }
+  }
 
-[data-app="cart"]
-{
-    img{
-        max-width: 100%;
-    }
-    .bg-F0F0F0{
-        background-color: #F0F0F0;
-    }
-    .p-20px{
-        padding: 20px;
-    }
-    .px-32px{
-        padding-left: 32px;
-        padding-right: 32px;
-    }
-    .text-gray-300{
-        color:$gray-300;
-    }
-    // btn
-    .btn-black{
-        color:$white;
-        background-color:$black;
-        &:hover {
-            background-color: $primary;
-        }
-    }
-    .btn-primary{        
-        background-color:$primary;
-        border-color:$white;
-        span{
-            color:$white;
-        }
-        &:hover {
-            color:$primary;
-            background-color:$white;
-            border-color:$primary;
-            span{
-                color:$primary;
-            }
-        }
-    }
+  // input
+  .quantity-box {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: $white;
+    user-select: none;
 
-    // input
-    .quantity-box {
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        background-color: $white;
-        user-select: none;
-
-        .btn-icon {
-            background: none;
-            border: none;
-            color: #494949;
-            cursor: pointer;
-            border-radius: 6px;
-        }
+    .btn-icon {
+      background: none;
+      border: none;
+      color: #494949;
+      cursor: pointer;
+      border-radius: 6px;
     }
-    // input end
+  }
+  // input end
 }
 
 [data-app="products"] {
@@ -87,7 +85,7 @@
     // 48px
     8: 12px,
     // 12px
-    9: 14px // 14px,,,
+    9: 14px // 14px,,,,,,,,
   ) !default;
   // scss-docs-end font-sizes
 
@@ -201,28 +199,6 @@
       margin-bottom: 80px;
     }
     // max-width: 1296px 會繼續生效，自動產生 312px 的左右 margin
-  }
-
-  // 元件：側邊選單
-  .menu-box {
-    // 垂直排列
-    .accordion-body {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding-top: 0;
-      padding-bottom: 0;
-
-      a {
-        padding: 4px 0;
-        color: $gray-600;
-        text-decoration: none;
-
-        &:hover {
-          color: $primary;
-        }
-      }
-    }
   }
 
   // 元件：頁面標題 (.page-title)
@@ -555,6 +531,82 @@
       transition: none;
     }
   }
+
+  // 元件：側邊選單
+  .menu-box {
+    width: 100%;
+    background: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+    padding: 12px;
+  }
+
+  .search-box {
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .search-box input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 6px 32px 6px 10px;
+  }
+
+  .search-box i {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    color: #555;
+  }
+
+  .my-custom-divider {
+    border: none; // 清除預設邊框
+    height: 1px; // 設定高度 (等同 border-top)
+    background-color: #cccccc; // 設定顏色 (來自 Figma)
+    margin-top: 20px; // 設定上方間距
+    margin-bottom: 20px; // 設定下方間距
+    opacity: 1; // 覆蓋 Bootstrap 可能的透明度設定
+    // width: 100%;                   // 預設寬度是 100%，通常不需要特別設定
+    // width: 274px;                  // 如果您堅持要固定 274px 寬 (不建議，會影響響應式)
+  }
+
+  .accordion-item {
+    background-color: #f0f0f0;
+  }
+
+  .accordion-button {
+    font-weight: 700;
+    background-color: transparent;
+    color: #000;
+    padding: 6px 0;
+    box-shadow: none;
+  }
+
+  .accordion-button::after {
+    filter: invert(0.4);
+  }
+
+  .accordion-button:not(.collapsed) {
+    color: #f0b400;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .accordion-body {
+    padding: 0 0 0 12px;
+  }
+
+  .accordion-body a {
+    display: block;
+    color: #6c757d;
+    text-decoration: none;
+    padding: 4px 0;
+  }
+
+  .accordion-body a:hover {
+    color: #f0b400;
+  }
 }
 
 [data-app="Q&A-style"] {
@@ -574,7 +626,8 @@
     font-weight: 700 !important;
   }
 
-  .container {}
+  .container {
+  }
 
   p,
   a,
@@ -588,12 +641,10 @@
     color: black;
   }
 
-
   *,
   *::before,
   *::after {
     /* flex-direction: column; */
-
 
     /* background-color: black;
             color: white; */
@@ -616,7 +667,6 @@
     color: inherit;
     text-decoration: none;
     flex-wrap: wrap;
-
   }
 
   /* 
@@ -631,8 +681,6 @@
   .accordion-button {
     position: relative;
   }
-
-
 
   .SVG-switch .accordion-item:nth-child(-n + 3) .accordion-button::before {
     content: none;
@@ -650,8 +698,7 @@
     transform: translateY(-50%) rotate(0deg);
 
     /* 確保過渡效果涵蓋 transform 屬性 */
-    transition:
-      transform 0.2s ease-in-out 0s,
+    transition: transform 0.2s ease-in-out 0s,
       background-image 0.2s ease-in-out 0s;
 
     background-image: url(../images/Q&A-img/Icons.svg);
@@ -671,8 +718,7 @@
     transform: translateY(-50%) rotate(0deg);
 
     /* 確保過渡效果涵蓋 transform 屬性 */
-    transition:
-      transform 0.2s ease-in-out 0s,
+    transition: transform 0.2s ease-in-out 0s,
       background-image 0.2s ease-in-out 0s;
 
     background-image: url(../images/Q&A-img//Arrow-up.svg);
@@ -712,29 +758,25 @@
     vertical-align: bottom;
   }
 
-
-
   /* 隱藏第 1, 2, 3 個手風琴項目的預設箭頭 */
   .Left-menu .accordion-item:nth-child(1) .accordion-button::after,
   .Left-menu .accordion-item:nth-child(2) .accordion-button::after,
   .Left-menu .accordion-item:nth-child(3) .accordion-button::after {
     /* 移除或隱藏箭頭的標準方法 */
     display: none;
-
   }
 
-
   /* 調整手風琴按鈕的內間距 */
-  .m-1620>.accordion-button {
+  .m-1620 > .accordion-button {
     padding: 0.5rem 0;
   }
 
   /* 調整手風琴內容的內間距 */
-  .Left-menu>.accordion-body {
+  .Left-menu > .accordion-body {
     padding: 1rem 2rem;
   }
 
-  .Right-menu>.accordion-body {
+  .Right-menu > .accordion-body {
     padding: 2rem 2rem;
   }
 
@@ -742,12 +784,6 @@
   .accordion-item {
     margin-bottom: 0.5rem;
   }
-
-
-
-
-
-
 
   /* 
      // ------------------------------------
@@ -757,13 +793,12 @@
 
   .text-color-primary {
     /* color: $primary; */
-    color: #E4B112 !important;
+    color: #e4b112 !important;
   }
 
   .text-color-primary::before {
-    color: #E4B112 !important;
+    color: #e4b112 !important;
   }
-
 
   /* 
      // ------------------------------------
@@ -789,9 +824,9 @@
   /* //nav */
   .Left-menu-border,
   .Left-menu-svg-border {
-    border: 1px solid #CCCCCC;
+    border: 1px solid #cccccc;
     border-radius: 8px;
-    color: #CCCCCC;
+    color: #cccccc;
   }
 
   .Left-menu-svg-border {
@@ -886,7 +921,7 @@
   }
 
   .border-bottom-1 {
-    border-bottom: 1px solid #CCCCCC;
+    border-bottom: 1px solid #cccccc;
     /* nav-button-border border-bottom*/
   }
 
@@ -899,12 +934,12 @@
     border-color: rgba(255, 255, 255, 0) !important;
   }
 
-  .page-number>.page-link {
+  .page-number > .page-link {
     border-color: rgba(255, 255, 255, 0) !important;
     padding: 0.375rem 0.85rem;
   }
 
-  .accordion>* {
+  .accordion > * {
     border: none;
     /* 外框 線框取消 */
   }
@@ -916,10 +951,10 @@
      // ------------------------------------ 
      */
   .border-bottom-2:hover {
-    color: #FFFFFF;
-    background-color: #E4B112;
+    color: #ffffff;
+    background-color: #e4b112;
     /* background-color: $primary; */
-    border-bottom-color: 1px solid #E4B112;
+    border-bottom-color: 1px solid #e4b112;
     /* border-bottom: 1px solid $primary; */
     padding: 0.375rem 0.85rem;
     border-radius: 50%;
@@ -958,6 +993,14 @@
     background-color: #E4B112;
 
     border: 1px solid #E4B112;
+  .border-bottom-3:hover {
+    color: #ffffff;
+    background-color: #e4b112;
+    /* background-color: $primary; */
+    border-bottom-color: 1px solid #e4b112;
+    /* border-bottom: 1px solid $primary; */
+    padding: 0.5rem 0.5rem;
+
     border-radius: 50%;
     padding: 0.37rem 0.75rem;
     ;
@@ -975,6 +1018,8 @@
 
   }
 
+    transition: border-radius 0.3s ease, background-color 0.3s ease;
+  }
 
   /* article */
 
@@ -984,7 +1029,7 @@
      // ------------------------------------ 
      */
   .img-b-color {
-    background-color: #E3E3E3;
+    background-color: #e3e3e3;
     display: flex;
     align-items: center;
   }
@@ -1015,10 +1060,9 @@
   .accordion-body {
     padding-left: 24px;
     padding-right: 24px;
-
   }
 
-  // 
+  //
   //   .Right-menu>.accordion-button {
   //     padding-top: 24px;
   //     padding-bottom: 24px;

@@ -8,13 +8,11 @@
       <title>product-list</title>
       <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700&display=swap"
-        rel="stylesheet"
-      />
+        rel="stylesheet" />
 
       <link
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-        rel="stylesheet"
-      />
+        rel="stylesheet" />
     </head>
     <body>
       <%- include('./layout/header'); -%>
@@ -22,8 +20,7 @@
         <!-- breadcrumb -->
         <nav aria-label="breadcrumb" class="mr-2 my-6">
           <ol
-            class="breadcrumb mb-0 body-sm text-gray-400 lh-base fw-normal font-noto"
-          >
+            class="breadcrumb mb-0 body-sm text-gray-400 lh-base fw-normal font-noto">
             <li class="breadcrumb-item">
               <a href="#" class="text-gray-400 text-decoration-none">首頁</a>
             </li>
@@ -41,8 +38,7 @@
 
             <li
               class="breadcrumb-item active text-black fw-normal"
-              aria-current="page"
-            >
+              aria-current="page">
               胖嘟嘟ex
             </li>
           </ol>
@@ -53,53 +49,124 @@
         <div class="my-8">
           <div class="row g-4">
             <!-- 左側：類別/搜尋 (待修改)-->
-            <aside class="col-12 col-lg-3">
-              <div class="card border-0 shadow-sm sticky-top" style="top: 88px">
-                <div class="card-body">
-                  <div class="input-group mb-3">
-                    <input
-                      type="text"
-                      class="form-control form-control-sm"
-                      placeholder="搜尋卡牌"
-                    />
-                    <button class="btn btn-outline-secondary btn-sm">
-                      <i class="bi bi-search"></i>
-                    </button>
-                  </div>
+            <aside class="col-3 p-3">
+              <div class="menu-box p-5">
+                <div class="search-box">
+                  <input type="text" placeholder="搜尋卡牌" />
+                  <i class="bi bi-search"></i>
+                </div>
 
-                  <nav id="categoryNav" class="nav nav-pills flex-column gap-2">
-                    <a class="nav-link fw-bold" href="#">Weiß Schwarz</a>
-                    <a class="nav-link fw-bold" href="#">航海王</a>
+                <hr class="my-custom-divider" />
 
-                    <div class="nav-item">
+                <div class="accordion" id="menuAccordion">
+                  <div class="fw-bold mb-5">Weiß Schwarz</div>
+
+                  <div class="accordion-item border-0 mb-5">
+                    <h2 class="accordion-header">
                       <button
-                        class="btn w-100 d-flex justify-content-between align-items-center px-0 border-0 bg-transparent fw-bold"
+                        class="accordion-button collapsed"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#grp-pokemon"
-                        aria-expanded="true"
-                      >
-                        寶可夢
-                        <i class="bi bi-chevron-down small"></i>
+                        data-bs-target="#collapseOnePiece">
+                        航海王
                       </button>
-                      <div id="grp-pokemon" class="collapse show ps-3">
-                        <a class="nav-link small" href="#">最新彈</a>
-                        <a
-                          class="nav-link small text-warning fw-semibold"
-                          href="#"
-                          >超級勇氣</a
-                        >
-                        <a class="nav-link small text-muted" href="#"
-                          >超級交響樂</a
-                        >
+                    </h2>
+                    <div
+                      id="collapseOnePiece"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#menuAccordion">
+                      <div class="accordion-body">
+                        <a href="#">最新彈</a>
+                        <a href="#">超級勇氣</a>
+                        <a href="#">超級交響樂</a>
                       </div>
                     </div>
+                  </div>
 
-                    <a class="nav-link fw-bold" href="#">朱紫系列</a>
-                    <a class="nav-link fw-bold" href="#">劍盾系列</a>
-                    <a class="nav-link fw-bold" href="#">Vanguard</a>
-                    <a class="nav-link fw-bold" href="#">遊戲王</a>
-                  </nav>
+                  <div class="accordion-item border-0 mb-5">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapsePokemon">
+                        寶可夢
+                      </button>
+                    </h2>
+                    <div
+                      id="collapsePokemon"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#menuAccordion">
+                      <div class="accordion-body">
+                        <a href="#">最新彈</a>
+                        <a href="#">超級交響樂</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item border-0 mb-5">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseVanguard">
+                        Vanguard
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseVanguard"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#menuAccordion">
+                      <div class="accordion-body">
+                        <a href="#">最新系列</a>
+                        <a href="#">特典包</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item border-0 mb-5">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseGundam">
+                        鋼彈系列
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseGundam"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#menuAccordion">
+                      <div class="accordion-body">
+                        <a href="#">創壞者卡牌</a>
+                        <a href="#">水星的魔女</a>
+                        <a href="#">鐵血的孤兒</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item border-0 mb-5">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseYugioh">
+                        遊戲王
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseYugioh"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#menuAccordion">
+                      <div class="accordion-body">
+                        <a href="#">最新卡包</a>
+                        <a href="#">結構牌組</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </aside>
@@ -111,8 +178,7 @@
               <div class="d-flex align-items-center mb-3 gap-2">
                 <a
                   href="product-list.html"
-                  class="h6-ch link-secondary d-inline-flex align-items-center text-decoration-none"
-                >
+                  class="h6-ch link-secondary d-inline-flex align-items-center text-decoration-none">
                   <i class="bi bi-arrow-left me-1"></i> 回上頁
                 </a>
               </div>
@@ -130,8 +196,7 @@
                       <img
                         src="/assets/images/product-card-1.png"
                         class="w-100 h-auto d-block"
-                        alt="卡牌大圖"
-                      />
+                        alt="卡牌大圖" />
                     </div>
                   </div>
                 </div>
@@ -142,15 +207,13 @@
                   <div class="d-flex align-items-center gap-2 mb-5">
                     <!-- 寶可夢：橘色邊框、透明底 -->
                     <span
-                      class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md"
-                    >
+                      class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md">
                       寶可夢
                     </span>
 
                     <!-- 稀有度 RR：咖啡色邊框 + 同色文字 -->
                     <span
-                      class="tag tag-outline-dark d-inline-flex align-items-center justify-content-center px-2 py-1 body-md"
-                    >
+                      class="tag tag-outline-dark d-inline-flex align-items-center justify-content-center px-2 py-1 body-md">
                       稀有度 RR
                     </span>
                   </div>
@@ -171,8 +234,11 @@
                   <div class="d-flex align-items-center mb-5">
                     <span
                       class="rounded-circle bg-success me-1"
-                      style="width: 10px; height: 10px; display: inline-block"
-                    ></span>
+                      style="
+                        width: 10px;
+                        height: 10px;
+                        display: inline-block;
+                      "></span>
                     <span class="text-gray-400 body-sm">尚有庫存</span>
                   </div>
                   <!-- 庫存 end-->
@@ -182,13 +248,11 @@
                     <!-- input -->
                     <div
                       class="quantity-box d-flex align-items-center justify-content-between"
-                      id="quantityBox"
-                    >
+                      id="quantityBox">
                       <button
                         class="btn-icon btn-minus"
                         type="button"
-                        aria-label="減少數量"
-                      >
+                        aria-label="減少數量">
                         <i class="bi bi-dash"></i>
                       </button>
 
@@ -197,8 +261,7 @@
                       <button
                         class="btn-icon btn-plus"
                         type="button"
-                        aria-label="增加數量"
-                      >
+                        aria-label="增加數量">
                         <i class="bi bi-plus"></i>
                       </button>
                     </div>
@@ -216,8 +279,7 @@
                     <button
                       class="btn btn-fav d-flex align-items-center justify-content-center"
                       id="favBtn"
-                      aria-label="加入收藏"
-                    >
+                      aria-label="加入收藏">
                       <i class="bi bi-heart fs-4"></i>
                     </button>
                   </div>
@@ -320,26 +382,22 @@
                           <img
                             src="/assets/images/product-card-5.png"
                             class="img-fluid rounded"
-                            alt="product"
-                          />
+                            alt="product" />
                         </div>
                       </div>
 
                       <!-- 右：文字內容 -->
                       <div class="card-body p-0 flex-grow-1">
                         <div
-                          class="d-flex justify-content-between align-items-start mb-2"
-                        >
+                          class="d-flex justify-content-between align-items-start mb-2">
                           <span
-                            class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md"
-                          >
+                            class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md">
                             寶可夢
                           </span>
 
                           <button
                             class="btn btn-fav d-flex align-items-center justify-content-center"
-                            aria-label="加入收藏"
-                          >
+                            aria-label="加入收藏">
                             <i class="bi bi-heart fs-4"></i>
                           </button>
                         </div>
@@ -365,8 +423,7 @@
                                   width: 10px;
                                   height: 10px;
                                   display: inline-block;
-                                "
-                              ></span>
+                                "></span>
                               <span class="text-gray-400 body-sm"
                                 >尚有庫存</span
                               >
@@ -376,13 +433,11 @@
                             <!-- input-->
                             <div
                               class="quantity-box d-flex align-items-center justify-content-between"
-                              id="quantityBox"
-                            >
+                              id="quantityBox">
                               <button
                                 class="btn-icon btn-minus"
                                 type="button"
-                                aria-label="減少數量"
-                              >
+                                aria-label="減少數量">
                                 <i class="bi bi-dash"></i>
                               </button>
 
@@ -393,8 +448,7 @@
                               <button
                                 class="btn-icon btn-plus"
                                 type="button"
-                                aria-label="增加數量"
-                              >
+                                aria-label="增加數量">
                                 <i class="bi bi-plus"></i>
                               </button>
                             </div>
@@ -421,26 +475,22 @@
                           <img
                             src="/assets/images/product-card-6.png"
                             class="img-fluid rounded"
-                            alt="product"
-                          />
+                            alt="product" />
                         </div>
                       </div>
 
                       <!-- 右：文字內容 -->
                       <div class="card-body p-0 flex-grow-1">
                         <div
-                          class="d-flex justify-content-between align-items-start mb-2"
-                        >
+                          class="d-flex justify-content-between align-items-start mb-2">
                           <span
-                            class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md"
-                          >
+                            class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md">
                             寶可夢
                           </span>
 
                           <button
                             class="btn btn-fav d-flex align-items-center justify-content-center"
-                            aria-label="加入收藏"
-                          >
+                            aria-label="加入收藏">
                             <i class="bi bi-heart fs-4"></i>
                           </button>
                         </div>
@@ -461,8 +511,7 @@
                                   width: 10px;
                                   height: 10px;
                                   display: inline-block;
-                                "
-                              ></span>
+                                "></span>
                               <span class="text-gray-400 body-sm"
                                 >尚有庫存</span
                               >
@@ -472,13 +521,11 @@
                             <!-- input-->
                             <div
                               class="quantity-box d-flex align-items-center justify-content-between"
-                              id="quantityBox"
-                            >
+                              id="quantityBox">
                               <button
                                 class="btn-icon btn-minus"
                                 type="button"
-                                aria-label="減少數量"
-                              >
+                                aria-label="減少數量">
                                 <i class="bi bi-dash"></i>
                               </button>
 
@@ -489,8 +536,7 @@
                               <button
                                 class="btn-icon btn-plus"
                                 type="button"
-                                aria-label="增加數量"
-                              >
+                                aria-label="增加數量">
                                 <i class="bi bi-plus"></i>
                               </button>
                             </div>
@@ -517,26 +563,22 @@
                           <img
                             src="/assets/images/product-card-7.png"
                             class="img-fluid rounded"
-                            alt="product"
-                          />
+                            alt="product" />
                         </div>
                       </div>
 
                       <!-- 右：文字內容 -->
                       <div class="card-body p-0 flex-grow-1">
                         <div
-                          class="d-flex justify-content-between align-items-start mb-2"
-                        >
+                          class="d-flex justify-content-between align-items-start mb-2">
                           <span
-                            class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md"
-                          >
+                            class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md">
                             寶可夢
                           </span>
 
                           <button
                             class="btn btn-fav d-flex align-items-center justify-content-center"
-                            aria-label="加入收藏"
-                          >
+                            aria-label="加入收藏">
                             <i class="bi bi-heart fs-4"></i>
                           </button>
                         </div>
@@ -557,8 +599,7 @@
                                   width: 10px;
                                   height: 10px;
                                   display: inline-block;
-                                "
-                              ></span>
+                                "></span>
                               <span class="text-gray-400 body-sm"
                                 >尚有庫存</span
                               >
@@ -568,13 +609,11 @@
                             <!-- input-->
                             <div
                               class="quantity-box d-flex align-items-center justify-content-between"
-                              id="quantityBox"
-                            >
+                              id="quantityBox">
                               <button
                                 class="btn-icon btn-minus"
                                 type="button"
-                                aria-label="減少數量"
-                              >
+                                aria-label="減少數量">
                                 <i class="bi bi-dash"></i>
                               </button>
 
@@ -585,8 +624,7 @@
                               <button
                                 class="btn-icon btn-plus"
                                 type="button"
-                                aria-label="增加數量"
-                              >
+                                aria-label="增加數量">
                                 <i class="bi bi-plus"></i>
                               </button>
                             </div>
@@ -613,26 +651,22 @@
                           <img
                             src="/assets/images/product-card-8.png"
                             class="img-fluid rounded"
-                            alt="product"
-                          />
+                            alt="product" />
                         </div>
                       </div>
 
                       <!-- 右：文字內容 -->
                       <div class="card-body p-0 flex-grow-1">
                         <div
-                          class="d-flex justify-content-between align-items-start mb-2"
-                        >
+                          class="d-flex justify-content-between align-items-start mb-2">
                           <span
-                            class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md"
-                          >
+                            class="tag tag-outline-primary d-inline-flex align-items-center justify-content-center px-2 py-1 body-md">
                             寶可夢
                           </span>
 
                           <button
                             class="btn btn-fav d-flex align-items-center justify-content-center"
-                            aria-label="加入收藏"
-                          >
+                            aria-label="加入收藏">
                             <i class="bi bi-heart fs-4"></i>
                           </button>
                         </div>
@@ -658,8 +692,7 @@
                                   width: 10px;
                                   height: 10px;
                                   display: inline-block;
-                                "
-                              ></span>
+                                "></span>
                               <span class="text-gray-400 body-sm"
                                 >尚有庫存</span
                               >
@@ -669,13 +702,11 @@
                             <!-- input-->
                             <div
                               class="quantity-box d-flex align-items-center justify-content-between"
-                              id="quantityBox"
-                            >
+                              id="quantityBox">
                               <button
                                 class="btn-icon btn-minus"
                                 type="button"
-                                aria-label="減少數量"
-                              >
+                                aria-label="減少數量">
                                 <i class="bi bi-dash"></i>
                               </button>
 
@@ -686,8 +717,7 @@
                               <button
                                 class="btn-icon btn-plus"
                                 type="button"
-                                aria-label="增加數量"
-                              >
+                                aria-label="增加數量">
                                 <i class="bi bi-plus"></i>
                               </button>
                             </div>
