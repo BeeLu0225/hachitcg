@@ -461,7 +461,7 @@
       border: none;
       background-color: transparent;
       color: $black; // 預設黑色文字/圖標
-      border-radius: 0; // 先重設，再單獨設定
+    //   border-radius: 50; // 先重設，再單獨設定
 
       // 確保內容 (數字/圖標) 垂直水平置中
       display: flex;
@@ -930,9 +930,9 @@
      //bootstrap 取消樣式
      // ------------------------------------ 
      */
-  .page-link {
-    border-color: rgba(255, 255, 255, 0) !important;
-  }
+//   .page-link {
+//     border-color: rgba(255, 255, 255, 0) !important;
+//   }
 
   .page-number > .page-link {
     border-color: rgba(255, 255, 255, 0) !important;
@@ -979,14 +979,14 @@
     border: 1px solid #ffffff !important;
   }
 
-  .page-link {
-    color: rgb(0, 0, 0) !important;
-  }
+//   .page-link {
+//     color: rgb(0, 0, 0) !important;
+//   }
 
-  .page-link svg {
+//   .page-link svg {
 
-    padding-bottom: 2px;
-  }
+//     padding-bottom: 2px;
+//   }
 
   .page-number-hover:hover {
     color: rgb(255, 255, 255) !important;
@@ -1077,6 +1077,83 @@
     padding: 2rem 24px;
     margin-bottom: 2rem;
   }
+  // 10. 分頁元件
+  .pagination {
+    .page-item {
+      // 1. 設定數字按鈕之間的 8px 間距
+      //    nth-child(n+3) 選取第 3 個 li (數字 2) 開始的所有 li
+      //    :not(:last-child) 排除最後一個 li (右箭頭)
+      &:nth-child(n + 3):not(:last-child) {
+        margin-left: 8px;
+      }
+
+      // 2. 設定第一個數字按鈕 (數字 1) 與左箭頭的 24px 間距
+      //    nth-child(2) 選取第 2 個 li (數字 1)
+      &:nth-child(2) {
+        margin-left: 24px;
+      }
+
+      // 3. 設定右箭頭與最後一個數字按鈕的 24px 間距
+      &:last-child {
+        margin-left: 24px;
+      }
+    }
+
+    // 通用按鈕樣式 (.page-link)
+    .page-link {
+      width: 32px;
+      height: 32px;
+      padding: 8px;
+
+      // 重設 Bootstrap 樣式
+      border: none;
+      background-color: transparent;
+      color: $black; // 預設黑色文字/圖標
+    //   border-radius: 50; // 先重設，再單獨設定
+
+      // 確保內容 (數字/圖標) 垂直水平置中
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1; // 確保文字垂直置中
+
+      // 移除焦點時的藍色外框 (可選)
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    // 箭頭按鈕樣式 (第一個和最後一個 li)
+    .page-item:first-child .page-link,
+    .page-item:last-child .page-link {
+      // 來自 Figma (Icon Button)
+      border-radius: 100px; // 圓形
+      // background-color: transparent; // 已在通用樣式設定
+      // color: $black; // 已在通用樣式設定
+    }
+
+    // 當前頁面 (Active) 樣式
+    .page-item.active .page-link {
+      // 來自 Figma (Pagination Item - Active)
+      background-color: $primary; // $primary: #E4B112
+      color: $light; // 使用 $dark (#5B3400) 提供更好的對比度
+      border-radius: 19px; // Figma 規格
+      z-index: 1; // 確保在其他按鈕之上 (Bootstrap 預設)
+    }
+
+    // 禁用 (Disabled) 樣式
+    .page-item.disabled .page-link {
+      color: $gray-400; // 使用灰色表示禁用
+      background-color: transparent;
+      // pointer-events: none; // Bootstrap 預設已有
+      // cursor: auto; // Bootstrap 預設已有
+    }
+
+    // 滑鼠懸停 (Hover) 樣式 (非 Active, 非 Disabled)
+    .page-item:not(.active):not(.disabled) .page-link:hover {
+      background-color: $gray-100; // 提供一個淡淡的 hover 背景色
+    }
+  }
 
 
 }
@@ -1111,6 +1188,8 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  
 }
 
 // 應用限定區域樣式在html 標籤上加入 data-app="site"
