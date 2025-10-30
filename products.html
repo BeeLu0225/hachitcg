@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-app="products">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>寶可夢 超級勇氣 - 商品列表</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans+TC:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" crossorigin href="/web-layout-training-vite/assets/all-BqRUtbQG.css">
+  </head>
+  <body>
+    <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- 你的自訂 Bootstrap SCSS 編譯結果 -->
+
+<!-- Bootstrap JS (僅保留 JS，不載入官方 CSS) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ====== Navbar Start ====== -->
+<nav class="navbar navbar-expand-lg small py-1 bg-light">
+  <div class="container">
+    <!-- 左：品牌區 -->
+    <a class="navbar-brand d-flex align-items-center gap-2 mt-1" href="index.html">
+      <img src="data:image/png;base64,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" alt="logo" width="74" height="47.57">
+      <span class="d-flex flex-column lh-1">
+        <strong class="brand-title text-header">小蜜蜂卡牌屋</strong>
+        <span class="brand-sub text-header fs-8 mt-1">Little Bee Card House</span>
+      </span>
+    </a>
+
+    <!-- 漢堡按鈕 -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- 右：導覽選單 -->
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+
+        <!-- Mega Menu：選擇商品 -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center fs-6 pt-1 pb-1 ps-4 pe-4 py-2 fw-bold" 
+             href="#" data-bs-toggle="dropdown" aria-expanded="false">
+            選擇商品 <i class="bi bi-chevron-down ms-1" style="font-size: 1.25rem;"></i>
+          </a>
+
+          <div class="dropdown-menu mega mt-0 border-0 shadow-sm rounded-0">
+            <div class="row g-2 px-3 py-2">
+              <div class="col-12 col-lg-4">
+                <a href="#">遊戲王</a>
+                <a href="#">Vanguard</a>
+                <a href="#">Weiß Schwarz Rose</a>
+                <a href="#">Dual Masters</a>
+                <a href="#">UNION ARENA</a>
+                <a href="#">碧藍航線</a>
+              </div>
+              <div class="col-12 col-lg-4">
+                <a href="products.html">寶可夢</a>
+                <a href="#">Weiß Schwarz</a>
+                <a href="#">Rebirth for you</a>
+                <a href="#">Wixoss</a>
+                <a href="#">數碼寶貝</a>
+                <a href="#">Z/X</a>
+              </div>
+              <div class="col-12 col-lg-4">
+                <a href="#">航海王</a>
+                <a href="#">Weiß Schwarz Blau</a>
+                <a href="#">hololive</a>
+                <a href="#">魔法風雲會</a>
+                <a href="#">Battle Spirits</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- 其他導覽連結 -->
+        <li class="nav-item fs-6 pt-1 pb-1 ps-4 pe-4 fw-bold"><a class="nav-link" href="news.html">消息攻略</a></li>
+        <li class="nav-item fs-6 pt-1 pb-1 ps-4 pe-4 fw-bold"><a class="nav-link" href="#">優惠專區</a></li>
+        <li class="nav-item fs-6 pt-1 pb-1 ps-4 pe-4 fw-bold"><a class="nav-link" href="Q&A-Page.html">問與答</a></li>
+
+        <!-- Icon 區 -->
+        <li class="nav-item fs-5"><a class="nav-link px-2" href="cart.html"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEJSURBVHgBvZTdDYIwFIVvi7zrI+EnuokbqBMYJ1A30E10AzdQN3ADSeBdBuDH0wQBoRDbJn4vpXC4Pb23t8zzvIJqjnEcH8gA3ppvx4AMYJ8HOL1imJMBRVGETYdHMoRzXjsUmLpkjG3aOdR2ie0+oig6fQVEhW9YJSQNbNteiZFLvim7hIlTCKQBLcu6QJCQAvinMtEJiIUS5ONMGu6kAQUIuKDfuDfdCUZtRRAEuzzPp6I4qNqMFOk4zLJsK8Y0TfekAWu/8H3/hS0r9zOOHJM6BHvds/gfHMdZoqdfrus+UaC1qq6TQyHAlqflNEFuJrKAfbpODnEFVQUZ6pg+XW9RStFQX0t1b+orYCcB9QH4AAAAAElFTkSuQmCC" alt="">
+        </a></li>
+        <li class="nav-item ms-3 fs-5"><a class="nav-link px-2" href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAE6SURBVHgBrZO7UcNAEIb3Tg6cWaFm9JgrQXRgOoAKDCERlIArQCVARugObHdABxySAmUIxXrwr5FnZI+EbEvfzL32dv/Zu70TVGNZljIM40kIscDSREurqloVRbFMkkSzj23bvpTyEfabLh/Bned5i7Isg9qpjWcI/cDnpWOfsH8XhuGb4Mwmk8knDSfN8/zKmM1mAY7p03CmgnFd9xv3YNI4pHJEMcaUSDKl8dhluKXx2Ep0AY1HIOM43mCyoYHg6l5ZizMkvMN7GDRdCMfily13871RKeXjC63PrToXFWLXWuuPA0HGcZw5hjWdAQRvoyha7ddGczPLMo2f8wWnOZbTHqEU7QFi7wf2Nue+4x8fs4lsC2BHDmgrVF2AVrHODBuZqjpTdSSmu2L+FWyK8rxP7GTUHyc9p19EapBFIO6HFAAAAABJRU5ErkJggg==" alt=""></a></li>
+        <li class="nav-item  fs-3"><a class="nav-link px-2" href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAI7SURBVHgB7Za9UsJAEMc3QOEMHxM7GD6EJxCfQHwCY2cnvAGlneQJxCdQ30BKK7WzM6WdYYA+w0fhMID/ZQ4HMwHuEuzuN3Nzx2Y3+XPZvSyRRqPRaDRRMCgCJkgmk3XDME4Xi0UVc5ntWDtYu5g7g8HggSIQWmAul7Pi8fg969zmB5EuJjus0DiFoFgs3mKH2lge7PKFn4lhZTIZGg6Hb6SIssBCoXCD6ZrUqaXTaXM0Gj2rBMVUnPP5fB1Ty2/nfMN0lkgkDnngd0PY/H5NTg1SQCkHIfBrVQjrQFTFBeu2MpjNZh/IQX+OeuPxuOIBkkB6B3n3gsSBjl8cI2ydAP9l5ZMk0gI50TdccjbFiAoOuleNJFHJwSMKftjRlphqkBHCj0kSFYGbHmZls9my3y5s50ExG1IlkARFx8SB/YIctSeTyRMbUqlUFcLvaQ9IVzEEuDtepwpOv98/kXFUKRKH9kdX1lFaYCwWe/XbINrDeMS44LMQu2LwwPqEbXwt6F6wP5Ek0q8Y566Jg/drdfDyQ5B7DRx33o44PrBbiLsScW6v16uQJNI7KIQ0xE9vPp/bu8SJOBe+7TWTTQooNQvoRj7RlRxiWcNOXOLj/42P//u2mFKp1MTEFc2dj40UaJMCofpBdDQtTNzV/PZ7GA56vmUh8WudTqcW/gSfgzXhd4frTVIkdMOKnrDOIvHg8jY/LiRMDeSddGH8iaeICKGWELr8hGHdRdVz2/+K+UEmVzUajUaj+R9+ACFb01M42G6HAAAAAElFTkSuQmCC" alt=""></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ====== Navbar End ====== -->
+
+<!-- ====== Dropdown JS 行為 ====== -->
+<script>
+document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+  const menu = toggle.parentElement.querySelector('.dropdown-menu');
+
+  // 展開時
+  toggle.addEventListener('show.bs.dropdown', () => {
+    const icon = toggle.querySelector('i');
+    if (icon) icon.classList.replace('bi-chevron-down', 'bi-chevron-up');
+    if (menu) menu.style.marginTop = '21px';
+  });
+
+  // 收合時
+  toggle.addEventListener('hide.bs.dropdown', () => {
+    const icon = toggle.querySelector('i');
+    if (icon) icon.classList.replace('bi-chevron-up', 'bi-chevron-down');
+    if (menu) menu.style.marginTop = '';
+  });
+});
+</script>
+    <div class="container">
+      <!-- breadcrumb -->
+      <nav aria-label="breadcrumb" class="mr-2 my-6">
+        <ol
+          class="breadcrumb mb-0 body-sm text-gray-400 lh-base fw-normal font-noto">
+          <li class="breadcrumb-item">
+            <a href="#" class="text-gray-400 text-decoration-none">首頁</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="#" class="text-gray-400 text-decoration-none">選擇商品</a>
+          </li>
+
+          <!--! 麵包屑待定 -->
+          <!-- <li class="breadcrumb-item">
+              <a href="#" class="text-gray-400 text-decoration-none"
+                >胖嘟嘟ex</a
+              >
+            </li> -->
+
+          <li
+            class="breadcrumb-item active text-black fw-normal"
+            aria-current="page">
+            寶可夢 超級勇氣
+          </li>
+        </ol>
+      </nav>
+      <!-- breadcrumb-end -->
+    </div>
+
+    <main class="product-list-page">
+      <div class="container">
+        <div class="row gx-4">
+          <aside class="col-3 p-3">
+            <div class="menu-box p-5">
+              <div class="search-box">
+                <input type="text" placeholder="搜尋卡牌" />
+                <i class="bi bi-search"></i>
+              </div>
+
+              <hr class="my-custom-divider" />
+
+              <div class="accordion" id="menuAccordion">
+                <div class="fw-bold mb-5">Weiß Schwarz</div>
+
+                <div class="accordion-item border-0 mb-5">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOnePiece">
+                      航海王
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseOnePiece"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                      <a href="#">最新彈</a>
+                      <a href="#">超級勇氣</a>
+                      <a href="#">超級交響樂</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item border-0 mb-5">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapsePokemon">
+                      寶可夢
+                    </button>
+                  </h2>
+                  <div
+                    id="collapsePokemon"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                      <a href="#">最新彈</a>
+                      <a href="#">超級交響樂</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item border-0 mb-5">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseVanguard">
+                      Vanguard
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseVanguard"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                      <a href="#">最新系列</a>
+                      <a href="#">特典包</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item border-0 mb-5">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseGundam">
+                      鋼彈系列
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseGundam"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                      <a href="#">創壞者卡牌</a>
+                      <a href="#">水星的魔女</a>
+                      <a href="#">鐵血的孤兒</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item border-0 mb-5">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseYugioh">
+                      遊戲王
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseYugioh"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                      <a href="#">最新卡包</a>
+                      <a href="#">結構牌組</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <section class="col-9 p-3">
+            <div class="page-title mb-7">
+              <p class="sub-title fs-5">/ PTGC /</p>
+              <h1 class="main-title fw-bold">寶可夢 超級勇氣</h1>
+            </div>
+
+            <div class="row row-cols-1 row-cols-lg-2 g-6">
+              <div class="col">
+                <div class="card product-card h-100">
+                  <div class="row g-0 h-100">
+                    <div class="col-4">
+                      <div
+                        class="product-card-image-frame h-100 d-flex align-items-center justify-content-center">
+                        <a
+                          href="http://localhost:5173/web-layout-training-vite/pages/product-list.html">
+                          <img
+                            src="/web-layout-training-vite/assets/product-card-1-BBXgVBv4.png"
+                            class="img-fluid"
+                            alt="寶可夢卡牌" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-8">
+                      <div
+                        class="card-body d-flex flex-column h-100 position-relative">
+                        <button
+                          class="btn btn-icon btn-favorite position-absolute top-0 end-0 m-4">
+                          <i class="bi bi-heart"></i>
+                        </button>
+
+                        <span class="tag align-self-start">寶可夢</span>
+
+                        <div class="product-info">
+                          <p class="body-md text-gray-300 mb-1">SV11WF - 042</p>
+                          <h5 class="h6-ch text-gray-500">
+                            <a
+                              href="http://localhost:5173/web-layout-training-vite/pages/product-list.html"
+                              class="text-decoration-none text-reset">
+                              胖嘟嘟ex
+                            </a>
+                          </h5>
+                        </div>
+
+                        <div class="product-purchase mt-0">
+                          <div
+                            class="d-flex justify-content-between align-items-center">
+                            <div class="price-stock">
+                              <div class="d-flex align-items-baseline">
+                                <p class="price fs-5 mb-0">NT $5</p>
+
+                                <p
+                                  class="text-gray-400 text-decoration-line-through fs-9 mb-0 ms-2">
+                                  NT$15
+                                </p>
+                              </div>
+
+                              <p class="stock-status in-stock small">
+                                <i
+                                  class="fa-solid fa-circle text-success fa-xs"></i>
+                                尚有庫存
+                              </p>
+                            </div>
+
+                            <button
+                              class="btn btn-fav d-flex align-items-center justify-content-center position-absolute top-0 end-0 m-4"
+                              aria-label="加入收藏">
+                              <i class="bi bi-heart fs-4"></i>
+                            </button>
+
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between m-0">
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量">
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value">1</span>
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量">
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <a href="" target="_blank" class="btn btn-add w-100">
+                            <span class="add-text">加入購物車</span>
+
+                            <span class="icon">
+                              <i class="bi bi-arrow-right"></i>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card product-card h-100">
+                  <div class="row g-0 h-100">
+                    <div class="col-4">
+                      <div
+                        class="product-card-image-frame h-100 d-flex align-items-center justify-content-center">
+                        <a
+                          href="http://localhost:5173/web-layout-training-vite/pages/product-list.html">
+                          <img
+                            src="/web-layout-training-vite/assets/product-card-5-fpRIzkV3.png"
+                            class="img-fluid"
+                            alt="寶可夢卡牌" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-8">
+                      <div
+                        class="card-body d-flex flex-column h-100 position-relative">
+                        <button
+                          class="btn btn-icon btn-favorite position-absolute top-0 end-0 m-4">
+                          <i class="bi bi-heart"></i>
+                        </button>
+
+                        <span class="tag align-self-start">寶可夢</span>
+
+                        <div class="product-info">
+                          <p class="product-code">SV11WF - 001</p>
+                          <h5 class="h6-ch text-gray-500">
+                            <a
+                              href="http://localhost:5173/web-layout-training-vite/pages/product-list.html"
+                              class="text-decoration-none text-reset">
+                              愛管侍
+                            </a>
+                          </h5>
+                        </div>
+
+                        <div class="product-purchase mt-0">
+                          <div
+                            class="d-flex justify-content-between align-items-center">
+                            <div class="price-stock">
+                              <div class="d-flex align-items-baseline">
+                                <p class="price fs-5 mb-0">NT $5</p>
+
+                                <p
+                                  class="text-gray-400 text-decoration-line-through fs-9 mb-0 ms-2">
+                                  NT$15
+                                </p>
+                              </div>
+
+                              <p class="stock-status in-stock small">
+                                <i
+                                  class="fa-solid fa-circle text-success fa-xs"></i>
+                                尚有庫存
+                              </p>
+                            </div>
+
+                            <button
+                              class="btn btn-fav d-flex align-items-center justify-content-center position-absolute top-0 end-0 m-4"
+                              aria-label="加入收藏">
+                              <i class="bi bi-heart fs-4"></i>
+                            </button>
+
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between m-0">
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量">
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value">1</span>
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量">
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <a href="" target="_blank" class="btn btn-add w-100">
+                            <span class="add-text">加入購物車</span>
+
+                            <span class="icon">
+                              <i class="bi bi-arrow-right"></i>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card product-card h-100">
+                  <div class="row g-0 h-100">
+                    <div class="col-4">
+                      <div
+                        class="product-card-image-frame h-100 d-flex align-items-center justify-content-center">
+                        <a
+                          href="http://localhost:5173/web-layout-training-vite/pages/product-list.html">
+                          <img
+                            src="/web-layout-training-vite/assets/product-card-6-D_U5r_wK.png"
+                            class="img-fluid"
+                            alt="寶可夢卡牌" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-8">
+                      <div
+                        class="card-body d-flex flex-column h-100 position-relative">
+                        <button
+                          class="btn btn-icon btn-favorite position-absolute top-0 end-0 m-4">
+                          <i class="bi bi-heart"></i>
+                        </button>
+
+                        <span class="tag align-self-start">寶可夢</span>
+
+                        <div class="product-info">
+                          <p class="product-code">SV11WF - 002</p>
+                          <h5 class="h6-ch text-gray-500">
+                            <a
+                              href="http://localhost:5173/web-layout-training-vite/pages/product-list.html"
+                              class="text-decoration-none text-reset">
+                              超能妙喵
+                            </a>
+                          </h5>
+                        </div>
+
+                        <div class="product-purchase mt-0">
+                          <div
+                            class="d-flex justify-content-between align-items-center">
+                            <div class="price-stock">
+                              <p class="price fs-5 mb-0">NT $5</p>
+                              <p class="stock-status in-stock small">
+                                <i
+                                  class="fa-solid fa-circle text-success fa-xs"></i>
+                                尚有庫存
+                              </p>
+                            </div>
+
+                            <button
+                              class="btn btn-fav d-flex align-items-center justify-content-center position-absolute top-0 end-0 m-4"
+                              aria-label="加入收藏">
+                              <i class="bi bi-heart fs-4"></i>
+                            </button>
+
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between m-0">
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量">
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value">1</span>
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量">
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <a href="" target="_blank" class="btn btn-add w-100">
+                            <span class="add-text">加入購物車</span>
+
+                            <span class="icon">
+                              <i class="bi bi-arrow-right"></i>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card product-card h-100">
+                  <div class="row g-0 h-100">
+                    <div class="col-4">
+                      <div
+                        class="product-card-image-frame h-100 d-flex align-items-center justify-content-center">
+                        <a
+                          href="http://localhost:5173/web-layout-training-vite/pages/product-list.html">
+                          <img
+                            src="/web-layout-training-vite/assets/product-card-7-CL5HlbAx.png"
+                            class="img-fluid"
+                            alt="寶可夢卡牌" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-8">
+                      <div
+                        class="card-body d-flex flex-column h-100 position-relative">
+                        <button
+                          class="btn btn-icon btn-favorite position-absolute top-0 end-0 m-4">
+                          <i class="bi bi-heart"></i>
+                        </button>
+
+                        <span class="tag align-self-start">寶可夢</span>
+
+                        <div class="product-info">
+                          <p class="product-code">SV11WF - 003</p>
+                          <h5 class="h6-ch text-gray-500">
+                            <a
+                              href="http://localhost:5173/web-layout-training-vite/pages/product-list.html"
+                              class="text-decoration-none text-reset">
+                              波克基斯
+                            </a>
+                          </h5>
+                        </div>
+
+                        <div class="product-purchase mt-0">
+                          <div
+                            class="d-flex justify-content-between align-items-center">
+                            <div class="price-stock">
+                              <p class="price fs-5 mb-0">NT $5</p>
+                              <p class="stock-status in-stock small">
+                                <i
+                                  class="fa-solid fa-circle text-success fa-xs"></i>
+                                尚有庫存
+                              </p>
+                            </div>
+
+                            <button
+                              class="btn btn-fav d-flex align-items-center justify-content-center position-absolute top-0 end-0 m-4"
+                              aria-label="加入收藏">
+                              <i class="bi bi-heart fs-4"></i>
+                            </button>
+
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between m-0">
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量">
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value">1</span>
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量">
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <a href="" target="_blank" class="btn btn-add w-100">
+                            <span class="add-text">加入購物車</span>
+
+                            <span class="icon">
+                              <i class="bi bi-arrow-right"></i>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card product-card h-100">
+                  <div class="row g-0 h-100">
+                    <div class="col-4">
+                      <div
+                        class="product-card-image-frame h-100 d-flex align-items-center justify-content-center">
+                        <a
+                          href="http://localhost:5173/web-layout-training-vite/pages/product-list.html">
+                          <img
+                            src="/web-layout-training-vite/assets/product-card-8-DyX2VPH6.png"
+                            class="img-fluid"
+                            alt="寶可夢卡牌" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-8">
+                      <div
+                        class="card-body d-flex flex-column h-100 position-relative">
+                        <button
+                          class="btn btn-icon btn-favorite position-absolute top-0 end-0 m-4">
+                          <i class="bi bi-heart"></i>
+                        </button>
+
+                        <span class="tag align-self-start">寶可夢</span>
+
+                        <div class="product-info">
+                          <p class="product-code">SV11WF - 004</p>
+                          <h5 class="h6-ch text-gray-500">
+                            <a
+                              href="http://localhost:5173/web-layout-training-vite/pages/product-list.html"
+                              class="text-decoration-none text-reset">
+                              由克希
+                            </a>
+                          </h5>
+                        </div>
+
+                        <div class="product-purchase mt-0">
+                          <div
+                            class="d-flex justify-content-between align-items-center">
+                            <div class="price-stock">
+                              <div class="d-flex align-items-baseline">
+                                <p class="price fs-5 mb-0">NT $5</p>
+
+                                <p
+                                  class="text-gray-400 text-decoration-line-through fs-9 mb-0 ms-2">
+                                  NT$15
+                                </p>
+                              </div>
+
+                              <p class="stock-status in-stock small">
+                                <i
+                                  class="fa-solid fa-circle text-success fa-xs"></i>
+                                尚有庫存
+                              </p>
+                            </div>
+
+                            <button
+                              class="btn btn-fav d-flex align-items-center justify-content-center position-absolute top-0 end-0 m-4"
+                              aria-label="加入收藏">
+                              <i class="bi bi-heart fs-4"></i>
+                            </button>
+
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between m-0">
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量">
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value">1</span>
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量">
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <a href="" target="_blank" class="btn btn-add w-100">
+                            <span class="add-text">加入購物車</span>
+
+                            <span class="icon">
+                              <i class="bi bi-arrow-right"></i>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card product-card h-100">
+                  <div class="row g-0 h-100">
+                    <div class="col-4">
+                      <div
+                        class="product-card-image-frame h-100 d-flex align-items-center justify-content-center">
+                        <a
+                          href="http://localhost:5173/web-layout-training-vite/pages/product-list.html">
+                          <img
+                            src="/web-layout-training-vite/assets/product-card-sewaddle-Dhs4LW8s.png"
+                            class="img-fluid"
+                            alt="寶可夢卡牌" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-8">
+                      <div
+                        class="card-body d-flex flex-column h-100 position-relative">
+                        <button
+                          class="btn btn-icon btn-favorite position-absolute top-0 end-0 m-4">
+                          <i class="bi bi-heart"></i>
+                        </button>
+
+                        <span class="tag align-self-start">寶可夢</span>
+
+                        <div class="product-info">
+                          <p class="product-code">SV11WF - 005</p>
+                          <h5 class="h6-ch text-gray-500">
+                            <a
+                              href="http://localhost:5173/web-layout-training-vite/pages/product-list.html"
+                              class="text-decoration-none text-reset">
+                              蟲寶包
+                            </a>
+                          </h5>
+                        </div>
+
+                        <div class="product-purchase mt-0">
+                          <div
+                            class="d-flex justify-content-between align-items-center">
+                            <div class="price-stock">
+                              <p class="price fs-5 mb-0">NT $5</p>
+                              <p class="stock-status in-stock small">
+                                <i
+                                  class="fa-solid fa-circle text-success fa-xs"></i>
+                                尚有庫存
+                              </p>
+                            </div>
+
+                            <button
+                              class="btn btn-fav d-flex align-items-center justify-content-center position-absolute top-0 end-0 m-4"
+                              aria-label="加入收藏">
+                              <i class="bi bi-heart fs-4"></i>
+                            </button>
+
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between m-0">
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量">
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value">1</span>
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量">
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <a href="" target="_blank" class="btn btn-add w-100">
+                            <span class="add-text">加入購物車</span>
+
+                            <span class="icon">
+                              <i class="bi bi-arrow-right"></i>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card product-card h-100">
+                  <div class="row g-0 h-100">
+                    <div class="col-4">
+                      <div
+                        class="product-card-image-frame h-100 d-flex align-items-center justify-content-center">
+                        <a
+                          href="http://localhost:5173/web-layout-training-vite/pages/product-list.html">
+                          <img
+                            src="/web-layout-training-vite/assets/product-card-sewaddle-Dhs4LW8s.png"
+                            class="img-fluid"
+                            alt="寶可夢卡牌" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-8">
+                      <div
+                        class="card-body d-flex flex-column h-100 position-relative">
+                        <button
+                          class="btn btn-icon btn-favorite position-absolute top-0 end-0 m-4">
+                          <i class="bi bi-heart"></i>
+                        </button>
+
+                        <span class="tag align-self-start">寶可夢</span>
+
+                        <div class="product-info">
+                          <p class="product-code">SV11WF - 005</p>
+                          <h5 class="h6-ch text-gray-500">
+                            <a
+                              href="http://localhost:5173/web-layout-training-vite/pages/product-list.html"
+                              class="text-decoration-none text-reset">
+                              蟲寶包
+                            </a>
+                          </h5>
+                        </div>
+
+                        <div class="product-purchase mt-0">
+                          <div
+                            class="d-flex justify-content-between align-items-center">
+                            <div class="price-stock">
+                              <p class="price fs-5 mb-0">NT $5</p>
+                              <p class="stock-status in-stock small">
+                                <i
+                                  class="fa-solid fa-circle text-success fa-xs"></i>
+                                尚有庫存
+                              </p>
+                            </div>
+
+                            <button
+                              class="btn btn-fav d-flex align-items-center justify-content-center position-absolute top-0 end-0 m-4"
+                              aria-label="加入收藏">
+                              <i class="bi bi-heart fs-4"></i>
+                            </button>
+
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between m-0">
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量">
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value">1</span>
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量">
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <a href="" target="_blank" class="btn btn-add w-100">
+                            <span class="add-text">加入購物車</span>
+
+                            <span class="icon">
+                              <i class="bi bi-arrow-right"></i>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card product-card h-100">
+                  <div class="row g-0 h-100">
+                    <div class="col-4">
+                      <div
+                        class="product-card-image-frame h-100 d-flex align-items-center justify-content-center">
+                        <a
+                          href="http://localhost:5173/web-layout-training-vite/pages/product-list.html">
+                          <img
+                            src="/web-layout-training-vite/assets/product-card-sewaddle-Dhs4LW8s.png"
+                            class="img-fluid"
+                            alt="寶可夢卡牌" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-8">
+                      <div
+                        class="card-body d-flex flex-column h-100 position-relative">
+                        <button
+                          class="btn btn-icon btn-favorite position-absolute top-0 end-0 m-4">
+                          <i class="bi bi-heart"></i>
+                        </button>
+
+                        <span class="tag align-self-start">寶可夢</span>
+
+                        <div class="product-info">
+                          <p class="product-code">SV11WF - 005</p>
+                          <h5 class="h6-ch text-gray-500">
+                            <a
+                              href="http://localhost:5173/web-layout-training-vite/pages/product-list.html"
+                              class="text-decoration-none text-reset">
+                              蟲寶包
+                            </a>
+                          </h5>
+                        </div>
+
+                        <div class="product-purchase mt-0">
+                          <div
+                            class="d-flex justify-content-between align-items-center">
+                            <div class="price-stock">
+                              <p class="price fs-5 mb-0">NT $5</p>
+                              <p class="stock-status in-stock small">
+                                <i
+                                  class="fa-solid fa-circle text-success fa-xs"></i>
+                                尚有庫存
+                              </p>
+                            </div>
+
+                            <button
+                              class="btn btn-fav d-flex align-items-center justify-content-center position-absolute top-0 end-0 m-4"
+                              aria-label="加入收藏">
+                              <i class="bi bi-heart fs-4"></i>
+                            </button>
+
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between m-0">
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量">
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value">1</span>
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量">
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <a href="" target="_blank" class="btn btn-add w-100">
+                            <span class="add-text">加入購物車</span>
+
+                            <span class="icon">
+                              <i class="bi bi-arrow-right"></i>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card product-card h-100">
+                  <div class="row g-0 h-100">
+                    <div class="col-4">
+                      <div
+                        class="product-card-image-frame h-100 d-flex align-items-center justify-content-center">
+                        <a
+                          href="http://localhost:5173/web-layout-training-vite/pages/product-list.html">
+                          <img
+                            src="/web-layout-training-vite/assets/product-card-sewaddle-Dhs4LW8s.png"
+                            class="img-fluid"
+                            alt="寶可夢卡牌" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-8">
+                      <div
+                        class="card-body d-flex flex-column h-100 position-relative">
+                        <button
+                          class="btn btn-icon btn-favorite position-absolute top-0 end-0 m-4">
+                          <i class="bi bi-heart"></i>
+                        </button>
+
+                        <span class="tag align-self-start">寶可夢</span>
+
+                        <div class="product-info">
+                          <p class="product-code">SV11WF - 005</p>
+                          <h5 class="h6-ch text-gray-500">
+                            <a
+                              href="http://localhost:5173/web-layout-training-vite/pages/product-list.html"
+                              class="text-decoration-none text-reset">
+                              蟲寶包
+                            </a>
+                          </h5>
+                        </div>
+
+                        <div class="product-purchase mt-0">
+                          <div
+                            class="d-flex justify-content-between align-items-center">
+                            <div class="price-stock">
+                              <p class="price fs-5 mb-0">NT $5</p>
+                              <p class="stock-status in-stock small">
+                                <i
+                                  class="fa-solid fa-circle text-success fa-xs"></i>
+                                尚有庫存
+                              </p>
+                            </div>
+
+                            <button
+                              class="btn btn-fav d-flex align-items-center justify-content-center position-absolute top-0 end-0 m-4"
+                              aria-label="加入收藏">
+                              <i class="bi bi-heart fs-4"></i>
+                            </button>
+
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between m-0">
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量">
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value">1</span>
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量">
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <a href="" target="_blank" class="btn btn-add w-100">
+                            <span class="add-text">加入購物車</span>
+
+                            <span class="icon">
+                              <i class="bi bi-arrow-right"></i>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card product-card h-100">
+                  <div class="row g-0 h-100">
+                    <div class="col-4">
+                      <div
+                        class="product-card-image-frame h-100 d-flex align-items-center justify-content-center">
+                        <a
+                          href="http://localhost:5173/web-layout-training-vite/pages/product-list.html">
+                          <img
+                            src="/web-layout-training-vite/assets/product-card-sewaddle-Dhs4LW8s.png"
+                            class="img-fluid"
+                            alt="寶可夢卡牌" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-8">
+                      <div
+                        class="card-body d-flex flex-column h-100 position-relative">
+                        <button
+                          class="btn btn-icon btn-favorite position-absolute top-0 end-0 m-4">
+                          <i class="bi bi-heart"></i>
+                        </button>
+
+                        <span class="tag align-self-start">寶可夢</span>
+
+                        <div class="product-info">
+                          <p class="product-code">SV11WF - 005</p>
+                          <h5 class="h6-ch text-gray-500">
+                            <a
+                              href="http://localhost:5173/web-layout-training-vite/pages/product-list.html"
+                              class="text-decoration-none text-reset">
+                              蟲寶包
+                            </a>
+                          </h5>
+                        </div>
+
+                        <div class="product-purchase mt-0">
+                          <div
+                            class="d-flex justify-content-between align-items-center">
+                            <div class="price-stock">
+                              <p class="price fs-5 mb-0">NT $5</p>
+                              <p class="stock-status in-stock small">
+                                <i
+                                  class="fa-solid fa-circle text-success fa-xs"></i>
+                                尚有庫存
+                              </p>
+                            </div>
+
+                            <button
+                              class="btn btn-fav d-flex align-items-center justify-content-center position-absolute top-0 end-0 m-4"
+                              aria-label="加入收藏">
+                              <i class="bi bi-heart fs-4"></i>
+                            </button>
+
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between m-0">
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量">
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value">1</span>
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量">
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <a href="" target="_blank" class="btn btn-add w-100">
+                            <span class="add-text">加入購物車</span>
+
+                            <span class="icon">
+                              <i class="bi bi-arrow-right"></i>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card product-card h-100">
+                  <div class="row g-0 h-100">
+                    <div class="col-4">
+                      <div
+                        class="product-card-image-frame h-100 d-flex align-items-center justify-content-center">
+                        <a
+                          href="http://localhost:5173/web-layout-training-vite/pages/product-list.html">
+                          <img
+                            src="/web-layout-training-vite/assets/product-card-sewaddle-Dhs4LW8s.png"
+                            class="img-fluid"
+                            alt="寶可夢卡牌" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-8">
+                      <div
+                        class="card-body d-flex flex-column h-100 position-relative">
+                        <button
+                          class="btn btn-icon btn-favorite position-absolute top-0 end-0 m-4">
+                          <i class="bi bi-heart"></i>
+                        </button>
+
+                        <span class="tag align-self-start">寶可夢</span>
+
+                        <div class="product-info">
+                          <p class="product-code">SV11WF - 005</p>
+                          <h5 class="h6-ch text-gray-500">
+                            <a
+                              href="http://localhost:5173/web-layout-training-vite/pages/product-list.html"
+                              class="text-decoration-none text-reset">
+                              蟲寶包
+                            </a>
+                          </h5>
+                        </div>
+
+                        <div class="product-purchase mt-0">
+                          <div
+                            class="d-flex justify-content-between align-items-center">
+                            <div class="price-stock">
+                              <p class="price fs-5 mb-0">NT $5</p>
+                              <p class="stock-status in-stock small">
+                                <i
+                                  class="fa-solid fa-circle text-success fa-xs"></i>
+                                尚有庫存
+                              </p>
+                            </div>
+
+                            <button
+                              class="btn btn-fav d-flex align-items-center justify-content-center position-absolute top-0 end-0 m-4"
+                              aria-label="加入收藏">
+                              <i class="bi bi-heart fs-4"></i>
+                            </button>
+
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between m-0">
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量">
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value">1</span>
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量">
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <a href="" target="_blank" class="btn btn-add w-100">
+                            <span class="add-text">加入購物車</span>
+
+                            <span class="icon">
+                              <i class="bi bi-arrow-right"></i>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card product-card h-100">
+                  <div class="row g-0 h-100">
+                    <div class="col-4">
+                      <div
+                        class="product-card-image-frame h-100 d-flex align-items-center justify-content-center">
+                        <a
+                          href="http://localhost:5173/web-layout-training-vite/pages/product-list.html">
+                          <img
+                            src="/web-layout-training-vite/assets/product-card-sewaddle-Dhs4LW8s.png"
+                            class="img-fluid"
+                            alt="寶可夢卡牌" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <div class="col-8">
+                      <div
+                        class="card-body d-flex flex-column h-100 position-relative">
+                        <button
+                          class="btn btn-icon btn-favorite position-absolute top-0 end-0 m-4">
+                          <i class="bi bi-heart"></i>
+                        </button>
+
+                        <span class="tag align-self-start">寶可夢</span>
+
+                        <div class="product-info">
+                          <p class="product-code">SV11WF - 005</p>
+                          <h5 class="h6-ch text-gray-500">
+                            <a
+                              href="http://localhost:5173/web-layout-training-vite/pages/product-list.html"
+                              class="text-decoration-none text-reset">
+                              蟲寶包
+                            </a>
+                          </h5>
+                        </div>
+
+                        <div class="product-purchase mt-0">
+                          <div
+                            class="d-flex justify-content-between align-items-center">
+                            <div class="price-stock">
+                              <p class="price fs-5 mb-0">NT $5</p>
+                              <p class="stock-status in-stock small">
+                                <i
+                                  class="fa-solid fa-circle text-success fa-xs"></i>
+                                尚有庫存
+                              </p>
+                            </div>
+
+                            <button
+                              class="btn btn-fav d-flex align-items-center justify-content-center position-absolute top-0 end-0 m-4"
+                              aria-label="加入收藏">
+                              <i class="bi bi-heart fs-4"></i>
+                            </button>
+
+                            <div
+                              class="quantity-box d-flex align-items-center justify-content-between m-0">
+                              <button
+                                class="btn-icon btn-minus"
+                                type="button"
+                                aria-label="減少數量">
+                                <i class="bi bi-dash"></i>
+                              </button>
+
+                              <span class="quantity-value">1</span>
+
+                              <button
+                                class="btn-icon btn-plus"
+                                type="button"
+                                aria-label="增加數量">
+                                <i class="bi bi-plus"></i>
+                              </button>
+                            </div>
+                          </div>
+
+                          <a href="" target="_blank" class="btn btn-add w-100">
+                            <span class="add-text">加入購物車</span>
+
+                            <span class="icon">
+                              <i class="bi bi-arrow-right"></i>
+                            </span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <nav aria-label="Page navigation" class="mt-7">
+              <ul class="pagination justify-content-center mb-0">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">
+                    <img
+                      src="data:image/svg+xml,%3csvg%20width='16'%20height='16'%20viewBox='0%200%2016%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_95_1261)'%3e%3cpath%20d='M13.3334%207.33341H5.22008L8.94675%203.60675L8.00008%202.66675L2.66675%208.00008L8.00008%2013.3334L8.94008%2012.3934L5.22008%208.66675H13.3334V7.33341Z'%20fill='%23AEAEAE'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_95_1261'%3e%3crect%20width='16'%20height='16'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt="上一頁"
+                      class="pagination-arrow" />
+                  </a>
+                </li>
+
+                <li class="page-item active">
+                  <a class="page-link" href="">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="">2</a></li>
+                <li class="page-item"><a class="page-link" href="">3</a></li>
+                <li class="page-item"><a class="page-link" href="">4</a></li>
+                <li class="page-item"><a class="page-link" href="">5</a></li>
+
+                <li class="page-item">
+                  <a class="page-link" href="#">
+                    <img
+                      src="data:image/svg+xml,%3csvg%20width='16'%20height='16'%20viewBox='0%200%2016%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_95_1239)'%3e%3cpath%20d='M8.00008%202.66675L7.06008%203.60675L10.7801%207.33341H2.66675V8.66675H10.7801L7.06008%2012.3934L8.00008%2013.3334L13.3334%208.00008L8.00008%202.66675Z'%20fill='%231C1C1C'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_95_1239'%3e%3crect%20width='16'%20height='16'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e"
+                      alt="下一頁"
+                      class="pagination-arrow" />
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </section>
+        </div>
+      </div>
+    </main>
+    
+<footer>
+   
+
+    <section class="bg-footer"> <!--banner-->
+        <div class="container py-50">
+            <div class="d-flex align-items-center mb-4">
+                <div class="me-auto"> <!-- logo-->
+                    <a class="navbar-brand d-flex align-items-center gap-2 mt-1" href="index.html">
+                    <img src="data:image/png;base64,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" alt="logo" width="74" height="47.57">
+                    <span class="d-flex flex-column lh-1">
+                        <strong class="brand-title text-footer">小蜜蜂卡牌屋</strong>
+                        <span class="brand-sub text-footer fs-8 mt-1">Little Bee Card House</span>
+                    </span>
+                    </a>
+                </div>
+
+                <div> <!-- nav-->
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link p-75 text-white fw-bold" href="#">消息攻略</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-75 text-white fw-bold" href="#">優惠專區</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center"> <!--聯絡-->
+                <ul class="nav">
+                    <li class="nav-item me-3"><a class="nav-link p-0" href="">
+                        <i class="bi bi-facebook text-white"></i>
+                    </a></li>
+                    <li class="nav-item me-3"><a class="nav-link p-0" href="">
+                        <i class="bi bi-instagram text-white"></i>
+                    </a></li>
+                    <li class="nav-item me-3"><a class="nav-link p-0" href="">
+                        <i class="bi bi-messenger text-white"></i>
+                    </a></li>
+                    <li class="nav-item me-137-5"><a class="nav-link p-0" href="">
+                        <i class="bi bi-whatsapp text-white"></i>
+                    </a></li>
+                </ul>
+                
+                <p class="m-0 text-white fs-87-5">聯絡我們  sevice@cardstore.com.tw</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray500"> <!--版權-->
+        <div class="d-flex justify-content-center py-75">
+            <p class="m-0 text-white-50 fs-75">網站版權為 小蜜蜂卡牌屋 所有 Copyright © 2025 小蜜蜂卡牌屋 . All rights reserved.</p>
+        </div>
+    </section>
+</footer>
+    <script src="../assets/JS/products.js"></script>
+  </body>
+</html>
