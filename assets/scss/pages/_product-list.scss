@@ -394,4 +394,80 @@
       }
     }
   }
+
+  // 元件：側邊選單
+  .menu-box {
+    width: 100%;
+    background: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+    padding: 12px;
+  }
+
+  .search-box {
+    position: relative;
+    margin-bottom: 10px;
+  }
+
+  .search-box input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 6px 32px 6px 10px;
+  }
+
+  .search-box i {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    color: #555;
+  }
+
+  .my-custom-divider {
+    border: none; // 清除預設邊框
+    height: 1px; // 設定高度 (等同 border-top)
+    background-color: #cccccc; // 設定顏色 (來自 Figma)
+    margin-top: 20px; // 設定上方間距
+    margin-bottom: 20px; // 設定下方間距
+    opacity: 1; // 覆蓋 Bootstrap 可能的透明度設定
+    // width: 100%;                   // 預設寬度是 100%，通常不需要特別設定
+    // width: 274px;                  // 如果您堅持要固定 274px 寬 (不建議，會影響響應式)
+  }
+
+  .accordion-item {
+    background-color: #f0f0f0;
+  }
+
+  .accordion-button {
+    font-weight: 700;
+    background-color: transparent;
+    color: #000;
+    padding: 6px 0;
+    box-shadow: none;
+  }
+
+  .accordion-button::after {
+    filter: invert(0.4);
+  }
+
+  .accordion-button:not(.collapsed) {
+    color: #f0b400;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .accordion-body {
+    padding: 0 0 0 12px;
+  }
+
+  .accordion-body a {
+    display: block;
+    color: #6c757d;
+    text-decoration: none;
+    padding: 4px 0;
+  }
+
+  .accordion-body a:hover {
+    color: #f0b400;
+  }
 }
