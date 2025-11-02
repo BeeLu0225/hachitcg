@@ -1,5 +1,5 @@
 // 導入 Bootstrap 的 JavaScript
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
+// import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const siteApp = document.querySelector('[data-app="site"]');
 
